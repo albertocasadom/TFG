@@ -27,4 +27,5 @@ for urltraining in traininglinks:
 
 		response = BeautifulSoup(urltr.content,"html.parser")
 		title = response.div.div.h1.text
-		response.findAll()
+		body = response.findAll('div',{'id':'left_side'})
+		print(body)
