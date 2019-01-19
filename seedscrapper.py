@@ -17,7 +17,8 @@ for urltraining in traininglinks:
 	url = requests.get(urlres)
 	response = BeautifulSoup(url.content,"html.parser")
 	for linkrsc in response.findAll('li'):
-
+		title = linkrsc.h3.text
+		print(title)
 		if urlrsc in linkrsc.a['href']:
 			urltr = requests.get(linkrsc.a['href'])
 		else:
@@ -25,7 +26,6 @@ for urltraining in traininglinks:
 			print(urltr)
 			urltr = requests.get(urltr)
 
-		response = BeautifulSoup(urltr.content,"html.parser")
-		title = response.div.div.h1.text
+		response = BeautifulSoup(urltr.content,"html.parser")	
 		body = response.findAll('div',{'id':'left_side'})
 		print(body)
