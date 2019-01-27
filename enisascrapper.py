@@ -23,13 +23,11 @@ for link in response.findAll('tr'):
 # Conecta con cada uno de los links y obtiene los datos deseados.
 for urltraining in traininglinks:
     page = requests.get(urltraining)
-   # print(f"CONECTANDO A: {urltraining} ...")
+    print("CONECTANDO A: {0} ...".format(urltraining))
     responsetr = BeautifulSoup(page.content,"html.parser")
     for title in responsetr.find_all('h2'):
     	if title.text != None:
     		titles.append(title.text)
-    		print(title.text)
-
     for content in responsetr.find_all('table'):
         if content.findAll('p') != None:
             contenttr = content.find_all('p')
@@ -41,7 +39,6 @@ for urltraining in traininglinks:
             for a in resourcestr:
                 resources.append(a['href'])
 count = 0
-
 for onetitle in titles:   
     data['resources'].append({
         'resource':{
@@ -50,12 +47,13 @@ for onetitle in titles:
         'target_audience': informationdivided[count][0],
         'duration': informationdivided[count][1],
         'description': informationdivided[count][-1],
-        'files': informationdivided[count][2:-1]}
-        })
+        'files': informationdivided[count][2:-1]
+        }
+    })
     count+=1
 
 with open('data.json', 'w') as outfile:
-    json.dump(data,outfile)
+    json.dump(data,outfile, indent = 4)
 
 
 folder = FILE_PATH 
