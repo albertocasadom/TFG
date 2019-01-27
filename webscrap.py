@@ -41,18 +41,16 @@ for urltraining in traininglinks:
             for a in resourcestr:
                 resources.append(a['href'])
 count = 0
-'''
-for onetitle in titles:
-	pairtitlersc = (onetitle,informationdivided[count])
-	allinfo.append(pairtitlersc)
-	count+=1
-'''
+
 for onetitle in titles:   
     data['resources'].append({
         'resource':{
         'source': 'enisa',
         'title': onetitle,
-        'lista': informationdivided[count]}
+        'target_audience': informationdivided[count][0],
+        'duration': informationdivided[count][1],
+        'description': informationdivided[count][-1],
+        'files': informationdivided[count][2:-1]}
         })
     count+=1
 
