@@ -15,6 +15,8 @@ information = []
 resources = []
 dwnfiles = []
 folder = FILE_PATH 
+if not os.path.exists(folder):
+	os.makedirs(folder)
 
 for link in response.findAll("div",{"class":"one_third"}):
 	traininglinks.append(link.a['href'])
@@ -51,6 +53,7 @@ for urltraining in traininglinks:
 				dwnfiles.append(li.a['href'])
 		rootlist = root.split('/')
 		root = root + rootlist[-2] + '.pdf'
+		
 		download = wget.download(root,out =folder)
 
 		with open("data.json",'r') as datafile:
