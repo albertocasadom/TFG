@@ -11,8 +11,6 @@ url = requests.get(urlrsc)
 response = BeautifulSoup(url.content,"html.parser")
 traininglinks = [] 
 rsclinks = []
-data = {}
-data['resources'] = []
 information = []
 resources = []
 folder = FILE_PATH 
@@ -35,26 +33,30 @@ for urltraining in traininglinks:
 			urltr = requests.get(linkrsc.a['href'])
 			root = linkrsc.a['href']
 		elif "drive" in linkrsc.a['href']:
-			continue
+			pass
 		elif ".pdf" in linkrsc.a['href'] or ".zip" in linkrsc.a['href']:
-			continue
+			pass
 		else:
 			urltr = urlres + linkrsc.a['href']
 			root = urltr
 			urltr = requests.get(urltr)
+
 		response = BeautifulSoup(urltr.content,"html.parser")	
 		rootlist = root.split('/')
 		root = root + rootlist[-2] + '.pdf'
-		print(root)
 		download = wget.download(root,out =folder)
-    	data['resources'].append({
-			'resource':{
-				'source':'SEEDLabs',
-				'title': title,
-				'target_audience': 'Students',
-				'description': description,
-				'Enunciado': root
+		with open("data.json",'r') as datafile:
+			data = json.load(datafile)
+
+		data['resources'].append({
+			'resource': {
+			'source': 'SEEDLabs',
+			'title': title,
+			'target_audience':'Students',
+			'description': description,
+			'urlproblem': root
 			}
-		})
-    	with open('data.json','w+') as outfile:
-    		json.dump(data,outfile, indent = 4)
+			})
+
+		with open("data.json",'w') as outfile:
+			json.dump(data,outfile,indent = 4)
