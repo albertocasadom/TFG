@@ -11,7 +11,6 @@ url = requests.get(urlrsc)
 response = BeautifulSoup(url.content,"html.parser")
 traininglinks = [] 
 rsclinks = []
-information = []
 resources = []
 dwnfiles = []
 folder = FILE_PATH 
@@ -45,15 +44,19 @@ for urltraining in traininglinks:
 		response = BeautifulSoup(urltr.content,"html.parser")
 		files = []
 		dwnfiles = []
+		information = []
 		for li in response.findAll('li'):
-			if li.b != None:
-				information.append(li.b.text)
+			if "Networking" in root:
+				if "week"
+			else:
+				if li.b != None:
+					information.append(li.b.text)
 			if li.a != None and "./files/" in li.a['href']:
 				files.append(li.a.text)
 				dwnfiles.append(li.a['href'])
 		rootlist = root.split('/')
 		root = root + rootlist[-2] + '.pdf'
-		
+
 		download = wget.download(root,out =folder)
 
 		with open("data.json",'r') as datafile:
