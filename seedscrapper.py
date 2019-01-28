@@ -13,9 +13,8 @@ traininglinks = []
 rsclinks = []
 information = []
 resources = []
+dwnfiles = []
 folder = FILE_PATH 
-if not os.path.exists(folder):
-	os.makedirs(folder)
 
 for link in response.findAll("div",{"class":"one_third"}):
 	traininglinks.append(link.a['href'])
@@ -41,10 +40,19 @@ for urltraining in traininglinks:
 			root = urltr
 			urltr = requests.get(urltr)
 
-		response = BeautifulSoup(urltr.content,"html.parser")	
+		response = BeautifulSoup(urltr.content,"html.parser")
+		files = []
+		dwnfiles = []
+		for li in response.findAll('li'):
+			if li.b != None:
+				information.append(li.b.text)
+			if li.a != None and "./files/" in li.a['href']:
+				files.append(li.a.text)
+				dwnfiles.append(li.a['href'])
 		rootlist = root.split('/')
 		root = root + rootlist[-2] + '.pdf'
 		download = wget.download(root,out =folder)
+
 		with open("data.json",'r') as datafile:
 			data = json.load(datafile)
 
@@ -53,8 +61,9 @@ for urltraining in traininglinks:
 			'source': 'SEEDLabs',
 			'title': title,
 			'target_audience':'Students',
+			'duration': information[1] + "-" + information[2],
 			'description': description,
-			'urlproblem': root
+			'files': files
 			}
 			})
 
