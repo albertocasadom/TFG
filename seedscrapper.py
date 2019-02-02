@@ -23,6 +23,7 @@ for link in response.findAll("div",{"class":"one_third"}):
 for urltraining in traininglinks:
 	urlres = urlrsc + urltraining
 	url = requests.get(urlres)
+	print("\nConnecting to: {0}".format(urlres))
 	response = BeautifulSoup(url.content,"html.parser")
 	for linkrsc in response.findAll('li'):
 		if linkrsc.h3 != None:
@@ -46,18 +47,17 @@ for urltraining in traininglinks:
 		dwnfiles = []
 		information = []
 		for li in response.findAll('li'):
-			if "Networking" in root:
-				if "week"
-			else:
-				if li.b != None:
-					information.append(li.b.text)
-			if li.a != None and "./files/" in li.a['href']:
+			if li.a != None and "files/" in li.a['href']:
+				files.append(li.a.text)
+				dwnfiles.append(li.a['href'])
+			elif li.a !=  None and ".py" in li.a['href']:
 				files.append(li.a.text)
 				dwnfiles.append(li.a['href'])
 		rootlist = root.split('/')
-		root = root + rootlist[-2] + '.pdf'
-
-		download = wget.download(root,out =folder)
+		rootpath = root + rootlist[-2]
+		rootpdf = rootpath + '.pdf'
+		for dur in response.find(string = re.compile("week")):
+			information.append(dur)
 
 		with open("data.json",'r') as datafile:
 			data = json.load(datafile)
@@ -67,7 +67,7 @@ for urltraining in traininglinks:
 			'source': 'SEEDLabs',
 			'title': title,
 			'target_audience':'Students',
-			'duration': information[1] + "-" + information[2],
+			'duration': information[0] + "week(s)",
 			'description': description,
 			'files': files
 			}
@@ -75,3 +75,13 @@ for urltraining in traininglinks:
 
 		with open("data.json",'w') as outfile:
 			json.dump(data,outfile,indent = 4)
+		folder = FILE_PATH
+		folder = folder + "/" + title
+		if not os.path.exists(folder):
+			os.makedirs(folder)
+
+		download = wget.download(rootpdf,out = folder)
+		for file in dwnfiles:
+			filepath= root + file
+			if requests.get(filepath).status_code == 200:
+				downloadfile = wget.download(filepath, out = folder)
