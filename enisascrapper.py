@@ -15,7 +15,9 @@ resources = []
 allinfo =[]
 data = {}
 data['resources'] = []
-
+folder = FILE_PATH 
+if not os.path.exists(folder):
+    os.makedirs(folder)
 # Obtiene todos los links de las diferentes clasificaciones de trainings
 for link in response.findAll('tr'):
     if link.td.find('a') != None:
@@ -39,7 +41,13 @@ for urltraining in traininglinks:
             for a in resourcestr:
                 resources.append(a['href'])
 count = 0
-for onetitle in titles:   
+resources.reverse()
+for onetitle in titles:
+    folder = FILE_PATH 
+    folder = folder + "/" + onetitle
+    if not os.path.exists(folder):
+        os.makedirs(folder)
+
     data['resources'].append({
         'resource':{
         'source': 'enisa',
@@ -52,15 +60,10 @@ for onetitle in titles:
     })
     count+=1
 
-with open('data.json', 'w') as outfile:
-    json.dump(data,outfile, indent = 4)
+    with open('data.json', 'w') as outfile:
+        json.dump(data,outfile, indent = 4)
 
+    for file in range(0,len(informationdivided[count][2:-1])):
+        dwnloadfile = resources.pop()
+        dwnfile = wget.download(dwnloadfile, out = folder)
 
-folder = FILE_PATH 
-
-if not os.path.exists(folder):
-    os.makedirs(folder)
-
-for rsrc in resources:
-    download = wget.download(rsrc, out = folder)
-    

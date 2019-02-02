@@ -17,6 +17,9 @@ folder = FILE_PATH
 if not os.path.exists(folder):
 	os.makedirs(folder)
 
+with open("data.json",'r') as datafile:
+			data = json.load(datafile)
+
 for link in response.findAll("div",{"class":"one_third"}):
 	traininglinks.append(link.a['href'])
 
@@ -31,6 +34,7 @@ for urltraining in traininglinks:
 		if linkrsc.p != None:
 			description = linkrsc.p.text
 		if urlrsc in linkrsc.a['href']:
+			print("\nConnecting to: {0}".format(linkrsc.a['href']))
 			urltr = requests.get(linkrsc.a['href'])
 			root = linkrsc.a['href']
 		elif "drive" in linkrsc.a['href']:
@@ -40,6 +44,7 @@ for urltraining in traininglinks:
 		else:
 			urltr = urlres + linkrsc.a['href']
 			root = urltr
+			print("\nConnecting to: {0}".format(urltr))
 			urltr = requests.get(urltr)
 
 		response = BeautifulSoup(urltr.content,"html.parser")
@@ -57,24 +62,19 @@ for urltraining in traininglinks:
 		rootpath = root + rootlist[-2]
 		rootpdf = rootpath + '.pdf'
 		for dur in response.find(string = re.compile("week")):
-			information.append(dur)
-
-		with open("data.json",'r') as datafile:
-			data = json.load(datafile)
+			information.append(dur)		
 
 		data['resources'].append({
 			'resource': {
 			'source': 'SEEDLabs',
 			'title': title,
 			'target_audience':'Students',
-			'duration': information[0] + "week(s)",
+			'duration': information[0] + " week(s)",
 			'description': description,
 			'files': files
 			}
 			})
 
-		with open("data.json",'w') as outfile:
-			json.dump(data,outfile,indent = 4)
 		folder = FILE_PATH
 		folder = folder + "/" + title
 		if not os.path.exists(folder):
@@ -85,3 +85,6 @@ for urltraining in traininglinks:
 			filepath= root + file
 			if requests.get(filepath).status_code == 200:
 				downloadfile = wget.download(filepath, out = folder)
+
+with open("data.json",'w') as outfile:
+	json.dump(data,outfile,indent = 4)
