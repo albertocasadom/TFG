@@ -92,7 +92,7 @@ for urltraining in traininglinks:
 			})
 
 		folder = FILE_PATH
-		folder = folder + "/" + title
+		folder = os.path.join(folder,title.replace("/","-"))
 		if not os.path.exists(folder):
 			os.makedirs(folder)
 
