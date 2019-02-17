@@ -12,3 +12,4 @@ def index(request):
 		data = json.load(datafile)
 	context = { 'data':data}
 	return HttpResponse(template.render(context, request))
+
