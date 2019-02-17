@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+	<html>
+		<header>
+			<title> Home </title>
+			<meta charset = 'utf-8'>
+		</header>
+		<body>
+			<h1> WELCOME </h1>
+			<table class="table table-bordered">
+				<head>
+					<tr>
+						<th> Title </th>
+						<th> Description </th>
+					</tr>
+					{% for training in data.resources %}
+					<tr>
+						<td> {{training.resource.title}}</td>
+						<td> {{training.resource.description}}</td>
+					</tr>
+					{% endfor %}
+			</table>
+		</body>
