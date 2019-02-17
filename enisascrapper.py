@@ -4,7 +4,8 @@ import requests
 import json
 from bs4 import BeautifulSoup
 
-FILE_PATH = "/home/hacklberto/Telematics Degree/TFG/TFG/EnisaFiles"
+#FILE_PATH = "/Users/albertocm/Desktop/Ingeniería Telemática/TFG/TFG/EnisaFiles"
+FILE_PATH = os.getcwd() + "/EnisaFiles"
 url = requests.get("https://www.enisa.europa.eu/topics/trainings-for-cybersecurity-specialists/online-training-material")
 response = BeautifulSoup(url.content,"html.parser");
 traininglinks = []
@@ -29,13 +30,14 @@ for urltraining in traininglinks:
     responsetr = BeautifulSoup(page.content,"html.parser")
     for title in responsetr.find_all('h2'):
     	if title.text != None:
-    		titles.append(title.text)
+    		titles.append(title.text.replace("\u00a0"," "))
+
     for content in responsetr.find_all('table'):
         if content.findAll('p') != None:
             contenttr = content.find_all('p')
             information = []
             for p in contenttr:
-                information.append(p.text)
+                information.append(p.text.replace("\u00a0"," "))
             informationdivided.append(information)
             resourcestr = content.find_all('a')
             for a in resourcestr:
@@ -65,5 +67,8 @@ for onetitle in titles:
 
     for file in range(0,len(informationdivided[count][2:-1])):
         dwnloadfile = resources.pop()
-        dwnfile = wget.download(dwnloadfile, out = folder)
+        if "pdf" in dwnloadfile:
+            dwnfile = wget.download(dwnloadfile, out = folder)
+            
+
 

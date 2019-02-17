@@ -5,7 +5,8 @@ import json
 import re
 from bs4 import BeautifulSoup
 
-FILE_PATH = "/home/hacklberto/Telematics Degree/TFG/TFG/SeedFiles"
+#FILE_PATH = "/Users/albertocm/Desktop/Ingeniería Telemática/TFG/TFG/SeedFiles"
+FILE_PATH = os.getcwd() + "/SeedFiles"
 urlrsc = "http://www.cis.syr.edu/~wedu/seed/Labs_16.04/"
 url = requests.get(urlrsc)
 response = BeautifulSoup(url.content,"html.parser")
@@ -31,6 +32,19 @@ for urltraining in traininglinks:
 	for linkrsc in response.findAll('li'):
 		if linkrsc.h3 != None:
 			title = linkrsc.h3.text
+			img = linkrsc.h3.img['src']
+			diff = linkrsc.h3.get('class')
+			if diff != None:
+				diff = diff[0]
+			else:
+				diff = "Not defined"
+
+			if "attack" in img:
+				typetr = "attack"
+			elif "exploration" in img:
+				typetr = "exploration"
+			else:
+				typetr = "implementation"
 		if linkrsc.p != None:
 			description = linkrsc.p.text
 		if urlrsc in linkrsc.a['href']:
@@ -58,6 +72,7 @@ for urltraining in traininglinks:
 			elif li.a !=  None and ".py" in li.a['href']:
 				files.append(li.a.text)
 				dwnfiles.append(li.a['href'])
+
 		rootlist = root.split('/')
 		rootpath = root + rootlist[-2]
 		rootpdf = rootpath + '.pdf'
@@ -68,7 +83,8 @@ for urltraining in traininglinks:
 			'resource': {
 			'source': 'SEEDLabs',
 			'title': title,
-			'target_audience':'Students',
+			'type' : typetr,
+			'difficulty': diff,
 			'duration': information[0] + " week(s)",
 			'description': description,
 			'files': files
