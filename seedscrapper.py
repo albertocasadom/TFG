@@ -80,7 +80,6 @@ for urltraining in traininglinks:
 			information.append(dur)		
 
 		data['resources'].append({
-			'resource': {
 			'source': 'SEEDLabs',
 			'title': title,
 			'type' : typetr,
@@ -88,7 +87,6 @@ for urltraining in traininglinks:
 			'duration': information[0] + " week(s)",
 			'description': description,
 			'files': files
-			}
 			})
 
 		folder = FILE_PATH

@@ -11,7 +11,6 @@ response = BeautifulSoup(url.content,"html.parser");
 traininglinks = []
 informationdivided = []
 titles = []
-numelemp = 0
 resources = []
 allinfo =[]
 data = {}
@@ -51,24 +50,22 @@ for onetitle in titles:
         os.makedirs(folder)
 
     data['resources'].append({
-        'resource':{
         'source': 'enisa',
         'title': onetitle,
         'target_audience': informationdivided[count][0],
         'duration': informationdivided[count][1],
         'description': informationdivided[count][-1],
         'files': informationdivided[count][2:-1]
-        }
-    })
+        })
     count+=1
 
     with open('data.json', 'w') as outfile:
         json.dump(data,outfile, indent = 4)
-
+'''
     for file in range(0,len(informationdivided[count][2:-1])):
         dwnloadfile = resources.pop()
         if "pdf" in dwnloadfile:
             dwnfile = wget.download(dwnloadfile, out = folder)
-            
+          '''  
 
 
