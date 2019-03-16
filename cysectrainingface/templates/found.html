@@ -2,18 +2,17 @@
 
 {% block content %}
 	{% if user.is_authenticated %}
-        <p class="display-4">Hello, {{ user.last_login }}</p>
-        <a class="lead" href="{% url 'logout' %}">Log out </a>
+  		<a class="lead" href="{% url 'logout' %}">Log out </a>
         <table class="table table-bordered">
 			<head>
 				<tr>
 					<th> Title </th>
 					<th> Description </th>
 				</tr>
-				{% for training in data.resources %}
+				{% for training in data %}
 				<tr>
-					<td> {{training.resource.title}}</td>
-					<td> {{training.resource.description}}</td>
+					<td> {{training.title}}</td>
+					<td> {{training.description}}</td>
 				</tr>
 				{% endfor %}
 		</table>
