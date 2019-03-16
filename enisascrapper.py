@@ -61,11 +61,10 @@ for onetitle in titles:
 
     with open('data.json', 'w') as outfile:
         json.dump(data,outfile, indent = 4)
-'''
+
     for file in range(0,len(informationdivided[count][2:-1])):
         dwnloadfile = resources.pop()
         if "pdf" in dwnloadfile:
             dwnfile = wget.download(dwnloadfile, out = folder)
-          '''  
 
 

@@ -13,6 +13,7 @@ def found(request):
 	getfilter = request.POST.get('filter')
 	gettext = request.POST.get('text')
 	result = []
+	trainingnames = []
 	with open(os.path.join(BASE_DIR, '../data.json'),'r') as datafile:
 		data = json.load(datafile)
 	if getfilter != 'word':
@@ -21,23 +22,40 @@ def found(request):
 				result.append(training)
 			else:
 				continue
+		context = {'data':result}
 	else:
+		numberepeated = []
 		ENISA_DIR = os.walk(os.path.join(BASE_DIR,'../EnisaFiles'))
-		repeated = 0
 		for dirs in ENISA_DIR:
 			file = os.path.join(dirs[0],'mainwordfile.txt')
 			if os.path.exists(file):
 				with open(file,'r') as wordsfile:
-					lines = wordsfile.readlines()
-					for line in lines:
-						words = line.split(' ')
-						for w in words:
-							repeated+=1
-							dirsname = dirs[0].split(BASE_DIR)
-							print(dirsname[1])
-
-		print(repeated)
-	context = {'data':result}
+					repeated = 0
+					for l in wordsfile:
+						match = re.findall(gettext,l)
+						repeated = len(match)
+					if repeated > 0:
+						dirsname = dirs[0].split('EnisaFiles/')
+						trainingnames.append((dirsname[1],repeated))
+		SEED_DIR = os.walk(os.path.join(BASE_DIR,'../SeedFiles'))
+		for dirs in SEED_DIR:
+			file = os.path.join(dirs[0],'mainwordfile.txt')
+			if os.path.exists(file):
+				with open(file,'r') as wordsfile:
+					repeated = 0
+					for l in wordsfile:
+						match = re.findall(gettext,l)
+						repeated = len(match)
+					if repeated > 0:
+						dirsname = dirs[0].split('SeedFiles/')
+						trainingnames.append((dirsname[1],repeated))
+		for training in data['resources']:
+			for tr in trainingnames:
+				if training['title'] == tr[0]:
+					result.append((training,tr[1]))
+					result.sort(key=lambda numword: numword[1], reverse = True)
+		template = loader.get_template('foundtext.html')
+		context = {'data':result, 'text': gettext}
 	return HttpResponse(template.render(context, request))
 
 def logout_view(request):
