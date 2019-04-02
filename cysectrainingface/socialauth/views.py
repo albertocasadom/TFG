@@ -7,19 +7,50 @@ import os
 import json
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-
+with open(os.path.join(BASE_DIR, '../data.json'),'r') as datafile:
+		data = json.load(datafile)
+def search(request):
+	template = loader.get_template('search.html')
+	searchfilter = []
+	for resources in data['resources']:
+		keys = list(resources.keys())
+		for key in keys:
+			if key in searchfilter:
+				continue
+			else:
+				searchfilter.append(key)
+	context = {'filter':searchfilter}
+	return HttpResponse(template.render(context,request))
+#Poner desplegables en lo que sea acotado TO DO.
 def found(request):
 	template = loader.get_template('found.html')
 	getfilter = request.POST.get('filter')
-	gettext = request.POST.get('text')
+	gettext = request.POST.get('text').lower()
 	result = []
 	trainingnames = []
-	with open(os.path.join(BASE_DIR, '../data.json'),'r') as datafile:
-		data = json.load(datafile)
+	text = []
 	if getfilter != 'word':
 		for training in data['resources']:
-			if gettext in training[getfilter]:
-				result.append(training)
+			#Preguntar primero si el training tiene la clave.
+			keys = list(training.keys())
+			if getfilter in keys:
+			#Separar palabras de búsqueda
+				if type(training[getfilter]) != list:
+					text = gettext.split(" ")
+					for word in text:
+						if word in training[getfilter].lower():
+							result.append(training)
+							break
+						else:
+							continue
+				else:
+					for el in training[getfilter]:
+						if el.lower() == gettext:
+							result.append(training)
+							break
+						else: 
+							continue
+							
 			else:
 				continue
 		context = {'data':result}
@@ -32,7 +63,7 @@ def found(request):
 				with open(file,'r') as wordsfile:
 					repeated = 0
 					for l in wordsfile:
-						match = re.findall(gettext,l)
+						match = re.findall(gettext,l.lower())
 						repeated = len(match)
 					if repeated > 0:
 						dirsname = dirs[0].split('EnisaFiles/')
@@ -44,7 +75,7 @@ def found(request):
 				with open(file,'r') as wordsfile:
 					repeated = 0
 					for l in wordsfile:
-						match = re.findall(gettext,l)
+						match = re.findall(gettext,l.lower())
 						repeated = len(match)
 					if repeated > 0:
 						dirsname = dirs[0].split('SeedFiles/')
@@ -58,15 +89,8 @@ def found(request):
 		context = {'data':result, 'text': gettext}
 	return HttpResponse(template.render(context, request))
 
-def logout_view(request):
-	logout(request)
-	return render(request,'socialauth/logout.html')
-
-def search(request):
-	template = loader.get_template('search.html')
-	with open(os.path.join(BASE_DIR, '../data.json'),'r') as datafile:
-		data = json.load(datafile)
-	searchfilter = []
+def advancedsearch(request):
+	template = loader.get_template('advancedsearch.html')
 	for resources in data['resources']:
 		keys = list(resources.keys())
 		for key in keys:
@@ -74,5 +98,18 @@ def search(request):
 				continue
 			else:
 				searchfilter.append(key)
-	context = {'filter':searchfilter}
+	
+def showtraining(request):
+	template = loader.get_template('showtraining.html')
+	trainingname = request.GET.get('training')
+	context = {}
+	print(trainingname)
+	for tr in data['resources']:
+		if tr['title'] == trainingname:
+			print(tr)
+			context = {'training':tr, 'test':'test'}
 	return HttpResponse(template.render(context,request))
+
+def logout_view(request):
+	logout(request)
+	return render(request,'socialauth/logout.html')
