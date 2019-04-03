@@ -82,7 +82,7 @@ def found(request):
 						trainingnames.append((dirsname[1],repeated))
 		for training in data['resources']:
 			for tr in trainingnames:
-				if training['title'] == tr[0]:
+				if tr[0] == training['title']:
 					result.append((training,tr[1]))
 					result.sort(key=lambda numword: numword[1], reverse = True)
 		template = loader.get_template('foundtext.html')
@@ -91,6 +91,7 @@ def found(request):
 
 def advancedsearch(request):
 	template = loader.get_template('advancedsearch.html')
+	searchfilter = []
 	for resources in data['resources']:
 		keys = list(resources.keys())
 		for key in keys:
@@ -98,7 +99,8 @@ def advancedsearch(request):
 				continue
 			else:
 				searchfilter.append(key)
-	
+	context = {'filter':searchfilter}
+	return HttpResponse(template.render(context,request))
 def showtraining(request):
 	template = loader.get_template('showtraining.html')
 	trainingname = request.GET.get('training')

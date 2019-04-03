@@ -13,7 +13,7 @@
 				</tr>
 				{% for training in data %}
 				<tr>
-					<td> {{training.0.title}}</td>
+					<td> <a href = "{%url 'showtraining'%}?training={{training.0.title}}">{{training.0.title}}</a></td>
 					<td> {{training.0.description}}</td>
 					<td> {{training.1}}</td>
 

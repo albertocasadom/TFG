@@ -3,6 +3,7 @@
 {% block content %}
 	{% if user.is_authenticated %}
   		<a class="lead" href="{% url 'logout' %}">Log out </a>
+  		<a href = "{% url 'advanced' %}"> Advanced search </a>
   		<form action = "../found/ " method = 'post'>
   		{% csrf_token %}
     	{{ form.as_p }}

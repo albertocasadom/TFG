@@ -123,6 +123,7 @@ LOGIN_URL = 'login'
 LOGIN_REDIRECT_URL = 'search'
 LOGOUT_REDIRECT_URL = 'logout'
 
+SECURE_SSL_REDIRECT = False
 
 
 # Internationalization
