@@ -2,11 +2,47 @@
 
 {% block content %}
 	{% if user.is_authenticated %}
+		<script>
+			var count = 0
+			var inner = '<div id = "toadd"><select name = "filter"><option value = "word" selected> Any field</option> {% for key in filter %}<option value = "{{key}}">{{key}} </option>{% endfor %}</select><select name = "content"><option value = "contains" selected> Contains </option><option value = "is"> Is (exactly) </option><option value = "start"> Start (with) </option></select><input type = "Search" name = "text" placeholder = "Search a training..." required></div>'
+
+			function addand(){
+				var element = document.getElementById("toadd");
+				element.id = count;
+
+				var selectfilter = document.getElementsByName('filter')[0].setAttribute("name",'andfilter'+count);
+				var selectcontent = document.getElementsByName('content')[0].setAttribute("name",'andcontent'+count);
+				var textelement = document.getElementsByName('text')[0].setAttribute("name",'andtext'+count);
+				var add = document.getElementById(count);
+				add.insertAdjacentHTML("afterEnd", inner);
+
+				count++;
+
+			}
+			function addor(){
+				var element = document.getElementById("toadd");
+				element.id = count;
+				var selectfilter = document.getElementsByName('filter')[0].setAttribute("name",'orfilter'+count);
+				var selectcontent = document.getElementsByName('content')[0].setAttribute("name",'orcontent'+count);
+				var textelement = document.getElementsByName('text')[0].setAttribute("name",'ortext'+count);
+				var add = document.getElementById(count);
+				add.insertAdjacentHTML("afterEnd", inner);
+
+				count++;	
+			}
+
+			function changetoadd(){
+				document.getElementById("toadd").id = count++;
+				document.getElementById("lastfield").insertAdjacentHTML("afterEnd", "<input type='hidden' name ='counter' value = count")
+			}
+		</script>
   		<a class="lead" href="{% url 'logout' %}">Log out </a>
   		<a href = "{% url 'search' %}"> Search </a>
   		<form action = "../advancedfound/ " method = 'post'>
   		{% csrf_token %}
     	{{ form.as_p }}
+    		<div id = "lastfield">
+    		<div id = "toadd">
   			<select name = "filter">
   				<option value = "word" selected> Any field</option> 
 				{% for key in filter %}
@@ -19,8 +55,13 @@
 				<option value = "start"> Start (with) </option>
 			</select>
 			<input type = "Search" name = "text" placeholder = 'Search a training...' required>
-			<input type = "submit" value = "submit"/>
+			</div>
+			</div>
+			<input type = "submit" value = "submit" onclick = "changetoadd()"/>
+		
 		</form>
+		<button onclick= "addand()"> AND </button>
+		<button onclick = "addor()"> OR </button>
 
 	{% else %}
        <a class="lead" href="{% url 'login' %}">Log in</a>
