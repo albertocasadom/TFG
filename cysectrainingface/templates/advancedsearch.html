@@ -3,65 +3,120 @@
 {% block content %}
 	{% if user.is_authenticated %}
 		<script>
-			var count = 0
-			var inner = '<div id = "toadd"><select name = "filter"><option value = "word" selected> Any field</option> {% for key in filter %}<option value = "{{key}}">{{key}} </option>{% endfor %}</select><select name = "content"><option value = "contains" selected> Contains </option><option value = "is"> Is (exactly) </option><option value = "start"> Start (with) </option></select><input type = "Search" name = "text" placeholder = "Search a training..." required></div>'
+			var count = 0;
+			var countor = 0;
+			var countand = 0;
+			var lastclicked = ""
+			var firstclicked = ""
+			var innerand = '<div id = "toadd"><span name = "and"> AND </span><select name = "andfilter"><option value = "word" selected> Any field</option> {% for key in filter %}<option value = "{{key}}">{{key}} </option>{% endfor %}</select><select name = "andcontent"><option value = "contains" selected> Contains </option><option value = "is"> Is (exactly) </option><option value = "start"> Start (with) </option></select><input type = "Search" name = "andtext" placeholder = "Search a training..." required><input type ="button" value = "-" onclick = "deletediv(this.parentElement.id)"/></div>'
+			
+			var inneror = '<div id = "toadd"><span name = "or"> OR </span> <select name = "orfilter"><option value = "word" selected> Any field</option> {% for key in filter %}<option value = "{{key}}">{{key}} </option>{% endfor %}</select><select name = "orcontent"><option value = "contains" selected> Contains </option><option value = "is"> Is (exactly) </option><option value = "start"> Start (with) </option></select><input type = "Search" name = "ortext" placeholder = "Search a training..." required> <input type ="button" value = "-" onclick = "deletediv(this.parentElement.id)"/></div>'
 
 			function addand(){
 				var element = document.getElementById("toadd");
 				element.id = count;
-
-				var selectfilter = document.getElementsByName('filter')[0].setAttribute("name",'andfilter'+count);
-				var selectcontent = document.getElementsByName('content')[0].setAttribute("name",'andcontent'+count);
-				var textelement = document.getElementsByName('text')[0].setAttribute("name",'andtext'+count);
+				var textvar = "text";
+				var content = "content";
+				var filter = "filter";
+				if (count === 0){
+					firstclicked = "and";
+				}
+				if(document.getElementsByTagName("div").length == 4){
+					firstclicked = "and"
+				}
+				if(lastclicked === "and" ){
+					textvar = "andtext";
+					content = "andcontent";
+					filter = "andfilter";
+				}else if (lastclicked === "or"){
+					textvar = "ortext";
+					content = "orcontent";
+					filter = "orfilter";
+				}
+				var selectfilter = document.getElementsByName(filter)[0].setAttribute("name","andfilter"+count);
+				var selectcontent = document.getElementsByName(content)[0].setAttribute("name",'andcontent'+count);
+				var textelement = document.getElementsByName(textvar)[0].setAttribute("name",'andtext'+count);
 				var add = document.getElementById(count);
-				add.insertAdjacentHTML("afterEnd", inner);
-
+				document.getElementById("lastfield").setAttribute("name",count);
+				add.insertAdjacentHTML("afterEnd", innerand);
+				lastclicked = "and";
 				count++;
-
+				countand++;
 			}
 			function addor(){
 				var element = document.getElementById("toadd");
 				element.id = count;
-				var selectfilter = document.getElementsByName('filter')[0].setAttribute("name",'orfilter'+count);
-				var selectcontent = document.getElementsByName('content')[0].setAttribute("name",'orcontent'+count);
-				var textelement = document.getElementsByName('text')[0].setAttribute("name",'ortext'+count);
+				var textvar = "text";
+				var content = "content";
+				var filter = "filter";
+				if (count === 0){
+					firstclicked ="or";
+				}
+				if(document.getElementsByTagName("div").length == 4){
+					firstclicked = "or"
+				}
+				if(lastclicked === "and" ){
+					textvar = "andtext";
+					content = "andcontent";
+					filter = "andfilter";
+				}else if (lastclicked === "or"){
+					textvar = "ortext";
+					content = "orcontent";
+					filter = "orfilter";
+				}
+				var selectfilter = document.getElementsByName(filter)[0].setAttribute("name",'orfilter'+count);
+				var selectcontent = document.getElementsByName(content)[0].setAttribute("name",'orcontent'+count);
+				var textelement = document.getElementsByName(textvar)[0].setAttribute("name",'ortext'+count);
 				var add = document.getElementById(count);
-				add.insertAdjacentHTML("afterEnd", inner);
-
-				count++;	
+				document.getElementById("lastfield").setAttribute("name",count);
+				add.insertAdjacentHTML("afterEnd", inneror);
+				lastclicked = "or";
+				count++;
+				countor++;
 			}
 
-			function changetoadd(){
-				document.getElementById("toadd").id = count++;
-				document.getElementById("lastfield").insertAdjacentHTML("afterEnd", "<input type='hidden' name ='counter' value = count")
+			function deletediv(elementid){
+				var numelems = document.getElementsByTagName("div").length;
+				document.getElementById(elementid).remove();
+				var count = document.getElementById("lastfield").getAttribute("name");
+				document.getElementById("lastfield").setAttribute("name",count-1);
+				if (numelems === 5){			
+						document.getElementById(count).setAttribute("id","toadd");
+						document.getElementsByName(firstclicked+"filter"+count)[0].setAttribute("name",'filter');
+						document.getElementsByName(firstclicked+"content"+count)[0].setAttribute("name",'content');
+						document.getElementsByName(firstclicked+"text"+count)[0].setAttribute("name",'text');
+						lastclicked = "";
+				}		
 			}
 		</script>
+
   		<a class="lead" href="{% url 'logout' %}">Log out </a>
   		<a href = "{% url 'search' %}"> Search </a>
   		<form action = "../advancedfound/ " method = 'post'>
   		{% csrf_token %}
     	{{ form.as_p }}
     		<div id = "lastfield">
-    		<div id = "toadd">
-  			<select name = "filter">
-  				<option value = "word" selected> Any field</option> 
-				{% for key in filter %}
-				<option value = "{{key}}">{{key}} </option>
-				{% endfor %}
-			</select>
-			<select name = "content">
-				<option value = "contains" selected> Contains </option>
-				<option value = "is"> Is (exactly) </option>
-				<option value = "start"> Start (with) </option>
-			</select>
-			<input type = "Search" name = "text" placeholder = 'Search a training...' required>
+	    		<div id = "toadd">
+		  			<select name = "filter">
+		  				<option value = "word" selected> Any field</option> 
+						{% for key in filter %}
+						<option value = "{{key}}">{{key}} </option>
+						{% endfor %}
+					</select>
+					<select name = "content">
+						<option value = "contains" selected> Contains </option>
+						<option value = "is"> Is (exactly) </option>
+						<option value = "start"> Start (with) </option>
+					</select>
+					<input type = "Search" name = "text" placeholder = 'Search a training...' required>
+				</div>
 			</div>
-			</div>
-			<input type = "submit" value = "submit" onclick = "changetoadd()"/>
-		
+			<input type = "button" value = "AND" onclick= "addand()"/>
+			<input type = "button" value = "OR" onclick= "addor()"/>
+			<input type = "submit" value = "submit"/>
+			
 		</form>
-		<button onclick= "addand()"> AND </button>
-		<button onclick = "addor()"> OR </button>
+		
 
 	{% else %}
        <a class="lead" href="{% url 'login' %}">Log in</a>
