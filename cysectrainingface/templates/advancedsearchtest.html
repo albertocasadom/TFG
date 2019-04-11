@@ -9,9 +9,9 @@
 			var checkboxesclicked = [];
 			var lastclicked = ""
 			var firstclicked = ""
-			var innerand = '<div id = "toadd"><span name = "and"> AND </span><select name = "andfilter"><option value = "word" selected> Word</option> {% for key in filter %}<option value = "{{key}}">{{key}} </option>{% endfor %}</select><select name = "andcontent"><option value = "contains" selected> Contains </option><option value = "is"> Is (exactly) </option></select><input type = "Search" name = "andtext" placeholder = "Search a training..." required><input type ="button" value = "-" onclick = "deletediv(this.parentElement.id)"/></div>'
+			var innerand = '<div id = "toadd"><span name = "and"> AND </span><select name = "andfilter"><option value = "word" selected> Word</option> {% for key in filter %}<option value = "{{key}}">{{key}} </option>{% endfor %}</select><select name = "andcontent"><option value = "contains" selected> Contains </option><option value = "is"> Is (exactly) </option></select><input type = "Search" name = "andtext" placeholder = "Search a training..." required><input type ="button" value = "-" onclick = "deletediv(this.parentElement.id,this.parentElement.firstChild)"/></div>'
 			
-			var inneror = '<div id = "toadd"><span name = "or"> OR </span> <select name = "orfilter"><option value = "word" selected> Word</option> {% for key in filter %}<option value = "{{key}}">{{key}} </option>{% endfor %}</select><select name = "orcontent"><option value = "contains" selected> Contains </option><option value = "is"> Is (exactly) </option></select><input type = "Search" name = "ortext" placeholder = "Search a training..." required> <input type ="button" value = "-" onclick = "deletediv(this.parentElement.id)"/></div>'
+			var inneror = '<div id = "toadd"><span name = "or"> OR </span> <select name = "orfilter"><option value = "word" selected> Word</option> {% for key in filter %}<option value = "{{key}}">{{key}} </option>{% endfor %}</select><select name = "orcontent"><option value = "contains" selected> Contains </option><option value = "is"> Is (exactly) </option></select><input type = "Search" name = "ortext" placeholder = "Search a training..." required> <input type ="button" value = "-" onclick = "deletediv(this.parentElement.id,this.parentElement.firstChild)"/></div>'
 
 			function addand(){
 				var element = document.getElementById("toadd");
@@ -76,7 +76,7 @@
 				countor++;
 			}
 
-			function deletediv(elementid){
+			function deletediv(elementid,span){
 				var numelems = document.getElementsByTagName("div").length;
 				document.getElementById(elementid).remove();
 				var count = document.getElementById("lastfield").getAttribute("name");
@@ -87,20 +87,21 @@
 						document.getElementsByName(firstclicked+"content"+count)[0].setAttribute("name",'content');
 						document.getElementsByName(firstclicked+"text"+count)[0].setAttribute("name",'text');
 						lastclicked = "";
-				}		
+				}			
 			}
 
 			function clickedbox(element){
-				var name = element.name;
+				var name = element.name
+				console.log(name);
 				var elements = document.getElementsByName(name);
 				if (element.checked === true){
 					elements[1].style.display = "block";
 				}else{
 					elements[1].style.display = "none";
-					elements[1].selectedIndex = 0;
 				}
 
 			}
+
 			function changelogic(){
 				var divs = document.getElementById("lastfield").childNodes;
 				for(var i = 2; i<divs.length-1; i++){
@@ -134,6 +135,7 @@
     	{%endfor%}
     		<div id = "lastfield">
 	    		<div id = "toadd">
+	    			<span name = "and" style = "display:none"> AND </span>
 		  			<select name = "filter">
 		  				<option value = "word" selected> Word</option> 
 						{% for key in filter %}
@@ -147,9 +149,9 @@
 					<input type = "Search" name = "text" placeholder = 'Search a training...' required>
 				</div>
 			</div>
-			<input type = "button" name = "and" value = "AND" onclick= "addand()"/>
-			<input type = "button" name = "or" value = "OR" onclick= "addor()"/>
-			<input type = "submit" value = "submit" onclick ="changelogic()"/>
+			<input type = "button" value = "AND" onclick= "addand()"/>
+			<input type = "button" value = "OR" onclick= "addor()"/>
+			<input type = "submit" value = "submit" onclick = "changelogic()"/>
 			
 		</form>
 		

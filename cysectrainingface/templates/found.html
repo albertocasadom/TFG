@@ -15,6 +15,11 @@
 					<td> {{training.description}}</td>
 				</tr>
 				{% endfor %}
+				{% for training in checkbox%}
+				<ul>
+					<li> {{training}}</li>
+				</ul>
+				{% endfor%}
 		</table>
 
 	{% else %}
