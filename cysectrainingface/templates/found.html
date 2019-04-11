@@ -15,12 +15,13 @@
 					<td> {{training.description}}</td>
 				</tr>
 				{% endfor %}
+			</table>
 				{% for training in checkbox%}
 				<ul>
-					<li> {{training}}</li>
+					<li> {{training.title}}</li>
 				</ul>
 				{% endfor%}
-		</table>
+		
 
 	{% else %}
        <a class="lead" href="{% url 'login' %}">Log in</a>

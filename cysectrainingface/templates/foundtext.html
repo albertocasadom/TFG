@@ -19,6 +19,11 @@
 
 				</tr>
 				{% endfor %}
+				{% for training in checkbox%}
+				<ul>
+					<li> {{training.title}}</li>
+				</ul>
+				{% endfor%}
 		</table>
 
 	{% else %}

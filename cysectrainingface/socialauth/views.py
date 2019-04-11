@@ -38,7 +38,7 @@ def get_filters():
 	context = {'filter':searchfilter, 'pairvalues':pairvalues, 'length': len(pairvalues)}
 	return context
 
-def get_dataset_repeats(dataset):
+def get_checkbox_repeated(dataset):
 	datafound = []
 	repeated = []
 	keys = list(dataset.keys())
@@ -47,25 +47,18 @@ def get_dataset_repeats(dataset):
 		for data in dataset[keys[0]]:
 			datafound.append(data)
 		print("Número de elementos encontrados: {0}".format(len(datafound)))
-		for element in datafound:
-			print("REPEATED: {0}".format(element))
 		return datafound
 	else:
 		for x in range(0,len(keys)):
 			if (x+1 == len(keys)):
 				break
-			print("La clave es: {0}".format(keys[x]))
 			for datasetobj in dataset[keys[x]]:
 				for datasetcompare in dataset[keys[x+1]]:
 					if datasetobj == datasetcompare:
 						if datasetobj not in repeated:
 							repeated.append(datasetobj)
 		print("Número de elementos encontrados: {0}".format(len(repeated)))
-		for element in repeated:
-			print("REPEATED: {0}".format(element))
-
 		return repeated
-
 
 def search(request):
 	template = loader.get_template('search.html')
@@ -177,10 +170,9 @@ def advancedfound(request):
 						if training not in dataset[key]:
 							dataset[key].append(training)
 
-	with open('test.json','w') as out:
-		json.dump(dataset,out,indent=4)
-
-	context['checkbox'] = get_dataset_repeats(dataset)
+	andtrainings = get_checkbox_repeated(dataset)
+	if len(andtrainings) != 0:
+		data['resources'] = andtrainings
 
 	x = len(parameters)
 
@@ -240,7 +232,7 @@ def advancedfound(request):
 										continue
 						else:
 							continue
-						context = {'data':result}
+						context['data'] = result
 			else:
 				numberepeated = []
 				ENISA_DIR = os.walk(os.path.join(BASE_DIR,'../EnisaFiles'))
@@ -273,7 +265,8 @@ def advancedfound(request):
 							result.append((training,tr[1]))
 							result.sort(key=lambda numword: numword[1], reverse = True) 
 				template = loader.get_template('foundtext.html')
-				context = {'data':result, 'text': value}
+				context['data']=result
+				context['text']= value
 
 		elif contains == "is":
 			if key != "word":
@@ -296,7 +289,7 @@ def advancedfound(request):
 									continue
 					else:
 						continue
-					context = {'data':result}
+					context['data'] = result
 			else: 
 				numberepeated = []
 				ENISA_DIR = os.walk(os.path.join(BASE_DIR,'../EnisaFiles'))
@@ -328,7 +321,6 @@ def advancedfound(request):
 				template = loader.get_template('found.html')
 				context['data'] = result
 				context['text'] = value
-	
 	return HttpResponse(template.render(context, request))
 
 def showtraining(request):
