@@ -43,11 +43,13 @@ def get_checkbox_repeated(dataset):
 	repeated = []
 	keys = list(dataset.keys())
 	print("---- get_dataset_repeats ----")
+	if len(keys) == 0:
+			return (repeated,-1)
 	if len(keys) == 1:
 		for data in dataset[keys[0]]:
 			datafound.append(data)
 		print("Número de elementos encontrados: {0}".format(len(datafound)))
-		return datafound
+		return (datafound,0)
 	else:
 		for x in range(0,len(keys)):
 			if (x+1 == len(keys)):
@@ -58,7 +60,8 @@ def get_checkbox_repeated(dataset):
 						if datasetobj not in repeated:
 							repeated.append(datasetobj)
 		print("Número de elementos encontrados: {0}".format(len(repeated)))
-		return repeated
+		
+		return (repeated,0)
 
 def search(request):
 	template = loader.get_template('search.html')
@@ -148,15 +151,19 @@ def advancedfound(request):
 	result = []
 	trainingnames = []
 	fixedsearch = []
+	advancedsearchtrs = {}
+	alllogictrs = {}
+	checkboxclicked = 0
 	parameters = list(request.POST.keys())
+	
 	print(parameters)
-	lenfixedparameters = parameters[1].split("-")
-	lenfixed = int(lenfixedparameters[1])
-	x = lenfixed
-	while(x != 0):
-		fixedsearch.append(parameters[x])
-		x = x-1
-
+	for param in parameters:
+		if "-" in param:
+			fixedsearch.append(param)
+	print(fixedsearch)
+	for p in fixedsearch:
+		print("{0} eliminado".format(p))
+		parameters.remove(p)
 	while(len(fixedsearch) != 0):
 		key = fixedsearch.pop()
 		value = request.POST.get(key)
@@ -169,159 +176,199 @@ def advancedfound(request):
 					if training[key] == value:
 						if training not in dataset[key]:
 							dataset[key].append(training)
+			checkboxclicked+= 1
 
-	andtrainings = get_checkbox_repeated(dataset)
-	if len(andtrainings) != 0:
-		data['resources'] = andtrainings
+	if checkboxclicked != 0:		
+		andtrainings = get_checkbox_repeated(dataset)
+	else:
+		andtrainings = (data['resources'],0)
 
-	x = len(parameters)
+	if andtrainings[1] == 0:
+		data['resources'] = andtrainings[0]
 
-	while(x != 1 + lenfixed):
-		auxparameters = parameters
-		groupsearch.append((auxparameters.pop(),auxparameters.pop(), auxparameters.pop()))
-		x = len(auxparameters)
+		parameters.remove('csrfmiddlewaretoken')
+		parameters.sort()
+		print(parameters)
+		x = len(parameters)-1
+		print("La longitud es: {0}".format(x))
 
-	groupsearch.reverse()
-	for parameter in groupsearch:
-		search = ["","","",""]
-		if "or" in parameter[0]:
-			search[0] = "or"
-		else:
-			search[0] = "and"
+		for parameter in parameters:
+			parameterlist = ['','','']
+			if 'text' in parameter:
+				splitparameter = parameter.split('text')
+				parameterlist[0] = parameter
+				if splitparameter[1] != '':
+					for p in parameters:
+						if splitparameter[1] in p and "content" in p:
+							parameterlist[1] = p
+						elif splitparameter[1] in p and "filter" in p:
+							parameterlist[2] = p
+				else:
+					for p in parameters:
+						if "content" in p:
+							parameterlist[1] = p
+						elif "filter" in p:
+							parameterlist[2] = p
+				groupsearch.append(parameterlist)
+		
+		print(groupsearch)
+		groupsearch.reverse()
+		for parameter in groupsearch:
+			search = ["","","",""]
+			if "or" in parameter[0]:
+				search[0] = "or"
+			else:
+				search[0] = "and"
 
-		search[3] = request.POST.get(parameter[0]).lower()
-		search[2] = request.POST.get(parameter[1])
-		search[1] = request.POST.get(parameter[2])
-		finalsearch.append(search);
+			search[3] = request.POST.get(parameter[0]).lower()
+			search[2] = request.POST.get(parameter[1])
+			search[1] = request.POST.get(parameter[2])
+			finalsearch.append(search);
 
-	x = len(finalsearch)
+		x = len(finalsearch)
 
-	while(x != 0):
-		key = finalsearch[x-1][1]
-		value = finalsearch[x-1][3].lower()
-		logic = finalsearch[x-1][0]
-		contains = finalsearch[x-1][2]
-		print(key)
-		print(value)
-		print(logic)
-		print(contains)
-		x = x-1
-		if contains == "contains":
-			if key != "word":
-				#print(key)
-				for training in data['resources']:
-				#Preguntar primero si el training tiene la clave.
-					if training not in result:
+		while(x != 0):
+			key = finalsearch[x-1][1]
+			value = finalsearch[x-1][3].lower()
+			logic = finalsearch[x-1][0]
+			contains = finalsearch[x-1][2]
+			print(key)
+			print(value)
+			print(logic)
+			print(contains)
+			x = x-1
+			if contains == "contains":
+				if key != "word":
+					#print(key)
+					for training in data['resources']:
+					#Preguntar primero si el training tiene la clave.
+						if training not in result:
+							keys = list(training.keys())
+							if key in keys:
+							#Separar palabras de búsqueda
+								if type(training[key]) != list:
+									text = value.split(" ")
+									for word in text:
+										if word in training[key].lower():
+											result.append(training)
+											break
+										else:
+											continue
+									advancedsearchtrs['logic'] = logic
+									advancedsearchtrs['resources'] = result
+								else:
+									for el in training[key]:
+										if el.lower() in value:
+											result.append(training)
+											break
+										else: 
+											continue
+									advancedsearchtrs['logic'] = logic
+									advancedsearchtrs['resources'] = result
+							else:
+								continue
+					alllogictrs[x] = advancedsearchtrs
+							
+				else:
+					numberepeated = []
+					ENISA_DIR = os.walk(os.path.join(BASE_DIR,'../EnisaFiles'))
+					for dirs in ENISA_DIR:
+						file = os.path.join(dirs[0],'mainwordfile.txt')
+						if os.path.exists(file):
+							with open(file,'r') as wordsfile:
+								repeated = 0
+								for l in wordsfile:
+									match = re.findall(value,l.lower())
+									repeated = len(match)
+								if repeated > 0:
+									dirsname = dirs[0].split('EnisaFiles/')
+									trainingnames.append((dirsname[1],repeated))
+					SEED_DIR = os.walk(os.path.join(BASE_DIR,'../SeedFiles'))
+					for dirs in SEED_DIR:
+						file = os.path.join(dirs[0],'mainwordfile.txt')
+						if os.path.exists(file):
+							with open(file,'r') as wordsfile:
+								repeated = 0
+								for l in wordsfile:
+									match = re.findall(value,l.lower())
+									repeated = len(match)
+								if repeated > 0:
+									dirsname = dirs[0].split('SeedFiles/')
+									trainingnames.append((dirsname[1],repeated))
+					for training in data['resources']:
+						for tr in trainingnames:
+							if tr[0] == training['title'] and (training,tr[1]) not in result:	
+								result.append((training,tr[1]))
+								result.sort(key=lambda numword: numword[1], reverse = True) 
+					template = loader.get_template('foundtext.html')
+					context['data']=result
+					context['text']= value
+
+			elif contains == "is":
+				if key != "word":
+					print(key)
+					for training in data['resources']:
+					#Preguntar primero si el training tiene la clave.
 						keys = list(training.keys())
 						if key in keys:
 						#Separar palabras de búsqueda
 							if type(training[key]) != list:
-								text = value.split(" ")
-								for word in text:
-									if word in training[key].lower():
-										result.append(training)
-										break
-									else:
-										continue
+								if value == training[key].lower():
+									result.append(training)
+								else:
+									continue
 							else:
 								for el in training[key]:
-									if el.lower() in value:
+									if el.lower() == value:
 										result.append(training)
-										break
 									else: 
 										continue
 						else:
 							continue
 						context['data'] = result
-			else:
-				numberepeated = []
-				ENISA_DIR = os.walk(os.path.join(BASE_DIR,'../EnisaFiles'))
-				for dirs in ENISA_DIR:
-					file = os.path.join(dirs[0],'mainwordfile.txt')
-					if os.path.exists(file):
-						with open(file,'r') as wordsfile:
-							repeated = 0
-							for l in wordsfile:
-								match = re.findall(value,l.lower())
-								repeated = len(match)
-							if repeated > 0:
-								dirsname = dirs[0].split('EnisaFiles/')
-								trainingnames.append((dirsname[1],repeated))
-				SEED_DIR = os.walk(os.path.join(BASE_DIR,'../SeedFiles'))
-				for dirs in SEED_DIR:
-					file = os.path.join(dirs[0],'mainwordfile.txt')
-					if os.path.exists(file):
-						with open(file,'r') as wordsfile:
-							repeated = 0
-							for l in wordsfile:
-								match = re.findall(value,l.lower())
-								repeated = len(match)
-							if repeated > 0:
-								dirsname = dirs[0].split('SeedFiles/')
-								trainingnames.append((dirsname[1],repeated))
-				for training in data['resources']:
-					for tr in trainingnames:
-						if tr[0] == training['title'] and (training,tr[1]) not in result:	
-							result.append((training,tr[1]))
-							result.sort(key=lambda numword: numword[1], reverse = True) 
-				template = loader.get_template('foundtext.html')
-				context['data']=result
-				context['text']= value
-
-		elif contains == "is":
-			if key != "word":
-				print(key)
-				for training in data['resources']:
-				#Preguntar primero si el training tiene la clave.
-					keys = list(training.keys())
-					if key in keys:
-					#Separar palabras de búsqueda
-						if type(training[key]) != list:
-							if value == training[key].lower():
-								result.append(training)
-							else:
-								continue
-						else:
-							for el in training[key]:
-								if el.lower() == value:
+				else: 
+					numberepeated = []
+					ENISA_DIR = os.walk(os.path.join(BASE_DIR,'../EnisaFiles'))
+					for dirs in ENISA_DIR:
+						file = os.path.join(dirs[0],'mainwordfile.txt')
+						if os.path.exists(file):
+							with open(file,'r') as wordsfile:
+								stringread = wordsfile.read().lower()
+								match = stringread.find(value)
+								if match != -1:
+									dirsname = dirs[0].split('EnisaFiles/')
+									trainingnames.append(dirsname[1])
+										
+					SEED_DIR = os.walk(os.path.join(BASE_DIR,'../SeedFiles'))
+					for dirs in SEED_DIR:
+						file = os.path.join(dirs[0],'mainwordfile.txt')
+						if os.path.exists(file):
+							with open(file,'r') as wordsfile:
+								stringread = wordsfile.read()
+								match = stringread.find(value)
+								if match != -1:
+									dirsname = dirs[0].split('SeedFiles/')
+									trainingnames.append(dirsname[1])
+					for training in data['resources']:
+						for tr in trainingnames:
+							if tr == training['title']:
+								if training not in result:
 									result.append(training)
-								else: 
-									continue
-					else:
-						continue
+					template = loader.get_template('found.html')
 					context['data'] = result
-			else: 
-				numberepeated = []
-				ENISA_DIR = os.walk(os.path.join(BASE_DIR,'../EnisaFiles'))
-				for dirs in ENISA_DIR:
-					file = os.path.join(dirs[0],'mainwordfile.txt')
-					if os.path.exists(file):
-						with open(file,'r') as wordsfile:
-							stringread = wordsfile.read().lower()
-							match = stringread.find(value)
-							if match != -1:
-								dirsname = dirs[0].split('EnisaFiles/')
-								trainingnames.append(dirsname[1])
-									
-				SEED_DIR = os.walk(os.path.join(BASE_DIR,'../SeedFiles'))
-				for dirs in SEED_DIR:
-					file = os.path.join(dirs[0],'mainwordfile.txt')
-					if os.path.exists(file):
-						with open(file,'r') as wordsfile:
-							stringread = wordsfile.read()
-							match = stringread.find(value)
-							if match != -1:
-								dirsname = dirs[0].split('SeedFiles/')
-								trainingnames.append(dirsname[1])
-				for training in data['resources']:
-					for tr in trainingnames:
-						if tr == training['title']:
-							if training not in result:
-								result.append(training)
-				template = loader.get_template('found.html')
-				context['data'] = result
-				context['text'] = value
-	return HttpResponse(template.render(context, request))
+					context['text'] = value
+
+		for x in range(1,len(alllogictrs)+1):
+			resultr = []
+			if alllogictrs[x]['logic'] == "or":
+				resultr += alllogictrs[x]['resources']
+				if x+1 in range(1,len(alllogictrs)+1):
+					resultr += alllogictrs[x+1]['resources']
+		print(resultr)
+
+		return HttpResponse(template.render(context, request))
+	else:
+		return HttpResponse(template.render(context,request))
 
 def showtraining(request):
 	with open(os.path.join(BASE_DIR, '../data.json'),'r') as datafile:
