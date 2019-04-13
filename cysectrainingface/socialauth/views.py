@@ -143,6 +143,7 @@ def advancedfound(request):
 	with open(os.path.join(BASE_DIR, '../data.json'),'r') as datafile:
 		data = json.load(datafile)
 	lenfixedsearch = 0
+	resultr= []
 	template = loader.get_template('found.html')
 	context = {}
 	dataset = {}
@@ -151,7 +152,7 @@ def advancedfound(request):
 	result = []
 	trainingnames = []
 	fixedsearch = []
-	advancedsearchtrs = {}
+	advancedsearchtrs = []
 	alllogictrs = {}
 	checkboxclicked = 0
 	parameters = list(request.POST.keys())
@@ -189,30 +190,37 @@ def advancedfound(request):
 		parameters.remove('csrfmiddlewaretoken')
 		parameters.sort()
 		print(parameters)
-		x = len(parameters)-1
+		x = len(parameters)
 		print("La longitud es: {0}".format(x))
-
-		for parameter in parameters:
+		for param in parameters:
 			parameterlist = ['','','']
-			if 'text' in parameter:
-				splitparameter = parameter.split('text')
-				parameterlist[0] = parameter
-				if splitparameter[1] != '':
-					for p in parameters:
-						if splitparameter[1] in p and "content" in p:
-							parameterlist[1] = p
-						elif splitparameter[1] in p and "filter" in p:
-							parameterlist[2] = p
+			if 'text' in param:
+				parameterlist[0] = param
+				splitparam = param.split('text')
+				print(splitparam)
+				if splitparam[1] != '':
+					print("valor spliteado: {0}".format(splitparam[1]))
+					for parameter in parameters:
+						auxsplit = parameter.split(splitparam[1])
+						print(auxsplit)
+						if len(auxsplit) > 1:		
+							if "filter" in auxsplit[0]:
+								parameterlist[2] = parameter
+							elif "content" in auxsplit[0]:
+								parameterlist[1] = parameter
 				else:
-					for p in parameters:
-						if "content" in p:
-							parameterlist[1] = p
-						elif "filter" in p:
-							parameterlist[2] = p
+					for parameter in parameters:		
+						if "andfilter" == parameter or "orfilter" == parameter:
+							parameterlist[2] = parameter
+						elif "andcontent" == parameter or "orcontent" == parameter:
+							parameterlist[1] = parameter
 				groupsearch.append(parameterlist)
-		
+
+			print(parameters)
+			print("LA longitud de parameters es: {0}".format(len(parameters)))
+			
 		print(groupsearch)
-		groupsearch.reverse()
+		#groupsearch.reverse()
 		for parameter in groupsearch:
 			search = ["","","",""]
 			if "or" in parameter[0]:
@@ -226,20 +234,19 @@ def advancedfound(request):
 			finalsearch.append(search);
 
 		x = len(finalsearch)
+		print("LA LONGITUD DE FINALSEARCH ES: {0}".format(x))
 
 		while(x != 0):
+			print("EJECUTANDO LA {0} iteracion".format(x))
 			key = finalsearch[x-1][1]
 			value = finalsearch[x-1][3].lower()
 			logic = finalsearch[x-1][0]
 			contains = finalsearch[x-1][2]
-			print(key)
-			print(value)
-			print(logic)
-			print(contains)
-			x = x-1
+			result = []
+			index = x - 1
+			print("La búsqueda ({3}) '{2}' con clave: {0} y valor: {1} devuelve...".format(key,value,logic.upper(),contains))
 			if contains == "contains":
 				if key != "word":
-					#print(key)
 					for training in data['resources']:
 					#Preguntar primero si el training tiene la clave.
 						if training not in result:
@@ -251,23 +258,27 @@ def advancedfound(request):
 									for word in text:
 										if word in training[key].lower():
 											result.append(training)
+											print(training['title'])
 											break
 										else:
 											continue
-									advancedsearchtrs['logic'] = logic
-									advancedsearchtrs['resources'] = result
 								else:
 									for el in training[key]:
-										if el.lower() in value:
+										print("File: {0}".format(value))
+										if value in el.lower():
 											result.append(training)
 											break
 										else: 
 											continue
-									advancedsearchtrs['logic'] = logic
-									advancedsearchtrs['resources'] = result
 							else:
 								continue
-					alllogictrs[x] = advancedsearchtrs
+
+					advancedsearchtrs.append((logic,result))
+
+					'''for tr in alllogictrs:
+						print("En la posicion {0}".format(tr))
+						for ix in alllogictrs[tr]['resources']:
+							print("todos los titles: {0}".format(ix['title']))'''
 							
 				else:
 					numberepeated = []
@@ -325,7 +336,6 @@ def advancedfound(request):
 										continue
 						else:
 							continue
-						context['data'] = result
 				else: 
 					numberepeated = []
 					ENISA_DIR = os.walk(os.path.join(BASE_DIR,'../EnisaFiles'))
@@ -357,15 +367,30 @@ def advancedfound(request):
 					template = loader.get_template('found.html')
 					context['data'] = result
 					context['text'] = value
+			x = x-1
+			
+		andresult = []
+		if len(advancedsearchtrs) > 1:						
+			for num in range(0,len(advancedsearchtrs)):
+				print("{0} EJECUCION del rango".format(num))
+				auxresultr = []
+				if advancedsearchtrs[num][0] == "and":
+					andresult.append(advancedsearchtrs[num][1])		
+				else:				
+					for tr in advancedsearchtrs[num][1]:
+						resultr.append(tr)
+			for index in range(0,len(andresult)):
+				if index+1 in range(0,len(andresult)):
+					for tref in andresult[index]:
+						print("REFERENCIA: {0}".format(tref['title']))
+						for tr in andresult[index+1]:
+							print("COMPARADO: {0}".format(tr['title']))
+							if tr == tref:
+								resultr.append(tr)
 
-		for x in range(1,len(alllogictrs)+1):
-			resultr = []
-			if alllogictrs[x]['logic'] == "or":
-				resultr += alllogictrs[x]['resources']
-				if x+1 in range(1,len(alllogictrs)+1):
-					resultr += alllogictrs[x+1]['resources']
-		print(resultr)
-
+			context['data'] = resultr
+		else:
+			context['data'] = result
 		return HttpResponse(template.render(context, request))
 	else:
 		return HttpResponse(template.render(context,request))

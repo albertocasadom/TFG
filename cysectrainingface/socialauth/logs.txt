@@ -1,0 +1,28 @@
+for num in alllogictrs:
+	auxresultr = []
+	if alllogictrs[num]['logic'] == "or":
+		for tr in alllogictrs[num]['resources']:
+			if tr not in resultr:
+				resultr.append(tr)
+		if num+1 in alllogictrs:
+			for tr in alllogictrs[num+1]['resources']:
+				if tr not in resultr:
+					resultr.append(tr)
+	else:
+		if num+1 in alllogictrs:
+			if len(resultr) != 0:
+				for trng in alllogictrs[num+1]['resources']:
+					if trng in resultr:
+						auxresultr.append(trng)
+				for andtr in resultr:
+					if andtr not in auxresultr:
+						resultr.remove(andtr)
+						print("{0} ha sido eliminado")
+			else:
+				resultr = alllogictrs[num]['resources']
+				for trng in alllogictrs[num+1]['resources']:
+					if trng in resultr:
+						auxresultr.append(trng)
+				for andtr in resultr:
+					if andtr not in auxresultr:
+						resultr.remove(andtr)
