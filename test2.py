@@ -56,15 +56,16 @@ for onetitle in titles:
         'target_audience': informationdivided[count][0][0],
         'duration': informationdivided[count][0][1],
         'description': informationdivided[count][0][-1],
-        'files': informationdivided[count][0][2:-1]
+        'files': informationdivided[count][0][2:-1],
+        'urls': informationdivided[count][1]
         })
     
 
     with open('data.json', 'w') as outfile:
         json.dump(data,outfile, indent = 4)
 
-    for file in informationdivided[count][1]:
-        dwnfile = wget.download(file, out = folder)
+    '''for file in informationdivided[count][1]:
+        dwnfile = wget.download(file, out = folder)'''
       
     count+=1
 

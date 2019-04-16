@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from django.template import loader
 from django.contrib.auth import logout
+from django.conf import settings
 import re
 import os
 import json
@@ -243,9 +244,6 @@ def get_post_parameters(parameters):
 		groupsearch.append(parameterlist)
 		x = len(parameters)
 	groupsearch.sort()
-	'''firstelement = groupsearch.pop()
-	groupsearch.sort()
-	groupsearch.insert(0,firstelement)'''
 	return groupsearch
 
 def search(request):
@@ -413,7 +411,7 @@ def advancedfound(request):
 			for res in advancedsearchtrs:
 				for tr in res:
 					finalresult.append(tr)
-			print("Count of {0} = {1}".format(tr['title'],res.count(tr)))
+			#print("Count of {0} = {1}".format(tr['title'],res.count(tr)))
 			for tr in finalresult:
 				if finalresult.count(tr) == numands:
 					if tr not in finalresultand:
@@ -435,11 +433,20 @@ def showtraining(request):
 	template = loader.get_template('showtraining.html')
 	trainingname = request.GET.get('training')
 	context = {}
+	trainingfiles = []
+	files = []
+	DIR_PATH = settings.STATIC_URL
+	print(DIR_PATH)
 	print(trainingname)
 	for tr in data['resources']:
 		if tr['title'] == trainingname:
-			print(tr)
-			context = {'training':tr, 'test':'test'}
+			training = tr
+			print(training['title'])
+	rango = range(len(training['files']))
+	linksname = []
+	for x in rango:
+		linksname.append([training['files'][x],training['urls'][x]])
+	context = {'training': training, 'linksname':linksname}
 	return HttpResponse(template.render(context,request))
 
 def logout_view(request):

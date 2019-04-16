@@ -1,89 +1,119 @@
 {
     "resources": [
         {
-            "source": "enisa",
-            "title": "Building artefact handling and analysis environment",
-            "target_audience": "Technical CERT staff.",
-            "duration": "7 hours",
-            "description": "The main objective is to create safe and useful artifact analysis environment, based on current best practices.",
             "files": [
                 "Handbook",
                 "Toolset",
                 "Virtual Image",
                 "Windows Tools",
                 "Windows Cuckoo"
-            ]
+            ],
+            "title": "Building artefact handling and analysis environment",
+            "source": "Enisa",
+            "urls": [
+                "https://www.enisa.europa.eu/topics/trainings-for-cybersecurity-specialists/online-training-material/documents/building-artifact-handling-and-analysis-environment-handbook",
+                "https://www.enisa.europa.eu/topics/trainings-for-cybersecurity-specialists/online-training-material/documents/building-artifact-handling-and-analysis-environment-toolset",
+                "http://enisa.europa.eu/ftp/styx32.ova",
+                "http://enisa.europa.eu/ftp/winbox_tools.zip",
+                "http://enisa.europa.eu/ftp/cuckoo_winbox.zip"
+            ],
+            "duration": "7 hours",
+            "target_audience": "Technical CERT staff.",
+            "description": "The main objective is to create safe and useful artifact analysis environment, based on current best practices."
         },
         {
-            "source": "enisa",
+            "files": [
+                "Handbook",
+                "Toolset",
+                "Virtual Image"
+            ],
             "title": "Processing and storing artefacts",
-            "target_audience": "Technical CERT staff.",
+            "source": "Enisa",
+            "urls": [
+                "https://www.enisa.europa.eu/topics/trainings-for-cybersecurity-specialists/online-training-material/documents/processing-and-storing-artifacts-handbook",
+                "https://www.enisa.europa.eu/topics/trainings-for-cybersecurity-specialists/online-training-material/documents/processing-and-storing-artifacts-toolset",
+                "http://enisa.europa.eu/ftp/styx32.ova"
+            ],
             "duration": "5 hours",
-            "description": "Present the trainees various methods of malicious artifacts acquisition with emphasis on artifacts collected through spam e-mails monitoring. Teach how to correctly set up spam collecting environment and simple artifacts repository. Exercise also provides knowledge how to modify and patch created system to better suit lab environment needs.",
+            "target_audience": "Technical CERT staff.",
+            "description": "Present the trainees various methods of malicious artifacts acquisition with emphasis on artifacts collected through spam e-mails monitoring. Teach how to correctly set up spam collecting environment and simple artifacts repository. Exercise also provides knowledge how to modify and patch created system to better suit lab environment needs."
+        },
+        {
             "files": [
                 "Handbook",
                 "Toolset",
                 "Virtual Image"
-            ]
-        },
-        {
-            "source": "enisa",
+            ],
             "title": "Artefact analysis fundamentals",
-            "target_audience": "Technical CERT staff.",
+            "source": "Enisa",
+            "urls": [
+                "https://www.enisa.europa.eu/topics/trainings-for-cybersecurity-specialists/online-training-material/documents/artifact-analysis-fundamentals-handbook",
+                "https://www.enisa.europa.eu/topics/trainings-for-cybersecurity-specialists/online-training-material/documents/artifact-analysis-fundamentals-toolset",
+                "http://enisa.europa.eu/ftp/styx32.ova"
+            ],
             "duration": "8 hours",
-            "description": "Present the trainees malicious artifact analysis fundamentals and various types of analyses. Present how to safely execute suspicious code in the controlled environment along with most important security precautions.",
-            "files": [
-                "Handbook",
-                "Toolset",
-                "Virtual Image"
-            ]
+            "target_audience": "Technical CERT staff.",
+            "description": "Present the trainees malicious artifact analysis fundamentals and various types of analyses. Present how to safely execute suspicious code in the controlled environment along with most important security precautions."
         },
         {
-            "source": "enisa",
-            "title": "Advanced artefact handling",
-            "target_audience": "Technical CERT staff.",
-            "duration": "8 hours",
-            "description": "Teach students how to obtain memory images from different sources and to analyse them. Both Windows and Linux systems will be covered.",
             "files": [
                 "Handbook",
                 "Toolset",
                 "Virtual Image 1",
                 "Virtual Image 2",
                 "AQ Tools"
-            ]
+            ],
+            "title": "Advanced artefact handling",
+            "source": "Enisa",
+            "urls": [
+                "https://www.enisa.europa.eu/topics/trainings-for-cybersecurity-specialists/online-training-material/documents/advanced-artifact-handling-handbook",
+                "https://www.enisa.europa.eu/topics/trainings-for-cybersecurity-specialists/online-training-material/documents/advanced-artifact-handling-toolset",
+                "http://enisa.europa.eu/ftp/styx32.ova",
+                "http://enisa.europa.eu/ftp/opsu-12-2-x86.ova",
+                "https://www.enisa.europa.eu/topics/trainings-for-cybersecurity-specialists/online-training-material/files/aq-tools"
+            ],
+            "duration": "8 hours",
+            "target_audience": "Technical CERT staff.",
+            "description": "Teach students how to obtain memory images from different sources and to analyse them. Both Windows and Linux systems will be covered."
         },
         {
-            "source": "enisa",
-            "title": "Forensic analysis: Local Incident Response ",
-            "target_audience": "Incident handler and investigator ",
-            "duration": "3 days",
-            "description": "This three-day training module will follow the tracks of an incident handler and investigator, teaching best practices and covering both sides of the breach. It is technical in nature and has the aim to provide a guided training for both incident handlers and investigators while providing lifelike conditions. Training material mainly uses open source and free tools.",
             "files": [
                 "Handbook",
                 "Toolset",
                 "Virtual Image I",
                 "Virtual Image II",
                 " "
-            ]
+            ],
+            "title": "Forensic analysis: Local Incident Response ",
+            "source": "Enisa",
+            "urls": [
+                "https://www.enisa.europa.eu/topics/trainings-for-cybersecurity-specialists/online-training-material/documents/2016-resources/exe1_forensic_analysis_i-handbook",
+                "https://www.enisa.europa.eu/topics/trainings-for-cybersecurity-specialists/online-training-material/documents/2016-resources/exe1_forensic_analysis-i-toolset",
+                "http://enisa.europa.eu/ftp/Caine_v1.4.ova",
+                "https://www.enisa.europa.eu/ftp/ENISA-LOT3-Evidence.zip"
+            ],
+            "duration": "3 days",
+            "target_audience": "Incident handler and investigator ",
+            "description": "This three-day training module will follow the tracks of an incident handler and investigator, teaching best practices and covering both sides of the breach. It is technical in nature and has the aim to provide a guided training for both incident handlers and investigators while providing lifelike conditions. Training material mainly uses open source and free tools."
         },
         {
-            "source": "enisa",
-            "title": "Forensic analysis: Network Incident Response ",
-            "target_audience": "Incident handler and investigator ",
-            "duration": " ",
-            "description": "The main goal of this training is to teach trainees network forensic techniques and extend trainees operating system forensic capabilities beyond Microsoft Windows systems to include Linux. Trainees will follow traces in the workstation and discover that analysed network captures together with logs, lead to another machine on the network.",
             "files": [
                 "Handbook",
                 "Toolset",
                 "Virtual Image"
-            ]
+            ],
+            "title": "Forensic analysis: Network Incident Response ",
+            "source": "Enisa",
+            "urls": [
+                "https://www.enisa.europa.eu/topics/trainings-for-cybersecurity-specialists/online-training-material/documents/2016-resources/exe2_forensic_analysis_ii-handbook",
+                "https://www.enisa.europa.eu/topics/trainings-for-cybersecurity-specialists/online-training-material/documents/2016-resources/exe2_forensic_analysis_ii-toolset",
+                "http://enisa.europa.eu/ftp/ENISA-Ex2-Evidence.vmdk"
+            ],
+            "duration": " ",
+            "target_audience": "Incident handler and investigator ",
+            "description": "The main goal of this training is to teach trainees network forensic techniques and extend trainees operating system forensic capabilities beyond Microsoft Windows systems to include Linux. Trainees will follow traces in the workstation and discover that analysed network captures together with logs, lead to another machine on the network."
         },
         {
-            "source": "enisa",
-            "title": "Forensic analysis: Webserver Analysis",
-            "target_audience": "Incident handler and investigator ",
-            "duration": " ",
-            "description": "This training requires the students to perform a forensic analysis of three (web) servers, identified during the first two exercises as taking part in a malicious campaign.",
             "files": [
                 "Handbook",
                 "Toolset",
@@ -91,715 +121,1042 @@
                 "Virtual Image II",
                 "Virtual Image III",
                 "Memory dump"
-            ]
+            ],
+            "title": "Forensic analysis: Webserver Analysis",
+            "source": "Enisa",
+            "urls": [
+                "https://www.enisa.europa.eu/topics/trainings-for-cybersecurity-specialists/online-training-material/documents/2016-resources/exe3_forensic_analysis_iii-handbook",
+                "https://www.enisa.europa.eu/topics/trainings-for-cybersecurity-specialists/online-training-material/documents/2016-resources/exe3_forensic_analysis_iii-toolset",
+                "http://enisa.europa.eu/ftp/blog.mycompany.ex.ova",
+                "http://enisa.europa.eu/ftp/blog.mysportclub.ex.ova",
+                "http://enisa.europa.eu/ftp/coloserver1337.myhosting.ex.ova",
+                "http://enisa.europa.eu/ftp/coloserver1337.myhosting.ex.mem"
+            ],
+            "duration": " ",
+            "target_audience": "Incident handler and investigator ",
+            "description": "This training requires the students to perform a forensic analysis of three (web) servers, identified during the first two exercises as taking part in a malicious campaign."
         },
         {
-            "source": "enisa",
+            "files": [
+                "Handbook",
+                "Toolset",
+                "Virtual Image"
+            ],
             "title": "Developing countermeasures",
-            "target_audience": "Technical CERT staff.",
+            "source": "Enisa",
+            "urls": [
+                "https://www.enisa.europa.eu/topics/trainings-for-cybersecurity-specialists/online-training-material/documents/developing-countermeasures-handbook",
+                "https://www.enisa.europa.eu/topics/trainings-for-cybersecurity-specialists/online-training-material/documents/developing-countermeasures-toolset",
+                "http://enisa.europa.eu/ftp/styx32.ova"
+            ],
             "duration": "8 hours",
-            "description": "Learn how to leverage information gathered during analysis into actionable signatures. Both network and system oriented signatures will be discussed.",
+            "target_audience": "Technical CERT staff.",
+            "description": "Learn how to leverage information gathered during analysis into actionable signatures. Both network and system oriented signatures will be discussed."
+        },
+        {
             "files": [
                 "Handbook",
                 "Toolset",
                 "Virtual Image"
-            ]
-        },
-        {
-            "source": "enisa",
+            ],
             "title": "Common framework for artefact analysis activities",
-            "target_audience": "Technical CERT staff.",
+            "source": "Enisa",
+            "urls": [
+                "https://www.enisa.europa.eu/topics/trainings-for-cybersecurity-specialists/online-training-material/documents/common-framework-for-artifact-analysis-activities-handbook",
+                "https://www.enisa.europa.eu/topics/trainings-for-cybersecurity-specialists/online-training-material/documents/common-framework-for-artifact-analysis-activities-toolset",
+                "https://www.enisa.europa.eu/ftp/crits-gui.ova"
+            ],
             "duration": "8 hours",
-            "description": "Learn how to collect, store and correlate different types of information about samples and how to make use of this information with the assumption that having a structured and organised database is a good way to reaching synergy in the area of artifact analysis and incident investigation.",
-            "files": [
-                "Handbook",
-                "Toolset",
-                "Virtual Image"
-            ]
+            "target_audience": "Technical CERT staff.",
+            "description": "Learn how to collect, store and correlate different types of information about samples and how to make use of this information with the assumption that having a structured and organised database is a good way to reaching synergy in the area of artifact analysis and incident investigation."
         },
         {
-            "source": "enisa",
+            "files": [
+                "Handbook",
+                "Toolset"
+            ],
             "title": "Introduction to advanced artefact analysis",
-            "target_audience": "CSIRT staff and incident handlers involved in the technical analysis of incidents.",
+            "source": "Enisa",
+            "urls": [
+                "https://www.enisa.europa.eu/topics/trainings-for-cybersecurity-specialists/online-training-material/documents/introduction-to-advanced-artefact-analysis.pdf",
+                "https://www.enisa.europa.eu/topics/trainings-for-cybersecurity-specialists/online-training-material/documents/introduction-to-advanced-artefact-analysis-toolset.pdf"
+            ],
             "duration": "4 hours",
-            "description": "This training presents the introduction to the advanced artefact analysis. It is the first part of a three-day course introducing assembly language and tools commonly used for the advanced artefact analysis.",
+            "target_audience": "CSIRT staff and incident handlers involved in the technical analysis of incidents.",
+            "description": "This training presents the introduction to the advanced artefact analysis. It is the first part of a three-day course introducing assembly language and tools commonly used for the advanced artefact analysis."
+        },
+        {
             "files": [
                 "Handbook",
                 "Toolset"
-            ]
-        },
-        {
-            "source": "enisa",
+            ],
             "title": "Dynamic analysis of artefacts",
-            "target_audience": "CSIRT staff and incident handlers involved in the technical analysis of incidents.",
+            "source": "Enisa",
+            "urls": [
+                "https://www.enisa.europa.eu/topics/trainings-for-cybersecurity-specialists/online-training-material/documents/dynamic-analysis-of-artefacts-handbook.pdf",
+                "https://www.enisa.europa.eu/topics/trainings-for-cybersecurity-specialists/online-training-material/documents/dynamic-analysis-of-artefacts-toolset.pdf"
+            ],
             "duration": "9 hours",
-            "description": "This training presents methods and techniques of dynamic artefact analysis with the use of OllyDbg debugger package.",
-            "files": [
-                "Handbook",
-                "Toolset"
-            ]
-        },
-        {
-            "source": "enisa",
-            "title": "Static analysis of artefacts",
             "target_audience": "CSIRT staff and incident handlers involved in the technical analysis of incidents.",
-            "duration": "10 hours",
-            "description": "The goal of this training is to introduce the participants to all aspects of static artefact analysis.",
+            "description": "This training presents methods and techniques of dynamic artefact analysis with the use of OllyDbg debugger package."
+        },
+        {
             "files": [
                 "Handbook",
                 "Toolset"
-            ]
+            ],
+            "title": "Static analysis of artefacts",
+            "source": "Enisa",
+            "urls": [
+                "https://www.enisa.europa.eu/topics/trainings-for-cybersecurity-specialists/online-training-material/documents/static-analysis-of-artefacts-handbook.pdf",
+                "https://www.enisa.europa.eu/topics/trainings-for-cybersecurity-specialists/online-training-material/documents/static-analysis-of-artefacts-toolset.pdf"
+            ],
+            "duration": "10 hours",
+            "target_audience": "CSIRT staff and incident handlers involved in the technical analysis of incidents.",
+            "description": "The goal of this training is to introduce the participants to all aspects of static artefact analysis."
         },
         {
-            "source": "enisa",
-            "title": "Processing and storing artefacts",
-            "target_audience": "Technical CERT staff.",
-            "duration": "5 hours",
-            "description": "Present the trainees various methods of malicious artifacts acquisition with emphasis on artifacts collected through spam e-mails monitoring. Teach how to correctly set up spam collecting environment and simple artifacts repository. Exercise also provides knowledge how to modify and patch created system to better suit lab environment needs.",
             "files": [
                 "Handbook",
                 "Toolset",
                 "Virtual Image"
-            ]
+            ],
+            "title": "Processing and storing artefacts",
+            "source": "Enisa",
+            "urls": [
+                "https://www.enisa.europa.eu/topics/trainings-for-cybersecurity-specialists/online-training-material/documents/processing-and-storing-artifacts-handbook",
+                "https://www.enisa.europa.eu/topics/trainings-for-cybersecurity-specialists/online-training-material/documents/processing-and-storing-artifacts-toolset",
+                "http://enisa.europa.eu/ftp/styx32.ova"
+            ],
+            "duration": "5 hours",
+            "target_audience": "Technical CERT staff.",
+            "description": "Present the trainees various methods of malicious artifacts acquisition with emphasis on artifacts collected through spam e-mails monitoring. Teach how to correctly set up spam collecting environment and simple artifacts repository. Exercise also provides knowledge how to modify and patch created system to better suit lab environment needs."
         },
         {
-            "source": "enisa",
-            "title": "Using indicators to enhance defence capabilities",
-            "target_audience": "Technical CERT staff.",
-            "duration": "7 hours",
-            "description": "Learn how to create and deploy indicators of compromise using Collaborative Research into Threats (CRITs) platform. Additionally, demonstrate how to leverage CRITs to visualize relationships among different elements of a campaign, how to extract indicators from incident data, develop mitigation actions, and track those actions.",
             "files": [
                 "Handbook",
                 "Virtual Image",
                 "Supporting Material"
-            ]
+            ],
+            "title": "Using indicators to enhance defence capabilities",
+            "source": "Enisa",
+            "urls": [
+                "https://www.enisa.europa.eu/topics/csirt-cert-services/reactive-services/copy_of_actionable-information/Usingindicatorstoenhancedefencecapabilities.pdf",
+                "https://www.enisa.europa.eu/ftp/crits-headless.ova",
+                "https://www.enisa.europa.eu/ftp/crits-headless-files.zip"
+            ],
+            "duration": "7 hours",
+            "target_audience": "Technical CERT staff.",
+            "description": "Learn how to create and deploy indicators of compromise using Collaborative Research into Threats (CRITs) platform. Additionally, demonstrate how to leverage CRITs to visualize relationships among different elements of a campaign, how to extract indicators from incident data, develop mitigation actions, and track those actions."
         },
         {
-            "source": "enisa",
+            "files": [
+                "Handbook",
+                "Toolset",
+                "Virtual Image",
+                "VM How To"
+            ],
             "title": "Identification and handling of electronic evidence",
-            "target_audience": "Technical CERT staff.",
+            "source": "Enisa",
+            "urls": [
+                "https://www.enisa.europa.eu/topics/trainings-for-cybersecurity-specialists/online-training-material/documents/identification-and-handling-of-electronic-evidence-handbook",
+                "https://www.enisa.europa.eu/topics/trainings-for-cybersecurity-specialists/online-training-material/documents/identification-and-handling-of-electronic-evidence-toolset",
+                "http://www.enisa.europa.eu/ftp/enisa-main.ova",
+                "https://www.enisa.europa.eu/topics/trainings-for-cybersecurity-specialists/online-training-material/documents/virtual-image-how-to"
+            ],
             "duration": "4 hours",
-            "description": "Present the trainees with the principles of evidence gathering. Establish a common knowledge of the requirements regarding evidence admissibility in a court of law. This task also gives an overview of popular malware characteristics, methods of identification and tools that may be used at the scene.",
+            "target_audience": "Technical CERT staff.",
+            "description": "Present the trainees with the principles of evidence gathering. Establish a common knowledge of the requirements regarding evidence admissibility in a court of law. This task also gives an overview of popular malware characteristics, methods of identification and tools that may be used at the scene."
+        },
+        {
             "files": [
                 "Handbook",
                 "Toolset",
                 "Virtual Image",
                 "VM How To"
-            ]
-        },
-        {
-            "source": "enisa",
+            ],
             "title": "Digital forensics",
-            "target_audience": "Technical CERT staff.",
+            "source": "Enisa",
+            "urls": [
+                "https://www.enisa.europa.eu/topics/trainings-for-cybersecurity-specialists/online-training-material/documents/digital-forensics-handbook",
+                "https://www.enisa.europa.eu/topics/trainings-for-cybersecurity-specialists/online-training-material/documents/digital-forensics-toolset",
+                "http://www.enisa.europa.eu/ftp/enisa-main.ova",
+                "https://www.enisa.europa.eu/topics/trainings-for-cybersecurity-specialists/online-training-material/documents/virtual-image-how-to"
+            ],
             "duration": "6 hours",
-            "description": "Present the trainees with the principles of digital forensics and evidence gathering.             ",
-            "files": [
-                "Handbook",
-                "Toolset",
-                "Virtual Image",
-                "VM How To"
-            ]
-        },
-        {
-            "source": "enisa",
-            "title": "Proactive incident detection",
-            "target_audience": "Technical and management CERT staff.",
-            "duration": "4 hours",
-            "description": "Setting up and working with AbuseHelper.                                                                        ",
-            "files": [
-                "Handbook",
-                "Toolset",
-                "Virtual Image"
-            ]
-        },
-        {
-            "source": "enisa",
-            "title": "Mobile threats incident handling",
             "target_audience": "Technical CERT staff.",
+            "description": "Present the trainees with the principles of digital forensics and evidence gathering.             "
+        },
+        {
+            "files": [
+                "Handbook",
+                "Toolset",
+                "Virtual Image"
+            ],
+            "title": "Proactive incident detection",
+            "source": "Enisa",
+            "urls": [
+                "https://www.enisa.europa.eu/topics/trainings-for-cybersecurity-specialists/online-training-material/documents/proactive-incident-detection-handbook",
+                "https://www.enisa.europa.eu/topics/trainings-for-cybersecurity-specialists/online-training-material/documents/proactive-incident-detection-toolset",
+                "http://www.enisa.europa.eu/ftp/ENISA_CERT_Exercises.ova"
+            ],
             "duration": "4 hours",
-            "description": "Make the students familiar with special requirements and tools to do incident handling and forensics with mobile/smartphone computing platforms.",
+            "target_audience": "Technical and management CERT staff.",
+            "description": "Setting up and working with AbuseHelper.                                                                        "
+        },
+        {
             "files": [
                 "Handbook",
                 "Toolset",
                 "Virtual Image",
                 "VM How To"
-            ]
+            ],
+            "title": "Mobile threats incident handling",
+            "source": "Enisa",
+            "urls": [
+                "https://www.enisa.europa.eu/topics/trainings-for-cybersecurity-specialists/online-training-material/documents/Mobileincidenthandlinghandbook.pdf",
+                "https://www.enisa.europa.eu/topics/trainings-for-cybersecurity-specialists/online-training-material/documents/Mobilethreatsincidenthandlingtoolset.pdf",
+                "http://www.enisa.europa.eu/ftp/enisa-main.ova",
+                "https://www.enisa.europa.eu/topics/trainings-for-cybersecurity-specialists/online-training-material/documents/virtual-image-how-to"
+            ],
+            "duration": "4 hours",
+            "target_audience": "Technical CERT staff.",
+            "description": "Make the students familiar with special requirements and tools to do incident handling and forensics with mobile/smartphone computing platforms."
         },
         {
-            "source": "enisa",
+            "files": [
+                "Handbook",
+                "Toolset",
+                "Virtual Image"
+            ],
             "title": "Mobile threats Incident handling (Part II)",
-            "target_audience": "CSIRT staff and incident handlers involved in the technical analysis of incident.",
+            "source": "Enisa",
+            "urls": [
+                "https://www.enisa.europa.eu/topics/trainings-for-cybersecurity-specialists/online-training-material/documents/mobile-threats-incident-handling-part-ii-handbook-document-for-teachers",
+                "https://www.enisa.europa.eu/topics/trainings-for-cybersecurity-specialists/online-training-material/documents/mobile-threats-incident-handling-part-ii.pdf",
+                "http://www.enisa.europa.eu/ftp/enisa-mobile(2016V2).ova"
+            ],
             "duration": "24 hours",
-            "description": "The goal of this training is to introduce the threats found in mobile environment, and to familiarise the participants with various tools and techniques used in Mobile Forensics and Incident Handling.",
+            "target_audience": "CSIRT staff and incident handlers involved in the technical analysis of incident.",
+            "description": "The goal of this training is to introduce the threats found in mobile environment, and to familiarise the participants with various tools and techniques used in Mobile Forensics and Incident Handling."
+        },
+        {
             "files": [
                 "Handbook",
                 "Toolset",
                 "Virtual Image"
-            ]
-        },
-        {
-            "source": "enisa",
+            ],
             "title": "Automation in incident handling",
-            "target_audience": "Incident handlers and technical staff.",
+            "source": "Enisa",
+            "urls": [
+                "https://www.enisa.europa.eu/topics/trainings-for-cybersecurity-specialists/online-training-material/documents/automation-in-incident-handling-handbook",
+                "https://www.enisa.europa.eu/topics/trainings-for-cybersecurity-specialists/online-training-material/documents/automation-in-incident-handling-toolset",
+                "http://www.enisa.europa.eu/ftp/ENISA_CERT_Exercises.ova"
+            ],
             "duration": "2 hours",
-            "description": "The purpose of this task is to develop students\u2019 abilities to create custom scripts and filters dealing with large amounts of data such as IP addresses. After completing the exercise students should be able to extract useful information from bulk data, even in non-standard formats.",
-            "files": [
-                "Handbook",
-                "Toolset",
-                "Virtual Image"
-            ]
+            "target_audience": "Incident handlers and technical staff.",
+            "description": "The purpose of this task is to develop students\u2019 abilities to create custom scripts and filters dealing with large amounts of data such as IP addresses. After completing the exercise students should be able to extract useful information from bulk data, even in non-standard formats."
         },
         {
-            "source": "enisa",
-            "title": "Introduction to network forensics",
-            "target_audience": "CSIRT staff and incident handlers involved in the technical analysis of incident.",
-            "duration": "24 hours",
-            "description": "The training materials are based on good practices, and include all needed methodologies, tools and procedures. The training includes the performance indicators and means, supporting those who use it to increase their operational competence. It is made available in a ready-to use version.  The training consists of an extensive introduction (sections 1\u20134) and three exercises (section 5). The updated scenarios also include content that is in line with the current technologies and methodologies.",
             "files": [
                 "Handbook",
                 "Toolset Ex1Toolset Ex2Toolset Ex3Virtual Image 1Virtual Image 2Virtual Image 3Virtual Image 4"
-            ]
+            ],
+            "title": "Introduction to network forensics",
+            "source": "Enisa",
+            "urls": [
+                "https://www.enisa.europa.eu/topics/trainings-for-cybersecurity-specialists/online-training-material/documents/introduction-to-network-forensics-handbook.pdf",
+                "https://www.enisa.europa.eu/topics/trainings-for-cybersecurity-specialists/online-training-material/documents/introduction-to-network-forensics-ex1-toolset.pdf",
+                "https://www.enisa.europa.eu/topics/trainings-for-cybersecurity-specialists/online-training-material/documents/introduction-to-network-forensics-ex2-toolset.pdf",
+                "https://www.enisa.europa.eu/topics/trainings-for-cybersecurity-specialists/online-training-material/documents/introduction-to-network-forensics-ex3-toolset.pdf",
+                "https://www.enisa.europa.eu/ftp/ENISA_INF_5.1.ova",
+                "https://www.enisa.europa.eu/ftp/ENISA_INF_Squid_Server_5.2.ova",
+                "https://www.enisa.europa.eu/ftp/ENISA_INF_Squid_Client_5.2.ova",
+                "https://www.enisa.europa.eu/ftp/Caine_ENISA__INF_5.3.ova"
+            ],
+            "duration": "24 hours",
+            "target_audience": "CSIRT staff and incident handlers involved in the technical analysis of incident.",
+            "description": "The training materials are based on good practices, and include all needed methodologies, tools and procedures. The training includes the performance indicators and means, supporting those who use it to increase their operational competence. It is made available in a ready-to use version.  The training consists of an extensive introduction (sections 1\u20134) and three exercises (section 5). The updated scenarios also include content that is in line with the current technologies and methodologies."
         },
         {
-            "source": "enisa",
+            "files": [
+                "Handbook",
+                "Toolset",
+                "Virtual Image"
+            ],
             "title": "Honeypots",
+            "source": "Enisa",
+            "urls": [
+                "https://www.enisa.europa.eu/topics/trainings-for-cybersecurity-specialists/online-training-material/documents/Honeypots_CERT_Exercise_Handbook.pdf",
+                "https://www.enisa.europa.eu/topics/trainings-for-cybersecurity-specialists/online-training-material/documents/Honeypots_CERT_Exercise_Toolset.pdf",
+                "http://www.enisa.europa.eu/ftp/ENISA-Honeypot-Exercise.ova"
+            ],
+            "duration": "3 hours",
             "target_audience": "Incident handlers and technical staff.",
-            "duration": "3 hours",
-            "description": "Familiarise students with two kinds of honeypots: server-side honeypots and client-side honeypots.",
+            "description": "Familiarise students with two kinds of honeypots: server-side honeypots and client-side honeypots."
+        },
+        {
             "files": [
                 "Handbook",
                 "Toolset",
                 "Virtual Image"
-            ]
-        },
-        {
-            "source": "enisa",
+            ],
             "title": "Vulnerability handling",
-            "target_audience": "Managers and incident handlers.",
+            "source": "Enisa",
+            "urls": [
+                "https://www.enisa.europa.eu/topics/trainings-for-cybersecurity-specialists/online-training-material/documents/vulnerability-handling-handbook",
+                "https://www.enisa.europa.eu/topics/trainings-for-cybersecurity-specialists/online-training-material/documents/Vulnerability_Handling_toolset.pdf",
+                "http://www.enisa.europa.eu/ftp/ENISA_CERT_Exercises.ova"
+            ],
             "duration": "3 hours",
-            "description": "To provide a practical overview of the vulnerability handling process and how vulnerabilities reported to a CERT team should be handled. Also, to provide some hands-on experience with difficult situations that may arise through the role of coordinator.",
-            "files": [
-                "Handbook",
-                "Toolset",
-                "Virtual Image"
-            ]
+            "target_audience": "Managers and incident handlers.",
+            "description": "To provide a practical overview of the vulnerability handling process and how vulnerabilities reported to a CERT team should be handled. Also, to provide some hands-on experience with difficult situations that may arise through the role of coordinator."
         },
         {
-            "source": "enisa",
-            "title": "Presenting, correlating and filtering various feeds",
-            "target_audience": "CERT technical staff.",
-            "duration": "6 hours",
-            "description": "Technical aspects of using visualisation to present, correlate and filter various feeds. The scenario will also cover the organisational aspects. In this scenario the students will be part of the CERT for a fictitious organisation which is analysing cybercrime activities.",
             "files": [
                 "Handbook",
                 "Toolset",
                 "Virtual Image 1",
                 "Virtual Image 2"
-            ]
+            ],
+            "title": "Presenting, correlating and filtering various feeds",
+            "source": "Enisa",
+            "urls": [
+                "https://www.enisa.europa.eu/topics/trainings-for-cybersecurity-specialists/online-training-material/documents/presenting-correlating-and-filtering-various-feeds-handbook",
+                "https://www.enisa.europa.eu/topics/trainings-for-cybersecurity-specialists/online-training-material/documents/presenting.pdf",
+                "http://www.enisa.europa.eu/ftp/ENISA_CERT_Exercises(AH_setup_from_beginning).ova",
+                "http://www.enisa.europa.eu/ftp/ENISA_CERT_Exercises_Vis.ova"
+            ],
+            "duration": "6 hours",
+            "target_audience": "CERT technical staff.",
+            "description": "Technical aspects of using visualisation to present, correlate and filter various feeds. The scenario will also cover the organisational aspects. In this scenario the students will be part of the CERT for a fictitious organisation which is analysing cybercrime activities."
         },
         {
-            "source": "enisa",
-            "title": "Incident handling during an attack on Critical Information Infrastructure",
-            "target_audience": "Incident handlers, incident management staff, technical CERT staff.",
-            "duration": "5 hours",
-            "description": "Make CERT members aware of requirements during incident handling in CII/SCADA environments.",
             "files": [
                 "Handbook",
                 "Toolset",
                 "Virtual Image",
                 "VM How To"
-            ]
+            ],
+            "title": "Incident handling during an attack on Critical Information Infrastructure",
+            "source": "Enisa",
+            "urls": [
+                "https://www.enisa.europa.eu/topics/trainings-for-cybersecurity-specialists/online-training-material/documents/incident-handling-during-attack-on-critical-information-infrastructure-handbook",
+                "https://www.enisa.europa.eu/topics/trainings-for-cybersecurity-specialists/online-training-material/documents/incident-handling-during-attack-on-critical-information-infrastructure-toolset",
+                "http://www.enisa.europa.eu/ftp/enisa-main.ova",
+                "https://www.enisa.europa.eu/topics/trainings-for-cybersecurity-specialists/online-training-material/documents/virtual-image-how-to"
+            ],
+            "duration": "5 hours",
+            "target_audience": "Incident handlers, incident management staff, technical CERT staff.",
+            "description": "Make CERT members aware of requirements during incident handling in CII/SCADA environments."
         },
         {
-            "source": "enisa",
+            "files": [
+                "Handbook",
+                "Toolset"
+            ],
             "title": "Advanced Persistent Threat incident handling",
-            "target_audience": "Incident handlers and technical CERT staff.",
+            "source": "Enisa",
+            "urls": [
+                "https://www.enisa.europa.eu/topics/trainings-for-cybersecurity-specialists/online-training-material/documents/advanced_persistent_threat_incident_handling_handbook",
+                "https://www.enisa.europa.eu/topics/trainings-for-cybersecurity-specialists/online-training-material/documents/advanced_persistent_threat_incident_handling_toolset"
+            ],
             "duration": "3 hours",
-            "description": "This task provides students with information about methods commonly used by attackers during the Advanced Persistent Threat (APT) attacks as well as methods of discovering and protecting internal resources against these attacks. Examples used in the exercise are based on real incidents and observations. The objective is also to involve participants in creative approaches to building CERT capability to deal effectively with and resolve the problem of APT attacks within an organisation.",
+            "target_audience": "Incident handlers and technical CERT staff.",
+            "description": "This task provides students with information about methods commonly used by attackers during the Advanced Persistent Threat (APT) attacks as well as methods of discovering and protecting internal resources against these attacks. Examples used in the exercise are based on real incidents and observations. The objective is also to involve participants in creative approaches to building CERT capability to deal effectively with and resolve the problem of APT attacks within an organisation."
+        },
+        {
             "files": [
                 "Handbook",
                 "Toolset"
-            ]
-        },
-        {
-            "source": "enisa",
+            ],
             "title": "Social networks used as an attack vector for targeted attacks",
-            "target_audience": "Incident handlers and technical CERT staff.",
+            "source": "Enisa",
+            "urls": [
+                "https://www.enisa.europa.eu/topics/trainings-for-cybersecurity-specialists/online-training-material/documents/social_networks_used_as_an_attack_vector_for_targeted_attacks_handbook",
+                "https://www.enisa.europa.eu/topics/trainings-for-cybersecurity-specialists/online-training-material/documents/social_networks_used_as_an_attack_vector_for_targeted_attacks_toolset"
+            ],
             "duration": "3 hours",
-            "description": "In this task, participants will investigate the vulnerabilities of social networks, using an Advanced Persistent Threat scenario as a test case to illustrate some examples of social network compromises. They will also examine the capabilities of social networks to respond to these kinds of threats.",
+            "target_audience": "Incident handlers and technical CERT staff.",
+            "description": "In this task, participants will investigate the vulnerabilities of social networks, using an Advanced Persistent Threat scenario as a test case to illustrate some examples of social network compromises. They will also examine the capabilities of social networks to respond to these kinds of threats."
+        },
+        {
             "files": [
                 "Handbook",
                 "Toolset"
-            ]
-        },
-        {
-            "source": "enisa",
+            ],
             "title": "Writing Security Advisories",
-            "target_audience": "Technical and management CERT staff.",
+            "source": "Enisa",
+            "urls": [
+                "https://www.enisa.europa.eu/topics/trainings-for-cybersecurity-specialists/online-training-material/documents/writing-security-advisories-handbook",
+                "https://www.enisa.europa.eu/topics/trainings-for-cybersecurity-specialists/online-training-material/documents/writing-security-advisories-toolset"
+            ],
             "duration": "4 hours",
-            "description": "The objective of the exercise is to provide a practical overview of what constitutes a good and a bad advisory publication for a CERT constituency.",
-            "files": [
-                "Handbook",
-                "Toolset"
-            ]
+            "target_audience": "Technical and management CERT staff.",
+            "description": "The objective of the exercise is to provide a practical overview of what constitutes a good and a bad advisory publication for a CERT constituency."
         },
         {
-            "source": "enisa",
-            "title": "Cost of ICT incident",
-            "target_audience": "Managers of CERT staff, incident handlers who have to estimate losses.",
-            "duration": "2 hours",
-            "description": "Make the CERT team familiar with one solution for estimating the costs of different information security incidents.",
             "files": [
                 "Handbook",
                 "Toolset",
                 "Spreadsheet (XLS)",
                 "Spreadsheet (ODS)"
-            ]
-        },
-        {
-            "source": "enisa",
-            "title": "Incident handling in live role playing",
-            "target_audience": "Future CERT members.",
-            "duration": "3 hours",
-            "description": "Simulate a real-life incident, involving many parties with conflicts of interests, different mindsets and legal frameworks, etc. With the introduction of such aspects as vulnerability handling, responsible disclosure and company security management, it helps the students to understand why incident handling is, in many cases, a complex task and what kinds of technical and social skills are required for this job.",
-            "files": [
-                "Handbook",
-                "Toolset"
-            ]
-        },
-        {
-            "source": "enisa",
-            "title": "Incident handling in the cloud",
-            "target_audience": "Incident responders of all experience levels.",
-            "duration": "4 hours",
-            "description": "Investigate methods to address cloud-based security vulnerabilities through a scenario where data is not always fixed to one physical server or location.",
-            "files": [
-                "Handbook",
-                "Toolset"
-            ]
-        },
-        {
-            "source": "enisa",
-            "title": "Large scale incident handling",
-            "target_audience": "CERT incident handlers.",
-            "duration": "5 hours",
-            "description": "Teach incident handlers the key information and actions required for the successful resolution of large-scale incidents.",
-            "files": [
-                "Handbook",
-                "Toolset"
-            ]
-        },
-        {
-            "source": "enisa",
-            "title": "Incident Handling Management",
-            "target_audience": "The exercise is aimed at incident handlers at any level of experience. It requires a good understanding of Internet topology and services.",
+            ],
+            "title": "Cost of ICT incident",
+            "source": "Enisa",
+            "urls": [
+                "https://www.enisa.europa.eu/topics/trainings-for-cybersecurity-specialists/online-training-material/documents/CostofICTincidentcalculationhandbook.pdf",
+                "https://www.enisa.europa.eu/topics/trainings-for-cybersecurity-specialists/online-training-material/documents/Costofincidenthandlingtoolset.pdf",
+                "https://www.enisa.europa.eu/topics/trainings-for-cybersecurity-specialists/online-training-material/documents/Exercise15CalculatorCIC.xlsx",
+                "https://www.enisa.europa.eu/topics/trainings-for-cybersecurity-specialists/online-training-material/documents/Exercise15CalculatorCICOpen.ods"
+            ],
             "duration": "2 hours",
-            "description": "This exercise provides students with experience of real-life incident reports, their ambiguity and complexity. After completing the exercise, they should understand:",
+            "target_audience": "Managers of CERT staff, incident handlers who have to estimate losses.",
+            "description": "Make the CERT team familiar with one solution for estimating the costs of different information security incidents."
+        },
+        {
+            "files": [
+                "Handbook",
+                "Toolset"
+            ],
+            "title": "Incident handling in live role playing",
+            "source": "Enisa",
+            "urls": [
+                "https://www.enisa.europa.eu/topics/trainings-for-cybersecurity-specialists/online-training-material/documents/incident-handling-in-live-role-playing-handbook",
+                "https://www.enisa.europa.eu/topics/trainings-for-cybersecurity-specialists/online-training-material/documents/incident-handling-in-live-role-playing-toolset"
+            ],
+            "duration": "3 hours",
+            "target_audience": "Future CERT members.",
+            "description": "Simulate a real-life incident, involving many parties with conflicts of interests, different mindsets and legal frameworks, etc. With the introduction of such aspects as vulnerability handling, responsible disclosure and company security management, it helps the students to understand why incident handling is, in many cases, a complex task and what kinds of technical and social skills are required for this job."
+        },
+        {
+            "files": [
+                "Handbook",
+                "Toolset"
+            ],
+            "title": "Incident handling in the cloud",
+            "source": "Enisa",
+            "urls": [
+                "https://www.enisa.europa.eu/topics/trainings-for-cybersecurity-specialists/online-training-material/documents/incident_handling_in_the_cloud_handbook",
+                "https://www.enisa.europa.eu/topics/trainings-for-cybersecurity-specialists/online-training-material/documents/incident_handling_in_the_cloud_toolset"
+            ],
+            "duration": "4 hours",
+            "target_audience": "Incident responders of all experience levels.",
+            "description": "Investigate methods to address cloud-based security vulnerabilities through a scenario where data is not always fixed to one physical server or location."
+        },
+        {
+            "files": [
+                "Handbook",
+                "Toolset"
+            ],
+            "title": "Large scale incident handling",
+            "source": "Enisa",
+            "urls": [
+                "https://www.enisa.europa.eu/topics/trainings-for-cybersecurity-specialists/online-training-material/documents/large-scale-incident-handling-handbook",
+                "https://www.enisa.europa.eu/topics/trainings-for-cybersecurity-specialists/online-training-material/documents/large-scale-incident-handling-toolset"
+            ],
+            "duration": "5 hours",
+            "target_audience": "CERT incident handlers.",
+            "description": "Teach incident handlers the key information and actions required for the successful resolution of large-scale incidents."
+        },
+        {
             "files": [
                 "Handbook",
                 "Toolset",
                 "Presentation"
-            ]
+            ],
+            "title": "Incident Handling Management",
+            "source": "Enisa",
+            "urls": [
+                "https://www.enisa.europa.eu/topics/trainings-for-cybersecurity-specialists/online-training-material/documents/2016-resources/incident_handling_management-handbook",
+                "https://www.enisa.europa.eu/topics/trainings-for-cybersecurity-specialists/online-training-material/documents/2016-resources/incident_handling_management-toolset",
+                "https://www.enisa.europa.eu/topics/trainings-for-cybersecurity-specialists/online-training-material/documents/2016-resources/incident_handling_management-presentation"
+            ],
+            "duration": "2 hours",
+            "target_audience": "The exercise is aimed at incident handlers at any level of experience. It requires a good understanding of Internet topology and services.",
+            "description": "This exercise provides students with experience of real-life incident reports, their ambiguity and complexity. After completing the exercise, they should understand:"
         },
         {
-            "source": "enisa",
-            "title": "Recruitment of CSIRT staff",
-            "target_audience": "The training is aimed at CSIRT managers who are responsible for recruiting staff.",
-            "duration": "1 day",
-            "description": "This training sets out to provide an indication of what an organisation might consider during the recruitment of staff for CSIRT teams. ",
             "files": [
                 "Handbook",
                 "Toolset",
                 "Presentation",
                 "Resources"
-            ]
+            ],
+            "title": "Recruitment of CSIRT staff",
+            "source": "Enisa",
+            "urls": [
+                "https://www.enisa.europa.eu/topics/trainings-for-cybersecurity-specialists/online-training-material/documents/2016-resources/recruitment_of_csirt_staff-handbook",
+                "https://www.enisa.europa.eu/topics/trainings-for-cybersecurity-specialists/online-training-material/documents/2016-resources/recruitment_of_csirt_staff-toolset",
+                "https://www.enisa.europa.eu/topics/trainings-for-cybersecurity-specialists/online-training-material/documents/2016-resources/recruitment_of_csirt_staff-presentation",
+                "https://www.enisa.europa.eu/topics/trainings-for-cybersecurity-specialists/online-training-material/documents/2016-resources/recruitment_of_csirt_staff-resources"
+            ],
+            "duration": "1 day",
+            "target_audience": "The training is aimed at CSIRT managers who are responsible for recruiting staff.",
+            "description": "This training sets out to provide an indication of what an organisation might consider during the recruitment of staff for CSIRT teams. "
         },
         {
-            "source": "enisa",
-            "title": "Developing CSIRT infrastructure",
-            "target_audience": "Technical and management CSIRT staff. ",
-            "duration": "3-4 hours",
-            "description": "To learn what kind of software and hardware solutions could be used to provide a particular CSIRT service for a constituency. ",
             "files": [
                 "Handbook",
                 "Toolset",
                 "Presentation"
-            ]
+            ],
+            "title": "Developing CSIRT infrastructure",
+            "source": "Enisa",
+            "urls": [
+                "https://www.enisa.europa.eu/topics/trainings-for-cybersecurity-specialists/online-training-material/documents/2016-resources/developing_csirt_infrastructure-handbook",
+                "https://www.enisa.europa.eu/topics/trainings-for-cybersecurity-specialists/online-training-material/documents/2016-resources/developing_csirt_infrastructure-toolset",
+                "https://www.enisa.europa.eu/topics/trainings-for-cybersecurity-specialists/online-training-material/documents/2016-resources/developing_csirt_infrastructure-presentation"
+            ],
+            "duration": "3-4 hours",
+            "target_audience": "Technical and management CSIRT staff. ",
+            "description": "To learn what kind of software and hardware solutions could be used to provide a particular CSIRT service for a constituency. "
         },
         {
-            "source": "enisa",
-            "title": "Establishing external contacts",
-            "target_audience": "Managers and incident handlers.",
-            "duration": "3 hours",
-            "description": "To enhance students\u2019 skills in establishing contacts with other CERTs, administrators of ISPs, and other parties responsible for the mitigation of security incidents in their networks around the globe.",
             "files": [
                 "Handbook",
                 "Toolset"
-            ]
+            ],
+            "title": "Establishing external contacts",
+            "source": "Enisa",
+            "urls": [
+                "https://www.enisa.europa.eu/topics/trainings-for-cybersecurity-specialists/online-training-material/documents/establishing_external_contacts_handbook",
+                "https://www.enisa.europa.eu/topics/trainings-for-cybersecurity-specialists/online-training-material/documents/establishing-external-contacts-toolset"
+            ],
+            "duration": "3 hours",
+            "target_audience": "Managers and incident handlers.",
+            "description": "To enhance students\u2019 skills in establishing contacts with other CERTs, administrators of ISPs, and other parties responsible for the mitigation of security incidents in their networks around the globe."
         },
         {
-            "source": "enisa",
-            "title": "Cooperation with Law Enforcement Agencies - Advising in Cyber Crime Cases",
-            "target_audience": "Technical and management CERT staff.",
-            "duration": "5 hours",
-            "description": "Explain a CERT\u2019s role in advising in a cyber-crime case and the basis for its effective cooperation with an LEA.",
             "files": [
                 "Handbook",
                 "Toolset",
                 " "
-            ]
+            ],
+            "title": "Cooperation with Law Enforcement Agencies - Advising in Cyber Crime Cases",
+            "source": "Enisa",
+            "urls": [
+                "https://www.enisa.europa.eu/topics/trainings-for-cybersecurity-specialists/online-training-material/documents/cooperation-with-law-enforcement-agencies-advising-in-cyber-crime-cases-handbook",
+                "https://www.enisa.europa.eu/topics/trainings-for-cybersecurity-specialists/online-training-material/documents/cooperation-with-law-enforcement-agencies-advising-in-cyber-crime-cases-toolset-1"
+            ],
+            "duration": "5 hours",
+            "target_audience": "Technical and management CERT staff.",
+            "description": "Explain a CERT\u2019s role in advising in a cyber-crime case and the basis for its effective cooperation with an LEA."
         },
         {
-            "source": "enisa",
-            "title": "Assessing and Testing Communication Channels with CERTs and all their stakeholders",
-            "target_audience": "CERT incident responders of all experience levels.",
-            "duration": "4 hours",
-            "description": "In this exercise, participants will discuss all fundamental concepts of the communication channels between CERTs and their constituents, other CERTs, law enforcement, management, public relations (PR), legal counsel, and all other stakeholders. Special attention is given to communications while under attack, and to the testing of communication channels as a means of safeguarding and improving them.",
             "files": [
                 "Handbook",
                 "Toolset"
-            ]
+            ],
+            "title": "Assessing and Testing Communication Channels with CERTs and all their stakeholders",
+            "source": "Enisa",
+            "urls": [
+                "https://www.enisa.europa.eu/topics/trainings-for-cybersecurity-specialists/online-training-material/documents/assessing_and_testing_communication_handbook",
+                "https://www.enisa.europa.eu/topics/trainings-for-cybersecurity-specialists/online-training-material/documents/assessing_and_testing_communication_toolset"
+            ],
+            "duration": "4 hours",
+            "target_audience": "CERT incident responders of all experience levels.",
+            "description": "In this exercise, participants will discuss all fundamental concepts of the communication channels between CERTs and their constituents, other CERTs, law enforcement, management, public relations (PR), legal counsel, and all other stakeholders. Special attention is given to communications while under attack, and to the testing of communication channels as a means of safeguarding and improving them."
         },
         {
-            "source": "enisa",
-            "title": "Identifying and handling cyber-crime traces",
-            "target_audience": "CERT Staff.",
-            "duration": "7 hours",
-            "description": "This task consists of 3 components: finding relevant information related to cybercrime in social media channels (based on Twitter examples), finding relevant information on IRC channels and analysing legal aspects of Internet monitoring activities related to cybercrime identification. The main objective is to teach trainees how to set up the basic system for continuous monitoring and alerting of various sources of information in terms of effective detection and warning for their constituencies based on the content.",
             "files": [
                 "Handbook",
                 "Toolset",
                 "Virtual Image",
                 "VM How To"
-            ]
+            ],
+            "title": "Identifying and handling cyber-crime traces",
+            "source": "Enisa",
+            "urls": [
+                "https://www.enisa.europa.eu/topics/trainings-for-cybersecurity-specialists/online-training-material/documents/identifying-and-handling-cybercrime-traces-handbook",
+                "https://www.enisa.europa.eu/topics/trainings-for-cybersecurity-specialists/online-training-material/documents/identifying-and-handling-cyber.pdf",
+                "http://www.enisa.europa.eu/ftp/enisa-main.ova",
+                "https://www.enisa.europa.eu/topics/trainings-for-cybersecurity-specialists/online-training-material/documents/virtual-image-how-to"
+            ],
+            "duration": "7 hours",
+            "target_audience": "CERT Staff.",
+            "description": "This task consists of 3 components: finding relevant information related to cybercrime in social media channels (based on Twitter examples), finding relevant information on IRC channels and analysing legal aspects of Internet monitoring activities related to cybercrime identification. The main objective is to teach trainees how to set up the basic system for continuous monitoring and alerting of various sources of information in terms of effective detection and warning for their constituencies based on the content."
         },
         {
-            "source": "enisa",
+            "files": [
+                "Handbook",
+                "Toolset"
+            ],
             "title": "Incident handling and cooperation during phishing campaign",
-            "target_audience": "National CERTs, bank CERTs, CERTs for big companies or organisations.",
+            "source": "Enisa",
+            "urls": [
+                "https://www.enisa.europa.eu/topics/trainings-for-cybersecurity-specialists/online-training-material/documents/incident-handling-and-cooperation-during-phishing-1.pdf",
+                "https://www.enisa.europa.eu/topics/trainings-for-cybersecurity-specialists/online-training-material/documents/incident-handling-and-cooperation-during-phishing.pdf"
+            ],
             "duration": "4 hours",
-            "description": "This task treats phishing on three levels: technical, organisational and legal. The purpose is to understand phishing campaigns better and understand how to resolve them in complex international contexts.",
+            "target_audience": "National CERTs, bank CERTs, CERTs for big companies or organisations.",
+            "description": "This task treats phishing on three levels: technical, organisational and legal. The purpose is to understand phishing campaigns better and understand how to resolve them in complex international contexts."
+        },
+        {
             "files": [
                 "Handbook",
                 "Toolset"
-            ]
-        },
-        {
-            "source": "enisa",
+            ],
             "title": "Cooperation in the Area of Cybercrime",
-            "target_audience": "Incident responders of all experience levels.",
+            "source": "Enisa",
+            "urls": [
+                "https://www.enisa.europa.eu/topics/trainings-for-cybersecurity-specialists/online-training-material/documents/cooperation-in-the-area-of-cybercrime-handbook.pdf",
+                "https://www.enisa.europa.eu/topics/trainings-for-cybersecurity-specialists/online-training-material/documents/cooperation-in-the-area-of-cybercrime-toolset.pdf"
+            ],
             "duration": "6 hours",
-            "description": "This task covers three different cybercrime related cases. All of them involve investigatory and legal aspects, but each of them requires participants to analyse them from different perspectives. All cases involve very common incidents for CERTs and organisations that could lead to law enforcement actions and court cases. Cooperation among the various parties involved is therefore essential and is the goal of this exercise \u2013 rather than exploring the techniques involved.",
-            "files": [
-                "Handbook",
-                "Toolset"
-            ]
+            "target_audience": "Incident responders of all experience levels.",
+            "description": "This task covers three different cybercrime related cases. All of them involve investigatory and legal aspects, but each of them requires participants to analyse them from different perspectives. All cases involve very common incidents for CERTs and organisations that could lead to law enforcement actions and court cases. Cooperation among the various parties involved is therefore essential and is the goal of this exercise \u2013 rather than exploring the techniques involved."
         },
         {
-            "source": "enisa",
-            "title": "CERT participation in incident handling related to the Article 13a obligations",
-            "target_audience": "Incident handlers and CERT managers.",
-            "duration": "3 hours",
-            "description": "Information about rules, procedures and best practice in handling incident related to obligation for internet service providers described in the Article 13a of the European Telecom Package.",
             "files": [
                 "Handbook",
                 "Toolset",
                 "data_ddos.pcap"
-            ]
+            ],
+            "title": "CERT participation in incident handling related to the Article 13a obligations",
+            "source": "Enisa",
+            "urls": [
+                "https://www.enisa.europa.eu/topics/trainings-for-cybersecurity-specialists/online-training-material/documents/cert_participation_in_incident_handling_related_to_the_article_13a_obligations_handbook",
+                "https://www.enisa.europa.eu/topics/trainings-for-cybersecurity-specialists/online-training-material/documents/cert_participation_in_incident_handling_related_to_the_article_13a_obligations_toolset",
+                "https://www.enisa.europa.eu/../ftp/data_ddos.pcap"
+            ],
+            "duration": "3 hours",
+            "target_audience": "Incident handlers and CERT managers.",
+            "description": "Information about rules, procedures and best practice in handling incident related to obligation for internet service providers described in the Article 13a of the European Telecom Package."
         },
         {
-            "source": "enisa",
-            "title": "CERT participation in incident handling related to the Article 4 obligations",
-            "target_audience": "Incident handlers and CERT managers.",
-            "duration": "2 hours",
-            "description": "Information about rules, procedures and best practices in incident handling related to personal data breaches. It is based on data breach notification requirements for the electronic communication sector introduced by the review of the ePrivacy Directive. The process of notification is parallel to normal incident handling process and it is part of it.",
             "files": [
                 "Handbook",
                 "Toolset"
-            ]
+            ],
+            "title": "CERT participation in incident handling related to the Article 4 obligations",
+            "source": "Enisa",
+            "urls": [
+                "https://www.enisa.europa.eu/topics/trainings-for-cybersecurity-specialists/online-training-material/documents/cert_participation_in_incident_handling_related_to_the_article_4_obligations_toolset",
+                "https://www.enisa.europa.eu/topics/trainings-for-cybersecurity-specialists/online-training-material/documents/cert_participation_in_incident_handling_related_to_the_article_4_obligations_handbook"
+            ],
+            "duration": "2 hours",
+            "target_audience": "Incident handlers and CERT managers.",
+            "description": "Information about rules, procedures and best practices in incident handling related to personal data breaches. It is based on data breach notification requirements for the electronic communication sector introduced by the review of the ePrivacy Directive. The process of notification is parallel to normal incident handling process and it is part of it."
         },
         {
-            "source": "SEEDLabs",
-            "title": "Buffer Overflow Vulnerability Lab",
-            "type": "attack",
-            "difficulty": "Not defined",
-            "duration": "1 week(s)",
-            "description": "Launching attack to exploit the buffer-overflow vulnerability using shellcode. Conducting experiments\r\n         with several countermeasures.",
             "files": [
                 "stack.c",
                 "call_shellcode.c",
                 "exploit.c",
                 "exploit.py"
-            ]
+            ],
+            "title": "Buffer Overflow Vulnerability Lab",
+            "source": "SEEDLabs",
+            "urls": [
+                "http://www.cis.syr.edu/~wedu/seed/Labs_16.04/Software/Buffer_Overflow/./files/stack.c",
+                "http://www.cis.syr.edu/~wedu/seed/Labs_16.04/Software/Buffer_Overflow/./files/call_shellcode.c",
+                "http://www.cis.syr.edu/~wedu/seed/Labs_16.04/Software/Buffer_Overflow/./files/exploit.c",
+                "http://www.cis.syr.edu/~wedu/seed/Labs_16.04/Software/Buffer_Overflow/./files/exploit.py"
+            ],
+            "duration": "1 week(s)",
+            "difficulty": "Not defined",
+            "description": "Launching attack to exploit the buffer-overflow vulnerability using shellcode. Conducting experiments\r\n         with several countermeasures.",
+            "type": "attack"
         },
         {
-            "source": "SEEDLabs",
-            "title": "Return-to-Libc Attack Lab",
-            "type": "attack",
-            "difficulty": "medium",
-            "duration": "1 week(s)",
-            "description": "Using the return-to-libc technique to defeat the \"non-executable stack\" countermeasure of\r\n         the buffer-overflow attack.",
             "files": [
                 "retlib.c",
                 "exploit.c"
-            ]
+            ],
+            "title": "Return-to-Libc Attack Lab",
+            "source": "SEEDLabs",
+            "urls": [
+                "http://www.cis.syr.edu/~wedu/seed/Labs_16.04/./Software/./Return_to_Libc/./files/retlib.c",
+                "http://www.cis.syr.edu/~wedu/seed/Labs_16.04/./Software/./Return_to_Libc/./files/exploit.c"
+            ],
+            "duration": "1 week(s)",
+            "difficulty": "medium",
+            "description": "Using the return-to-libc technique to defeat the \"non-executable stack\" countermeasure of\r\n         the buffer-overflow attack.",
+            "type": "attack"
         },
         {
-            "source": "SEEDLabs",
-            "title": "Environment Variable and Set-UID Lab",
-            "type": "exploration",
-            "difficulty": "easy",
-            "duration": "1 week(s)",
-            "description": "Launching attacks on privileged Set-UID root program. Risks of environment variables. Side effects of\r\n        system().",
             "files": [
                 "\nChecklist for Security of Setuid Programs"
-            ]
+            ],
+            "title": "Environment Variable and Set-UID Lab",
+            "source": "SEEDLabs",
+            "urls": [
+                "http://www.cis.syr.edu/~wedu/seed/Labs_16.04/./Software/./Environment_Variable_and_SetUID/./files/setuid.pdf"
+            ],
+            "duration": "1 week(s)",
+            "difficulty": "easy",
+            "description": "Launching attacks on privileged Set-UID root program. Risks of environment variables. Side effects of\r\n        system().",
+            "type": "exploration"
         },
         {
-            "source": "SEEDLabs",
-            "title": "Race Condition Vulnerability Lab",
-            "type": "attack",
-            "difficulty": "Not defined",
-            "duration": "1 week(s)",
-            "description": "Exploiting the race condition vulnerability in privileged program. Conducting experiments with\r\n         various countermeasures.",
             "files": [
                 "vulp.c"
-            ]
+            ],
+            "title": "Race Condition Vulnerability Lab",
+            "source": "SEEDLabs",
+            "urls": [
+                "http://www.cis.syr.edu/~wedu/seed/Labs_16.04/./Software/./Race_Condition/./files/vulp.c"
+            ],
+            "duration": "1 week(s)",
+            "difficulty": "Not defined",
+            "description": "Exploiting the race condition vulnerability in privileged program. Conducting experiments with\r\n         various countermeasures.",
+            "type": "attack"
         },
         {
-            "source": "SEEDLabs",
-            "title": "Dirty COW Attack Lab",
-            "type": "attack",
-            "difficulty": "Not defined",
-            "duration": "1 week(s)",
-            "description": "Exploiting the Dirty COW race condition vulnerability in Linux kernel \r\n         to gain the root privilege.",
             "files": [
                 "cow_attack.c"
-            ]
+            ],
+            "title": "Dirty COW Attack Lab",
+            "source": "SEEDLabs",
+            "urls": [
+                "http://www.cis.syr.edu/~wedu/seed/Labs_16.04/./Software/./Dirty_COW/./files/cow_attack.c"
+            ],
+            "duration": "1 week(s)",
+            "difficulty": "Not defined",
+            "description": "Exploiting the Dirty COW race condition vulnerability in Linux kernel \r\n         to gain the root privilege.",
+            "type": "attack"
         },
         {
-            "source": "SEEDLabs",
-            "title": "Format String Vulnerability Lab",
-            "type": "attack",
-            "difficulty": "Not defined",
-            "duration": "1 week(s)",
-            "description": "Exploiting the format string vulnerability to crash a program, steal sensitive information, or\r\n         modify critical data.",
             "files": [
                 "server.c",
                 "\nExploiting Format Strng Vulnerabilities"
-            ]
+            ],
+            "title": "Format String Vulnerability Lab",
+            "source": "SEEDLabs",
+            "urls": [
+                "http://www.cis.syr.edu/~wedu/seed/Labs_16.04/./Software/./Format_String_Server/./files/server.c"
+            ],
+            "duration": "1 week(s)",
+            "difficulty": "Not defined",
+            "description": "Exploiting the format string vulnerability to crash a program, steal sensitive information, or\r\n         modify critical data.",
+            "type": "attack"
         },
         {
-            "source": "SEEDLabs",
-            "title": "Shellshock Vulnerability Lab",
-            "type": "attack",
-            "difficulty": "Not defined",
-            "duration": "1 week(s)",
-            "description": "Launch attack to exploit the Shellshock vulnerability that is discovered in late 2014.",
             "files": [
                 "variables.c"
-            ]
+            ],
+            "title": "Shellshock Vulnerability Lab",
+            "source": "SEEDLabs",
+            "urls": [
+                "http://www.cis.syr.edu/~wedu/seed/Labs_16.04/./Software/./Shellshock/./files/variables.c"
+            ],
+            "duration": "1 week(s)",
+            "difficulty": "Not defined",
+            "description": "Launch attack to exploit the Shellshock vulnerability that is discovered in late 2014.",
+            "type": "attack"
         },
         {
-            "source": "SEEDLabs",
+            "files": [],
             "title": "Packet Sniffing and Spoofing Lab",
-            "type": "exploration",
-            "difficulty": "medium",
+            "source": "SEEDLabs",
+            "urls": [],
             "duration": "1 week(s)",
+            "difficulty": "medium",
             "description": "Sniffing packets sent over the local network and spoofing various types of packets.",
-            "files": []
+            "type": "exploration"
         },
         {
-            "source": "SEEDLabs",
+            "files": [],
             "title": "TCP/IP Attack Lab",
-            "type": "attack",
-            "difficulty": "medium",
+            "source": "SEEDLabs",
+            "urls": [],
             "duration": "2 week(s)",
+            "difficulty": "medium",
             "description": "Launching attacks to exploit the vulnerabilities of the TCP/IP protocol, including session hijacking,\r\n      SYN flooding, TCP reset attacks, etc.",
-            "files": []
+            "type": "attack"
         },
         {
-            "source": "SEEDLabs",
-            "title": "Heartbleed Attack Lab (Ubuntu 12.04 VM only)",
-            "type": "attack",
-            "difficulty": "easy",
-            "duration": "1 week(s)",
-            "description": "Using the heartbleed attack to steal secrets from a remote server.",
             "files": [
                 "attack.py"
-            ]
-        },
-        {
+            ],
+            "title": "Heartbleed Attack Lab (Ubuntu 12.04 VM only)",
             "source": "SEEDLabs",
-            "title": "Local DNS Attack Lab",
-            "type": "attack",
+            "urls": [
+                "http://www.cis.syr.edu/~wedu/seed/Labs_16.04/./Networking/./Heartbleed/./attack.py"
+            ],
+            "duration": "1 week(s)",
             "difficulty": "easy",
+            "description": "Using the heartbleed attack to steal secrets from a remote server.",
+            "type": "attack"
+        },
+        {
+            "files": [],
+            "title": "Local DNS Attack Lab",
+            "source": "SEEDLabs",
+            "urls": [],
             "duration": "1 week(s)",
+            "difficulty": "easy",
             "description": "Using several methods to conduct DNS pharming attacks on computers in a LAN environment.",
-            "files": []
+            "type": "attack"
         },
         {
-            "source": "SEEDLabs",
+            "files": [],
             "title": "Remote DNS Attack Lab",
-            "type": "attack",
-            "difficulty": "hard",
+            "source": "SEEDLabs",
+            "urls": [],
             "duration": "2 week(s)",
+            "difficulty": "hard",
             "description": "Using the Kaminsky method to launch DNS cache poisoning attacks on remote DNS servers.",
-            "files": []
+            "type": "attack"
         },
         {
-            "source": "SEEDLabs",
+            "files": [],
             "title": "Firewall Exploration Lab",
-            "type": "exploration",
-            "difficulty": "medium",
+            "source": "SEEDLabs",
+            "urls": [],
             "duration": "1 week(s)",
+            "difficulty": "medium",
             "description": "Writing a simple packet-filter firewall; playing with Linux's built-in firewall software and\r\n        web-proxy firewall; experimenting with ways to evade firewalls.",
-            "files": []
+            "type": "exploration"
         },
         {
-            "source": "SEEDLabs",
-            "title": "Firewall Evasion Lab",
-            "type": "exploration",
-            "difficulty": "medium",
-            "duration": "1 week(s)",
-            "description": "Implement a simple vpn program (client/server), and use it to\r\n        bypass firewalls. ",
             "files": [
                 "Sample VPN client and server programs (without encryption)"
-            ]
+            ],
+            "title": "Firewall Evasion Lab",
+            "source": "SEEDLabs",
+            "urls": [
+                "http://www.cis.syr.edu/~wedu/seed/Labs_16.04/./Networking/./Firewall_VPN/../VPN/files/vpn.zip"
+            ],
+            "duration": "1 week(s)",
+            "difficulty": "medium",
+            "description": "Implement a simple vpn program (client/server), and use it to\r\n        bypass firewalls. ",
+            "type": "exploration"
         },
         {
-            "source": "SEEDLabs",
-            "title": "Virtual Private Network (VPN) Lab",
-            "type": "implementation",
-            "difficulty": "hard",
-            "duration": "4 week(s)",
-            "description": "Design and implement a transport-layer VPN system for Linux, using the TUN/TAP\r\n            technologies. This project requires at least a month of time to finish, so it is good\r\n            for final project.",
             "files": [
                 "Sample VPN client and server programs (without encryption)",
                 "Sample TLS client and server programs"
-            ]
+            ],
+            "title": "Virtual Private Network (VPN) Lab",
+            "source": "SEEDLabs",
+            "urls": [
+                "http://www.cis.syr.edu/~wedu/seed/Labs_16.04/./Networking/./VPN/./files/vpn.zip",
+                "http://www.cis.syr.edu/~wedu/seed/Labs_16.04/./Networking/./VPN/./files/tls.zip"
+            ],
+            "duration": "4 week(s)",
+            "difficulty": "hard",
+            "description": "Design and implement a transport-layer VPN system for Linux, using the TUN/TAP\r\n            technologies. This project requires at least a month of time to finish, so it is good\r\n            for final project.",
+            "type": "implementation"
         },
         {
-            "source": "SEEDLabs",
+            "files": [],
             "title": "Cross-site Scripting Attack Lab",
-            "type": "attack",
-            "difficulty": "medium",
+            "source": "SEEDLabs",
+            "urls": [],
             "duration": "1 week(s)",
+            "difficulty": "medium",
             "description": "Launching the cross-site scripting attack on a vulnerable web application. Conducting experiments\n         with several countermeasures.",
-            "files": []
+            "type": "attack"
         },
         {
-            "source": "SEEDLabs",
+            "files": [],
             "title": "Cross-site Request Forgery Attack Lab",
-            "type": "attack",
+            "source": "SEEDLabs",
+            "urls": [],
+            "duration": "1 week(s)",
             "difficulty": "easy",
-            "duration": "1 week(s)",
             "description": "Launching the cross-site request forgery attack on a vulnerable web application. Conducting experiments\n         with several countermeasures.",
-            "files": []
+            "type": "attack"
         },
         {
-            "source": "SEEDLabs",
+            "files": [],
             "title": "SQL Injection Attack Lab",
-            "type": "attack",
-            "difficulty": "medium",
+            "source": "SEEDLabs",
+            "urls": [],
             "duration": "1 week(s)",
+            "difficulty": "medium",
             "description": "Launching the SQL-injection attack on a vulnerable web application. Conducting experiments\n         with several countermeasures. This is a newly developed lab, different from the one\n\t using Collabtive. This lab does not use Elgg; instead, it uses a web application developed by us.\n      ",
-            "files": []
+            "type": "attack"
         },
         {
-            "source": "SEEDLabs",
-            "title": "Meltdown Attack Lab",
-            "type": "attack",
-            "difficulty": "Not defined",
-            "duration": "1 week(s)",
-            "description": "Launching attack to exploit the Meltdown vulnerability in Intel CPUs.",
             "files": [
                 "Meltdown_Attack.zip"
-            ]
+            ],
+            "title": "Meltdown Attack Lab",
+            "source": "SEEDLabs",
+            "urls": [
+                "http://www.cis.syr.edu/~wedu/seed/Labs_16.04/./System/./Meltdown_Attack/./files/Meltdown_Attack.zip"
+            ],
+            "duration": "1 week(s)",
+            "difficulty": "Not defined",
+            "description": "Launching attack to exploit the Meltdown vulnerability in Intel CPUs.",
+            "type": "attack"
         },
         {
-            "source": "SEEDLabs",
-            "title": "Spectre Attack Lab",
-            "type": "attack",
-            "difficulty": "Not defined",
-            "duration": "1 week(s)",
-            "description": "Launching attack to exploit the Spectre vulnerability in Intel CPUs.",
             "files": [
                 "Spectre_Attack.zip"
-            ]
+            ],
+            "title": "Spectre Attack Lab",
+            "source": "SEEDLabs",
+            "urls": [
+                "http://www.cis.syr.edu/~wedu/seed/Labs_16.04/./System/./Spectre_Attack/./files/Spectre_Attack.zip"
+            ],
+            "duration": "1 week(s)",
+            "difficulty": "Not defined",
+            "description": "Launching attack to exploit the Spectre vulnerability in Intel CPUs.",
+            "type": "attack"
         },
         {
-            "source": "SEEDLabs",
-            "title": "MD5 Collision Attack Lab",
-            "type": "attack",
-            "difficulty": "Not defined",
-            "duration": "1 week(s)",
-            "description": "Use MD5 collision attack to create two different programs that \r\n         have the same MD5 hash value.",
             "files": [
                 "md5_patch.zip"
-            ]
-        },
-        {
+            ],
+            "title": "MD5 Collision Attack Lab",
             "source": "SEEDLabs",
-            "title": "RSA Public-Key Encryption and Signature Lab",
-            "type": "exploration",
+            "urls": [
+                "http://www.cis.syr.edu/~wedu/seed/Labs_16.04/./Crypto/./Crypto_MD5_Collision/./files/md5_patch.zip"
+            ],
+            "duration": "1 week(s)",
             "difficulty": "Not defined",
-            "duration": "1 week(s)",
-            "description": "Write a program to implement the RSA algorithm, and use it to do encryption,\r\n      decryption, signature generation and verification. \r\n         ",
-            "files": []
+            "description": "Use MD5 collision attack to create two different programs that \r\n         have the same MD5 hash value.",
+            "type": "attack"
         },
         {
+            "files": [],
+            "title": "RSA Public-Key Encryption and Signature Lab",
             "source": "SEEDLabs",
-            "title": "Secret Key Encryption Lab",
-            "type": "exploration",
-            "difficulty": "easy",
+            "urls": [],
             "duration": "1 week(s)",
-            "description": "Explore the secret-key encryption and its applications using OpenSSL.",
+            "difficulty": "Not defined",
+            "description": "Write a program to implement the RSA algorithm, and use it to do encryption,\r\n      decryption, signature generation and verification. \r\n         ",
+            "type": "exploration"
+        },
+        {
             "files": [
                 "ciphertext.txt (for Task 1)",
                 "pic_original.bmp",
                 "English Word List"
-            ]
+            ],
+            "title": "Secret Key Encryption Lab",
+            "source": "SEEDLabs",
+            "urls": [
+                "http://www.cis.syr.edu/~wedu/seed/Labs_16.04/./Crypto/./Crypto_Encryption/./files/ciphertext.txt",
+                "http://www.cis.syr.edu/~wedu/seed/Labs_16.04/./Crypto/./Crypto_Encryption/./files/pic_original.bmp",
+                "http://www.cis.syr.edu/~wedu/seed/Labs_16.04/./Crypto/./Crypto_Encryption/./files/words.txt"
+            ],
+            "duration": "1 week(s)",
+            "difficulty": "easy",
+            "description": "Explore the secret-key encryption and its applications using OpenSSL.",
+            "type": "exploration"
         },
         {
-            "source": "SEEDLabs",
+            "files": [],
             "title": "Pseudo Random Number Generation Lab",
-            "type": "exploration",
-            "difficulty": "easy",
+            "source": "SEEDLabs",
+            "urls": [],
             "duration": "1 week(s)",
+            "difficulty": "easy",
             "description": "Learn how to generate pseudo random numbers that are strong for security purposes.",
-            "files": []
+            "type": "exploration"
         },
         {
-            "source": "SEEDLabs",
+            "files": [],
             "title": "Public-Key Infrastructure (PKI) Lab",
-            "type": "exploration",
-            "difficulty": "medium",
+            "source": "SEEDLabs",
+            "urls": [],
             "duration": "1 week(s)",
+            "difficulty": "medium",
             "description": "Explore public-key cryptography, digital signature, certificate, and PKI using OpenSSL.",
-            "files": []
+            "type": "exploration"
         },
         {
+            "files": [],
+            "title": "Public-Key Infrastructure (PKI) Lab",
             "source": "SEEDLabs",
-            "title": "Android Repackaging Lab",
-            "type": "attack",
-            "difficulty": "easy",
+            "urls": [],
             "duration": "1 week(s)",
-            "description": "Insert malicious code inside an existing Android app, and repackage it.",
+            "difficulty": "medium",
+            "description": "Explore public-key cryptography, digital signature, certificate, and PKI using OpenSSL.",
+            "type": "exploration"
+        },
+        {
+            "files": [],
+            "title": "Public-Key Infrastructure (PKI) Lab",
+            "source": "SEEDLabs",
+            "urls": [],
+            "duration": "1 week(s)",
+            "difficulty": "medium",
+            "description": "Explore public-key cryptography, digital signature, certificate, and PKI using OpenSSL.",
+            "type": "exploration"
+        },
+        {
+            "files": [],
+            "title": "Public-Key Infrastructure (PKI) Lab",
+            "source": "SEEDLabs",
+            "urls": [],
+            "duration": "1 week(s)",
+            "difficulty": "medium",
+            "description": "Explore public-key cryptography, digital signature, certificate, and PKI using OpenSSL.",
+            "type": "exploration"
+        },
+        {
+            "files": [],
+            "title": "Public-Key Infrastructure (PKI) Lab",
+            "source": "SEEDLabs",
+            "urls": [],
+            "duration": "1 week(s)",
+            "difficulty": "medium",
+            "description": "Explore public-key cryptography, digital signature, certificate, and PKI using OpenSSL.",
+            "type": "exploration"
+        },
+        {
+            "files": [],
+            "title": "Public-Key Infrastructure (PKI) Lab",
+            "source": "SEEDLabs",
+            "urls": [],
+            "duration": "1 week(s)",
+            "difficulty": "medium",
+            "description": "Explore public-key cryptography, digital signature, certificate, and PKI using OpenSSL.",
+            "type": "exploration"
+        },
+        {
+            "files": [],
+            "title": "Public-Key Infrastructure (PKI) Lab",
+            "source": "SEEDLabs",
+            "urls": [],
+            "duration": "1 week(s)",
+            "difficulty": "medium",
+            "description": "Explore public-key cryptography, digital signature, certificate, and PKI using OpenSSL.",
+            "type": "exploration"
+        },
+        {
+            "files": [],
+            "title": "Public-Key Infrastructure (PKI) Lab",
+            "source": "SEEDLabs",
+            "urls": [],
+            "duration": "1 week(s)",
+            "difficulty": "medium",
+            "description": "Explore public-key cryptography, digital signature, certificate, and PKI using OpenSSL.",
+            "type": "exploration"
+        },
+        {
             "files": [
                 "MaliciousCode.smali",
                 "MaliciousCode_Location.zip",
                 "RepackagingLab.apk"
-            ]
+            ],
+            "title": "Android Repackaging Lab",
+            "source": "SEEDLabs",
+            "urls": [
+                "http://www.cis.syr.edu/~wedu/seed/Labs_16.04/./Mobile/./Android_Repackaging/./files/MaliciousCode.smali",
+                "http://www.cis.syr.edu/~wedu/seed/Labs_16.04/./Mobile/./Android_Repackaging/./files/MaliciousCode_Location.zip",
+                "http://www.cis.syr.edu/~wedu/seed/Labs_16.04/./Mobile/./Android_Repackaging/./files/RepackagingLab.apk"
+            ],
+            "duration": "1 week(s)",
+            "difficulty": "easy",
+            "description": "Insert malicious code inside an existing Android app, and repackage it.",
+            "type": "attack"
         },
         {
-            "source": "SEEDLabs",
+            "files": [],
             "title": "Android Device Rooting Lab",
-            "type": "exploration",
-            "difficulty": "medium",
+            "source": "SEEDLabs",
+            "urls": [],
             "duration": "1 week(s)",
+            "difficulty": "medium",
             "description": "Develop an OTA (Over-The-Air) package from scratch to root an Android device.",
-            "files": []
+            "type": "exploration"
         }
     ]
 }

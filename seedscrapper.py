@@ -77,7 +77,12 @@ for urltraining in traininglinks:
 		rootpath = root + rootlist[-2]
 		rootpdf = rootpath + '.pdf'
 		for dur in response.find(string = re.compile("week")):
-			information.append(dur)		
+			information.append(dur)
+		urlfiles = []
+		for file in dwnfiles:
+			filepath = root + file
+			if requests.get(filepath).status_code == 200:
+				urlfiles.append(filepath)	
 
 		data['resources'].append({
 			'source': 'SEEDLabs',
@@ -86,7 +91,8 @@ for urltraining in traininglinks:
 			'difficulty': diff,
 			'duration': information[0] + " week(s)",
 			'description': description,
-			'files': files
+			'files': files,
+			'urls': urlfiles
 			})
 
 		folder = FILE_PATH
@@ -94,11 +100,11 @@ for urltraining in traininglinks:
 		if not os.path.exists(folder):
 			os.makedirs(folder)
 
-		download = wget.download(rootpdf,out = folder)
+		'''download = wget.download(rootpdf,out = folder)
 		for file in dwnfiles:
 			filepath= root + file
-			if requests.get(filepath).status_code == 200:
-				downloadfile = wget.download(filepath, out = folder)
+			if requests.get(filepath).status_code == 200:'
+				downloadfile = wget.download(filepath, out = folder)'''
 
 with open("data.json",'w') as outfile:
 	json.dump(data,outfile,indent = 4)
