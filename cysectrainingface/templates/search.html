@@ -8,12 +8,6 @@
   		{% csrf_token %}
     	{{ form.as_p }}
   			<input type = "Search" name = "text" placeholder = 'Search a training...' required>
-  			<select name = "filter">
-  				<option value = "word" selected> Specific word(s)</option> 
-				{% for key in filter %}
-				<option value = "{{key}}">{{key}} </option>
-				{% endfor %}
-			</select>
 			<input type = "submit" value = "submit"/>
 		</form>
 

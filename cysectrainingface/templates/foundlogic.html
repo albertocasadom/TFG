@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+
+{% block content %}
+	{% if user.is_authenticated %}
+	<style>
+		table{
+			font-size: 15px;
+			font-style: italic;
+		}
+	</style>
+  		<a class="lead" href="{% url 'logout' %}">Log out </a>
+
+  		<h2> {{text}} found in <h2>
+        <table class="table table-bordered">
+			<head>
+				<tr>
+					<th> Title </th>
+					<th> Description </th>
+				</tr>
+			</head>
+				{% for training in data %}
+				<tr>
+					<td> {{training.title}}</td>
+					<td> {{training.description}}</td>
+				</tr>
+				{% endfor %}
+			</table>
+	{% else %}
+       <a class="lead" href="{% url 'login' %}">Log in</a>
+	{% endif %}
+{% endblock content %}

@@ -26,3 +26,162 @@ for num in alllogictrs:
 				for andtr in resultr:
 					if andtr not in auxresultr:
 						resultr.remove(andtr)
+
+
+-------------------------------------------------------------------------------------
+
+andresult = []
+		print(len(advancedsearchtrs))
+		if len(advancedsearchtrs) > 1:						
+			for num in range(0,len(advancedsearchtrs)):
+				print("{0} EJECUCION del rango".format(num))
+				auxresultr = []
+				if advancedsearchtrs[num][0] == "and":
+					andresult.append(advancedsearchtrs[num][1])
+					for tr in advancedsearchtrs[num][1]:
+						print(tr['title'])	
+				else:				
+					for tr in advancedsearchtrs[num][1]:
+						if tr not in resultr: 
+							print(tr['title'])
+							resultr.append(tr)
+
+			linealand = []
+			for tr in andresult:
+				for aux in tr:
+					linealand.append(aux)
+
+			auxand = linealand
+			for tr in linealand:
+				count = auxand.count(tr)
+				if count == len(andresult):
+					auxand.remove(tr)
+					resultr.append(tr)
+
+
+======================================================================================
+	it = 0
+			andresult = []
+			andorresult = []
+			countands = 0
+			while(it <= len(advancedlogic)-1):
+				if it+1 < len(advancedlogic):
+					if (advancedlogic[it] == "first"):
+						if advancedlogic[it+1] == "and":
+							andresult.append(advancedsearchtrs[it])
+							countands += 1
+						else:
+							andorresult.append(advancedsearchtrs[it])
+					if(advancedlogic[it] == "and" and advancedlogic[it+1] == "and"):
+						if countadns == 0:
+							for element in advancedsearchtrs[it]:
+								for tr in element:
+									andresult.append(advancedsearchtrs[it])
+						else:
+							for element in advancedsearchtrs[it]:
+								for tr in element:
+									for traux in andresult:
+										if tr == traux:
+											andresult.append(tr)
+						countands += 1
+					elif advancedlogic[it] == "and" and advancedlogic[it+1] == "or":
+						andresult.append(advancedsearchtrs[it])
+						countands += 1
+						andorresult.append(andresult)
+					elif advancedlogic[it] == "or" and advancedlogic[it+1] == "or":
+						andorresult.append(advancedsearchtrs[it])
+					elif advancedlogic[it] == "or" and advancedlogic[it+1] == "and":
+						andresult.append(advancedsearchtrs[it])
+						countands+=1
+				else:
+					if(advancedlogic[it] == "and"):
+						andresult.append(advancedsearchtrs[it])
+						countands+= 1
+						andorresult.append(andresult)
+					else:
+						andorresult.append(advancedsearchtrs[it])
+				it+=1
+
+			print("------- RESULT -------")
+			for element in andorresult:
+				for tr in element:
+					print(tr['title'])
+
+---------------------------------------------------------------------------------------------
+for index in indexsplit:
+			if len(nextlogics) == 0:
+				for el in advancedsearchtrs[:index]:
+					for tr in el:
+						print('index training: {0}'.format(tr['title']))
+				resultr.append(advancedsearchtrs[:index])
+				nextlogics.append(advancedsearchtrs[index:])
+			else:
+				resultr.append()
+			for training in resultr:
+				for res in training:
+					for tr in res:
+						print(tr['title'])
+			for delete in range(0,index):
+				advancedsearchtrs.pop(delete)
+			print("**********************************")
+
+
+
+
+
+
+
+============================== F U N C I O N A ===================================
+indexsplit = []
+		for element in advancedlogic:
+			if element == 'or':
+				index = advancedlogic.index(element)
+				indexsplit.append(index)
+
+		print(indexsplit)
+
+		for index in range(len(indexsplit)):
+			if len(resultr) == 0:
+				resultr.append(advancedsearchtrs[:indexsplit[index]])
+			if index+1 in range(len(indexsplit)):
+				resultr.append(advancedsearchtrs[indexsplit[index]:indexsplit[index+1]])
+			else:
+				resultr.append(advancedsearchtrs[indexsplit[index]:])
+
+		andtrainings = []
+		finalresultand = []
+		finalresult = []
+		alltrainings = []
+		
+		if(len(resultr) > 0):
+			print("Longitud de resultr: {0}".format(len(resultr)))
+			for andtrs in resultr:
+				andtrainings = []
+				numands = len(andtrs)
+				print("Numero de ANDS: {0}".format(numands))
+				for andresult in andtrs:
+					print("Longitud de andresult: {0}".format(len(andresult)))
+					for tr in andresult:
+						andtrainings.append(tr)
+				alltrainings.append([andtrainings,numands])	
+		
+			for res in alltrainings:
+				for tr in res[0]:
+					print()
+					if res[0].count(tr) == res[1]:
+						if tr not in finalresultand:
+							finalresultand.append(tr)
+			print("La longitud de todos los trainigs: {0}".format(len(alltrainings)))
+
+		else:
+			numands = len(advancedsearchtrs)
+			print("Numero de ANDS: {0}".format(numands))
+			for res in advancedsearchtrs:
+				for tr in res:
+					finalresult.append(tr)
+			print("Count of {0} = {1}".format(tr['title'],res.count(tr)))
+			for tr in finalresult:
+				if finalresult.count(tr) == numands:
+					if tr not in finalresultand:
+						finalresultand.append(tr)
+

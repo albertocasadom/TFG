@@ -38,6 +38,177 @@ def get_filters():
 	context = {'filter':searchfilter, 'pairvalues':pairvalues, 'length': len(pairvalues)}
 	return context
 
+def basic_training_search(word,data):
+	result = []
+	trainingnames = []
+	text = []
+	for training in data['resources']:
+		#Preguntar primero si el training tiene la clave.
+		keys = list(training.keys())
+		for key in keys:
+		#Separar palabras de búsqueda
+			if type(training[key]) != list:
+				if word in training[key].lower() and training not in result:
+					result.append(training)
+					break
+				else:
+					continue
+			else:
+				for el in training[key]:
+					if el.lower() == word and training not in result:
+						result.append(training)
+						break
+					else: 
+						continue
+	return result
+
+def basic_key_search(key,value,typesearch,logic,data):
+	advancedsearchtrs = []
+	result = []
+	if typesearch == "contains":
+		if key != "word":
+			for training in data['resources']:
+			#Preguntar primero si el training tiene la clave.
+				if training not in result:
+					keys = list(training.keys())
+					if key in keys:
+					#Separar palabras de búsqueda
+						if type(training[key]) != list:
+							if value in training[key].lower():
+								result.append(training)
+								print(training['title'])
+							text = value.split(" ")
+							for word in text:
+								if word in training[key].lower() and training not in result:
+									result.append(training)
+									print(training['title'])
+								else:
+									continue
+
+						else:
+							for el in training[key]:
+								if value in el.lower():
+									result.append(training)
+									print(training['title'])
+								else: 
+									continue
+			advancedsearchtrs.append(result)
+			advancedsearchtrs.insert(0,logic)
+			return advancedsearchtrs
+			#return result
+		else:
+			result = search_word_in_files(value,data)
+			resultfiles = []
+			for tr in result:
+				resultfiles.append(tr[0])
+				print("File {0}".format(tr[0]['title']))
+				advancedsearchtrs.append(resultfiles)
+				advancedsearchtrs.insert(0,logic)
+				return advancedsearchtrs
+			#return result
+	elif typesearch == "is":
+		if key != "word":
+			for training in data['resources']:
+			#Preguntar primero si el training tiene la clave.
+				if training not in result:
+					keys = list(training.keys())
+					if key in keys:
+					#Separar palabras de búsqueda
+						if type(training[key]) != list:
+							if value == training[key].lower():
+								result.append(training)
+								print(training['title'])
+							else:
+								continue
+						else:
+							for el in training[key]:
+								if el.lower() == value:
+									result.append(training)
+									print(training['title'])
+								else: 
+									continue
+					else:
+						continue
+			advancedsearchtrs.append(result)
+			advancedsearchtrs.insert(0,logic)
+			return advancedsearchtrs
+		else: 
+			result = search_is_word_files(word,data)
+			resultfiles = []
+			for tr in result:
+				resultfiles.append(tr[0])
+				advancedsearchtrs.append(resultfiles)
+				advancedsearchtrs.insert(0,logic)
+			return advancedsearchtrs
+
+
+def search_word_in_files(word,data):
+	trainingnames = []
+	result = []
+	ENISA_DIR = os.walk(os.path.join(BASE_DIR,'../EnisaFiles'))
+	for dirs in ENISA_DIR:
+		file = os.path.join(dirs[0],'mainwordfile.txt')
+		if os.path.exists(file):
+			with open(file,'r') as wordsfile:
+				repeated = 0
+				for l in wordsfile:
+					match = re.findall(word,l.lower())
+					repeated = len(match)
+				if repeated > 0:
+					dirsname = dirs[0].split('EnisaFiles/')
+					trainingnames.append((dirsname[1],repeated))
+	SEED_DIR = os.walk(os.path.join(BASE_DIR,'../SeedFiles'))
+	for dirs in SEED_DIR:
+		file = os.path.join(dirs[0],'mainwordfile.txt')
+		if os.path.exists(file):
+			with open(file,'r') as wordsfile:
+				repeated = 0
+				for l in wordsfile:
+					match = re.findall(word,l.lower())
+					repeated = len(match)
+				if repeated > 0:
+					dirsname = dirs[0].split('SeedFiles/')
+					trainingnames.append((dirsname[1],repeated))
+	for training in data['resources']:
+		for tr in trainingnames:
+			if tr[0] == training['title']:
+				result.append([training,tr[1]])
+				result.sort(key=lambda numword: numword[1], reverse = True)
+
+	return result
+
+def search_is_word_files(word,data):
+	numberepeated = []
+	result =[] 
+	trainingnames = []
+	ENISA_DIR = os.walk(os.path.join(BASE_DIR,'../EnisaFiles'))
+	for dirs in ENISA_DIR:
+		file = os.path.join(dirs[0],'mainwordfile.txt')
+		if os.path.exists(file):
+			with open(file,'r') as wordsfile:
+				stringread = wordsfile.read().lower()
+				match = stringread.find(value)
+				if match != -1:
+					dirsname = dirs[0].split('EnisaFiles/')
+					trainingnames.append(dirsname[1])
+						
+	SEED_DIR = os.walk(os.path.join(BASE_DIR,'../SeedFiles'))
+	for dirs in SEED_DIR:
+		file = os.path.join(dirs[0],'mainwordfile.txt')
+		if os.path.exists(file):
+			with open(file,'r') as wordsfile:
+				stringread = wordsfile.read()
+				match = stringread.find(value)
+				if match != -1:
+					dirsname = dirs[0].split('SeedFiles/')
+					trainingnames.append(dirsname[1])
+	for training in data['resources']:
+		for tr in trainingnames:
+			if tr == training['title']:
+				if training not in result:
+					result.append(training)
+	return result
+
 def get_checkbox_repeated(dataset):
 	datafound = []
 	repeated = []
@@ -63,6 +234,20 @@ def get_checkbox_repeated(dataset):
 		
 		return (repeated,0)
 
+def get_post_parameters(parameters):
+	groupsearch = []
+	x = len(parameters)
+	while (x != 0):
+		parameterlist = [parameters.pop(),parameters.pop(),parameters.pop(),parameters.pop()]
+		print(parameterlist)
+		groupsearch.append(parameterlist)
+		x = len(parameters)
+	groupsearch.sort()
+	'''firstelement = groupsearch.pop()
+	groupsearch.sort()
+	groupsearch.insert(0,firstelement)'''
+	return groupsearch
+
 def search(request):
 	template = loader.get_template('search.html')
 	context = get_filters()
@@ -70,68 +255,23 @@ def search(request):
 def found(request):
 	with open(os.path.join(BASE_DIR, '../data.json'),'r') as datafile:
 		data = json.load(datafile)
-	template = loader.get_template('found.html')
-	getfilter = request.POST.get('filter')
-	gettext = request.POST.get('text').lower()
 	result = []
-	trainingnames = []
-	text = []
-	if getfilter != 'word':
-		for training in data['resources']:
-			#Preguntar primero si el training tiene la clave.
-			keys = list(training.keys())
-			if getfilter in keys:
-			#Separar palabras de búsqueda
-				if type(training[getfilter]) != list:
-					if gettext in training[getfilter].lower():
-						result.append(training)
-						break
-					else:
-						continue
-				else:
-					for el in training[getfilter]:
-						if el.lower() == gettext:
-							result.append(training)
-							break
-						else: 
-							continue
-							
-			else:
-				continue
-		context = {'data':result}
-	else:
-		numberepeated = []
-		ENISA_DIR = os.walk(os.path.join(BASE_DIR,'../EnisaFiles'))
-		for dirs in ENISA_DIR:
-			file = os.path.join(dirs[0],'mainwordfile.txt')
-			if os.path.exists(file):
-				with open(file,'r') as wordsfile:
-					repeated = 0
-					for l in wordsfile:
-						match = re.findall(gettext,l.lower())
-						repeated = len(match)
-					if repeated > 0:
-						dirsname = dirs[0].split('EnisaFiles/')
-						trainingnames.append((dirsname[1],repeated))
-		SEED_DIR = os.walk(os.path.join(BASE_DIR,'../SeedFiles'))
-		for dirs in SEED_DIR:
-			file = os.path.join(dirs[0],'mainwordfile.txt')
-			if os.path.exists(file):
-				with open(file,'r') as wordsfile:
-					repeated = 0
-					for l in wordsfile:
-						match = re.findall(gettext,l.lower())
-						repeated = len(match)
-					if repeated > 0:
-						dirsname = dirs[0].split('SeedFiles/')
-						trainingnames.append((dirsname[1],repeated))
-		for training in data['resources']:
-			for tr in trainingnames:
-				if tr[0] == training['title']:
-					result.append((training,tr[1]))
-					result.sort(key=lambda numword: numword[1], reverse = True) 
-		template = loader.get_template('foundtext.html')
-		context = {'data':result, 'text': gettext}
+	resultfiles = []
+	template = loader.get_template('found.html')
+	text = request.POST.get('text').lower()
+	trainings = basic_training_search(text,data)
+	result.append((text.upper(),trainings))
+	filestr = search_word_in_files(text,data)
+	resultfiles.append((text.upper(),filestr))
+	splittext = text.split(" ")
+	if (len(splittext) > 1):
+		for word in splittext:
+			trainings = basic_training_search(word,data)
+			filestr = search_word_in_files(word,data)
+			result.append((word.upper(),trainings))
+			resultfiles.append((word.upper(),filestr))
+
+	context = {'data':result, 'files':resultfiles}
 	return HttpResponse(template.render(context, request))
 
 def advancedsearch(request):
@@ -156,8 +296,8 @@ def advancedfound(request):
 	alllogictrs = {}
 	checkboxclicked = 0
 	parameters = list(request.POST.keys())
-	
 	print(parameters)
+	
 	for param in parameters:
 		if "-" in param:
 			fixedsearch.append(param)
@@ -186,211 +326,105 @@ def advancedfound(request):
 
 	if andtrainings[1] == 0:
 		data['resources'] = andtrainings[0]
-
-		parameters.remove('csrfmiddlewaretoken')
-		parameters.sort()
-		print(parameters)
-		x = len(parameters)
-		print("La longitud es: {0}".format(x))
-		for param in parameters:
-			parameterlist = ['','','']
-			if 'text' in param:
-				parameterlist[0] = param
-				splitparam = param.split('text')
-				print(splitparam)
-				if splitparam[1] != '':
-					print("valor spliteado: {0}".format(splitparam[1]))
-					for parameter in parameters:
-						auxsplit = parameter.split(splitparam[1])
-						print(auxsplit)
-						if len(auxsplit) > 1:		
-							if "filter" in auxsplit[0]:
-								parameterlist[2] = parameter
-							elif "content" in auxsplit[0]:
-								parameterlist[1] = parameter
-				else:
-					for parameter in parameters:		
-						if "andfilter" == parameter or "orfilter" == parameter:
-							parameterlist[2] = parameter
-						elif "andcontent" == parameter or "orcontent" == parameter:
-							parameterlist[1] = parameter
-				groupsearch.append(parameterlist)
-
-			print(parameters)
-			print("LA longitud de parameters es: {0}".format(len(parameters)))
-			
-		print(groupsearch)
-		#groupsearch.reverse()
+		parametersaux = parameters
+		parametersaux.remove('csrfmiddlewaretoken')
+		parametersaux.sort()
+		print(parametersaux)
+		groupsearch = get_post_parameters(parametersaux)
+		print("Groupsearch es: {0}".format(groupsearch))
 		for parameter in groupsearch:
 			search = ["","","",""]
-			if "or" in parameter[0]:
-				search[0] = "or"
-			else:
-				search[0] = "and"
-
+			
+			search[0] = request.POST.get(parameter[3])
 			search[3] = request.POST.get(parameter[0]).lower()
 			search[2] = request.POST.get(parameter[1])
 			search[1] = request.POST.get(parameter[2])
 			finalsearch.append(search);
 
+		finalsearch.reverse()
 		x = len(finalsearch)
+		print(finalsearch)
+		numlogics = x
 		print("LA LONGITUD DE FINALSEARCH ES: {0}".format(x))
-
+		advancedlogic = []
+		query = "The search: "
 		while(x != 0):
-			print("EJECUTANDO LA {0} iteracion".format(x))
 			key = finalsearch[x-1][1]
 			value = finalsearch[x-1][3].lower()
-			logic = finalsearch[x-1][0]
-			contains = finalsearch[x-1][2]
+			contains = finalsearch[x-1][0]
+			logic = finalsearch[x-1][2]
 			result = []
-			index = x - 1
-			print("La búsqueda ({3}) '{2}' con clave: {0} y valor: {1} devuelve...".format(key,value,logic.upper(),contains))
-			if contains == "contains":
-				if key != "word":
-					for training in data['resources']:
-					#Preguntar primero si el training tiene la clave.
-						if training not in result:
-							keys = list(training.keys())
-							if key in keys:
-							#Separar palabras de búsqueda
-								if type(training[key]) != list:
-									text = value.split(" ")
-									for word in text:
-										if word in training[key].lower():
-											result.append(training)
-											print(training['title'])
-											break
-										else:
-											continue
-								else:
-									for el in training[key]:
-										print("File: {0}".format(value))
-										if value in el.lower():
-											result.append(training)
-											break
-										else: 
-											continue
-							else:
-								continue
-
-					advancedsearchtrs.append((logic,result))
-
-					'''for tr in alllogictrs:
-						print("En la posicion {0}".format(tr))
-						for ix in alllogictrs[tr]['resources']:
-							print("todos los titles: {0}".format(ix['title']))'''
-							
-				else:
-					numberepeated = []
-					ENISA_DIR = os.walk(os.path.join(BASE_DIR,'../EnisaFiles'))
-					for dirs in ENISA_DIR:
-						file = os.path.join(dirs[0],'mainwordfile.txt')
-						if os.path.exists(file):
-							with open(file,'r') as wordsfile:
-								repeated = 0
-								for l in wordsfile:
-									match = re.findall(value,l.lower())
-									repeated = len(match)
-								if repeated > 0:
-									dirsname = dirs[0].split('EnisaFiles/')
-									trainingnames.append((dirsname[1],repeated))
-					SEED_DIR = os.walk(os.path.join(BASE_DIR,'../SeedFiles'))
-					for dirs in SEED_DIR:
-						file = os.path.join(dirs[0],'mainwordfile.txt')
-						if os.path.exists(file):
-							with open(file,'r') as wordsfile:
-								repeated = 0
-								for l in wordsfile:
-									match = re.findall(value,l.lower())
-									repeated = len(match)
-								if repeated > 0:
-									dirsname = dirs[0].split('SeedFiles/')
-									trainingnames.append((dirsname[1],repeated))
-					for training in data['resources']:
-						for tr in trainingnames:
-							if tr[0] == training['title'] and (training,tr[1]) not in result:	
-								result.append((training,tr[1]))
-								result.sort(key=lambda numword: numword[1], reverse = True) 
-					template = loader.get_template('foundtext.html')
-					context['data']=result
-					context['text']= value
-
-			elif contains == "is":
-				if key != "word":
-					print(key)
-					for training in data['resources']:
-					#Preguntar primero si el training tiene la clave.
-						keys = list(training.keys())
-						if key in keys:
-						#Separar palabras de búsqueda
-							if type(training[key]) != list:
-								if value == training[key].lower():
-									result.append(training)
-								else:
-									continue
-							else:
-								for el in training[key]:
-									if el.lower() == value:
-										result.append(training)
-									else: 
-										continue
-						else:
-							continue
-				else: 
-					numberepeated = []
-					ENISA_DIR = os.walk(os.path.join(BASE_DIR,'../EnisaFiles'))
-					for dirs in ENISA_DIR:
-						file = os.path.join(dirs[0],'mainwordfile.txt')
-						if os.path.exists(file):
-							with open(file,'r') as wordsfile:
-								stringread = wordsfile.read().lower()
-								match = stringread.find(value)
-								if match != -1:
-									dirsname = dirs[0].split('EnisaFiles/')
-									trainingnames.append(dirsname[1])
-										
-					SEED_DIR = os.walk(os.path.join(BASE_DIR,'../SeedFiles'))
-					for dirs in SEED_DIR:
-						file = os.path.join(dirs[0],'mainwordfile.txt')
-						if os.path.exists(file):
-							with open(file,'r') as wordsfile:
-								stringread = wordsfile.read()
-								match = stringread.find(value)
-								if match != -1:
-									dirsname = dirs[0].split('SeedFiles/')
-									trainingnames.append(dirsname[1])
-					for training in data['resources']:
-						for tr in trainingnames:
-							if tr == training['title']:
-								if training not in result:
-									result.append(training)
-					template = loader.get_template('found.html')
-					context['data'] = result
-					context['text'] = value
+			print("-->LA BÚSQUEDA ({3}) '{2}' CON CLAVE: {0} Y VALOR: {1} DEVUELVE...".format(key,value,logic.upper(),contains))	
+			result = basic_key_search(key,value,contains,logic,data)
+			advancedsearchtrs.append(result[1])
+			advancedlogic.append(result[0])
 			x = x-1
-			
-		andresult = []
-		if len(advancedsearchtrs) > 1:						
-			for num in range(0,len(advancedsearchtrs)):
-				print("{0} EJECUCION del rango".format(num))
-				auxresultr = []
-				if advancedsearchtrs[num][0] == "and":
-					andresult.append(advancedsearchtrs[num][1])		
-				else:				
-					for tr in advancedsearchtrs[num][1]:
-						resultr.append(tr)
-			for index in range(0,len(andresult)):
-				if index+1 in range(0,len(andresult)):
-					for tref in andresult[index]:
-						print("REFERENCIA: {0}".format(tref['title']))
-						for tr in andresult[index+1]:
-							print("COMPARADO: {0}".format(tr['title']))
-							if tr == tref:
-								resultr.append(tr)
+			query += logic + " " + key + " " + contains + " " + value + " " 
 
-			context['data'] = resultr
+		query+= "Has given the following results"
+		indexsplit = []
+		element = 0
+		while element < len(advancedlogic):
+			if advancedlogic[element] == "or":
+				indexsplit.append(element)
+			element+=1
+
+		for index in range(len(indexsplit)):
+			if len(resultr) == 0:
+				resultr.append(advancedsearchtrs[:indexsplit[index]])
+			if index+1 in range(len(indexsplit)):
+				resultr.append(advancedsearchtrs[indexsplit[index]:indexsplit[index+1]])
+			else:
+				resultr.append(advancedsearchtrs[indexsplit[index]:])
+
+		for res in resultr:
+			print("------------------")
+			for tr in res:
+				for training in tr:
+					print(training['title'])
+		andtrainings = []
+		finalresultand = []
+		finalresult = []
+		alltrainings = []
+		
+		if(len(resultr) > 0):
+			print("Longitud de resultr: {0}".format(len(resultr)))
+			for andtrs in resultr:
+				andtrainings = []
+				numands = len(andtrs)
+				print("Numero de ANDS: {0}".format(numands))
+				for andresult in andtrs:
+					print("Longitud de andresult: {0}".format(len(andresult)))
+					for tr in andresult:
+						andtrainings.append(tr)
+				alltrainings.append([andtrainings,numands])	
+		
+			for res in alltrainings:
+				for tr in res[0]:
+					print()
+					if res[0].count(tr) == res[1]:
+						if tr not in finalresultand:
+							finalresultand.append(tr)
+			print("La longitud de todos los trainigs: {0}".format(len(alltrainings)))
+
 		else:
-			context['data'] = result
+			numands = len(advancedsearchtrs)
+			print("Numero de ANDS: {0}".format(numands))
+			for res in advancedsearchtrs:
+				for tr in res:
+					finalresult.append(tr)
+			print("Count of {0} = {1}".format(tr['title'],res.count(tr)))
+			for tr in finalresult:
+				if finalresult.count(tr) == numands:
+					if tr not in finalresultand:
+						finalresultand.append(tr)
+
+
+
+		template = loader.get_template('foundlogic.html')
+		context['data'] = finalresultand
+		context['text'] = query
+		
 		return HttpResponse(template.render(context, request))
 	else:
 		return HttpResponse(template.render(context,request))

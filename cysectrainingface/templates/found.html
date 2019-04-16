@@ -2,27 +2,51 @@
 
 {% block content %}
 	{% if user.is_authenticated %}
+	<style>
+		table{
+			font-size: 15px;
+			font-style: italic;
+		}
+	</style>
   		<a class="lead" href="{% url 'logout' %}">Log out </a>
+  		<h1> By training field </h1>
+  		{% for training in data %}
+  		<h2> {{training.0}} found in <h2>
         <table class="table table-bordered">
 			<head>
 				<tr>
 					<th> Title </th>
 					<th> Description </th>
 				</tr>
-				{% for training in data %}
+			</head>
+				{% for tr in training.1 %}
 				<tr>
-					<td> {{training.title}}</td>
-					<td> {{training.description}}</td>
+					<td> {{tr.title}}</td>
+					<td> {{tr.description}}</td>
 				</tr>
 				{% endfor %}
 			</table>
-				{% for training in checkbox%}
-				<ul>
-					<li> {{training.title}}</li>
-				</ul>
-				{% endfor%}
-		
-
+		{% endfor %}
+		<h1> By appear on training files </h1>
+		{% for filestr in files %}
+		<h2> {{filestr.0}} found in </h2>
+		<table class = "table table-bordered">
+			<head>
+				<tr>
+					<th> Title </th>
+					<th> Description </th>
+					<th> Nº Coincidences</th>
+				</tr>
+			</head>
+				{% for tr in filestr.1 %}
+				<tr>
+					<td>{{tr.0.title}}</td>
+					<td>{{tr.0.description}}</td>
+					<td>{{tr.1}}</td>
+				</tr>
+				{%endfor%}
+		</table>
+		{%endfor%}
 	{% else %}
        <a class="lead" href="{% url 'login' %}">Log in</a>
 	{% endif %}
