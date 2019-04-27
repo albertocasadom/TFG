@@ -5,9 +5,9 @@ import json
 from bs4 import BeautifulSoup
 
 #FILE_PATH = "/Users/albertocm/Desktop/Ingeniería Telemática/TFG/TFG/EnisaFiles"
-FILE_PATH = os.getcwd() + "/EnisaFiles"
+FILE_PATH = os.path.join(os.getcwd(),"EnisaFiles")
 url = requests.get("https://www.enisa.europa.eu/topics/trainings-for-cybersecurity-specialists/online-training-material")
-response = BeautifulSoup(url.content,"html.parser");
+response = BeautifulSoup(url.content,"html.parser")
 traininglinks = []
 informationdivided = []
 titles = []
@@ -35,36 +35,38 @@ for urltraining in traininglinks:
         if content.findAll('p') != None:
             contenttr = content.find_all('p')
             information = []
+            resources = []
             for p in contenttr:
                 information.append(p.text.replace("\u00a0"," "))
-            informationdivided.append(information)
             resourcestr = content.find_all('a')
             for a in resourcestr:
                 resources.append(a['href'])
+            informationdivided.append((information,resources))
 count = 0
 resources.reverse()
 for onetitle in titles:
     folder = FILE_PATH 
-    folder = folder + "/" + onetitle
+    folder = os.path.join(folder, onetitle)
     if not os.path.exists(folder):
         os.makedirs(folder)
 
     data['resources'].append({
-        'source': 'enisa',
+        'id':count,
+        'source': 'Enisa',
         'title': onetitle,
-        'target_audience': informationdivided[count][0],
-        'duration': informationdivided[count][1],
-        'description': informationdivided[count][-1],
-        'files': informationdivided[count][2:-1]
+        'target_audience': informationdivided[count][0][0],
+        'duration': informationdivided[count][0][1],
+        'description': informationdivided[count][0][-1],
+        'files': informationdivided[count][0][2:-1],
+        'urls': informationdivided[count][1]
         })
-    count+=1
+    
 
     with open('data.json', 'w') as outfile:
         json.dump(data,outfile, indent = 4)
 
-    for file in range(0,len(informationdivided[count][2:-1])):
-        dwnloadfile = resources.pop()
-        if "pdf" in dwnloadfile:
-            dwnfile = wget.download(dwnloadfile, out = folder)
-
+    '''for file in informationdivided[count][1]:
+        dwnfile = wget.download(file, out = folder)'''
+      
+    count+=1
 

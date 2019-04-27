@@ -21,6 +21,9 @@ if not os.path.exists(folder):
 with open("data.json",'r') as datafile:
 			data = json.load(datafile)
 
+lastid = data['resources'][-1]['id']
+print(lastid)
+
 for link in response.findAll("div",{"class":"one_third"}):
 	traininglinks.append(link.a['href'])
 
@@ -85,6 +88,7 @@ for urltraining in traininglinks:
 				urlfiles.append(filepath)	
 
 		data['resources'].append({
+			'id':lastid+1,
 			'source': 'SEEDLabs',
 			'title': title,
 			'type' : typetr,
@@ -94,7 +98,7 @@ for urltraining in traininglinks:
 			'files': files,
 			'urls': urlfiles
 			})
-
+		lastid += 1
 		folder = FILE_PATH
 		folder = os.path.join(folder,title.replace("/","-"))
 		if not os.path.exists(folder):
