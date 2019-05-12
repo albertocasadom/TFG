@@ -7,46 +7,107 @@
 			font-size: 15px;
 			font-style: italic;
 		}
+		.tab {
+		  overflow: hidden;
+		  border: 1px solid #ccc;
+		  background-color: #f1f1f1;
+		}
+
+	/* Style the buttons that are used to open the tab content */
+		.tab button {
+		  background-color: inherit;
+		  float: left;
+		  border: none;
+		  outline: none;
+		  cursor: pointer;
+		  padding: 14px 16px;
+		  transition: 0.3s;
+		}
+
+	/* Change background color of buttons on hover */
+		.tab button:hover {
+		  background-color: #ddd;
+		}
+
+	/* Create an active/current tablink class */
+		.tab button.active {
+		  background-color: #ccc;
+		}
+
+	/* Style the tab content */
+		.tabcontent {
+		  display: none;
+		  padding: 6px 12px;
+		  border: 1px solid #ccc;
+		  border-top: none;
+		}
 	</style>
+	<script>
+		function openTab(evt, searchtype) {
+		  // Declare all variables
+		  var i, tabcontent, tablinks;
+
+		  // Get all elements with class="tabcontent" and hide them
+		  tabcontent = document.getElementsByClassName("tabcontent");
+		  for (i = 0; i < tabcontent.length; i++) {
+		    tabcontent[i].style.display = "none";
+		  }
+
+		  // Get all elements with class="tablinks" and remove the class "active"
+		  tablinks = document.getElementsByClassName("tablinks");
+		  for (i = 0; i < tablinks.length; i++) {
+		    tablinks[i].className = tablinks[i].className.replace(" active", "");
+		  }
+
+		  // Show the current tab, and add an "active" class to the button that opened the tab
+		  document.getElementById(searchtype).style.display = "block";
+		  evt.currentTarget.className += " active";
+		}
+	</script>
   		<a class="lead" href="{% url 'logout' %}">Log out </a>
-  		<h1> By training field </h1>
-  		{% for training in data %}
-  		<h2> {{training.0}} found in <h2>
-        <table class="table table-bordered">
-			<head>
-				<tr>
-					<th> Title </th>
-					<th> Description </th>
-				</tr>
-			</head>
-				{% for tr in training.1 %}
-				<tr>
-					<td> {{tr.title}}</td>
-					<td> {{tr.description}}</td>
-				</tr>
-				{% endfor %}
+  		<h2> {{data.0.0}} found in </h2>
+  		<div class="tab">
+			<button class="tablinks active" onclick="openTab(event, 'field')">By field</button>
+			<button class="tablinks" onclick="openTab(event, 'keyword')">By keyword</button>
+		</div>
+	  		<div id="field" class="tabcontent" style = "display:block">
+	  		{% for training in data %}
+	        <table class="table table-bordered">
+				<head>
+					<tr>
+						<th> Title </th>
+						<th> Description </th>
+					</tr>
+				</head>
+					{% for tr in training.1 %}
+					<tr>
+						<td>  <a href = "{%url 'showtraining'%}?training={{tr.title}}">{{tr.title}}</a></td>
+						<td> {{tr.description}}</td>
+					</tr>
+					{% endfor %}
+				</table>
+			{% endfor %}
+		</div>
+		<div id="keyword" class="tabcontent">
+			{% for filestr in files %}
+			<table class = "table table-bordered">
+				<head>
+					<tr>
+						<th> Title </th>
+						<th> Description </th>
+						<th> Nº Coincidences</th>
+					</tr>
+				</head>
+					{% for tr in filestr.1 %}
+					<tr>
+						<td> <a href = "{%url 'showtraining'%}?training={{tr.0.title}}">{{tr.0.title}}</a></td>
+						<td>{{tr.0.description}}</td>
+						<td>{{tr.1}}</td>
+					</tr>
+					{%endfor%}
 			</table>
-		{% endfor %}
-		<h1> By appear on training files </h1>
-		{% for filestr in files %}
-		<h2> {{filestr.0}} found in </h2>
-		<table class = "table table-bordered">
-			<head>
-				<tr>
-					<th> Title </th>
-					<th> Description </th>
-					<th> Nº Coincidences</th>
-				</tr>
-			</head>
-				{% for tr in filestr.1 %}
-				<tr>
-					<td>{{tr.0.title}}</td>
-					<td>{{tr.0.description}}</td>
-					<td>{{tr.1}}</td>
-				</tr>
-				{%endfor%}
-		</table>
-		{%endfor%}
+			{%endfor%}
+		</div>
 	{% else %}
        <a class="lead" href="{% url 'login' %}">Log in</a>
 	{% endif %}

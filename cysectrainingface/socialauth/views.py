@@ -36,10 +36,21 @@ def get_filters():
 	for valuekey in pairvalues:
 		searchfilter.remove(valuekey[0])
 
-	context = {'filter':searchfilter, 'pairvalues':pairvalues, 'length': len(pairvalues)}
+	legend = []
+	for valuekey in pairvalues:
+		for training in data['resources']:
+			keys = list(training.keys())
+			if valuekey[0] not in keys:
+				if (valuekey[0],training['source']) not in legend:
+					print(valuekey[0])
+					print(training['source'])
+					legend.append((valuekey[0],training['source']))
+				
+
+	context = {'filter':searchfilter, 'pairvalues':pairvalues, 'length': len(pairvalues), 'legend':legend}
 	return context
 
-def basic_training_search(word,data):
+def basic_training_search(value,data):
 	result = []
 	trainingnames = []
 	text = []
@@ -48,19 +59,22 @@ def basic_training_search(word,data):
 		keys = list(training.keys())
 		for key in keys:
 		#Separar palabras de búsqueda
-			if type(training[key]) != list:
-				if word in training[key].lower() and training not in result:
+			if type(training[key]) == str:
+				if value.lower() in training[key].lower() and training not in result:
 					result.append(training)
-					break
 				else:
 					continue
-			else:
+
+			elif type(training[key]) == int:
+				if value == str(training[key]):
+					result.append(training)
+			
+			elif type(training[key]) == list:
 				for el in training[key]:
-					if el.lower() == word and training not in result:
+					if el.lower() == value and training not in result:
 						result.append(training)
-						break
 					else: 
-						continue
+									continue
 	return result
 
 def basic_key_search(key,value,typesearch,logic,data):
@@ -74,25 +88,23 @@ def basic_key_search(key,value,typesearch,logic,data):
 					keys = list(training.keys())
 					if key in keys:
 					#Separar palabras de búsqueda
-						if type(training[key]) != list:
-							if value in training[key].lower():
+						if type(training[key]) == str:
+							if value.lower() in training[key].lower() and training not in result:
 								result.append(training)
-								print(training['title'])
-							text = value.split(" ")
-							for word in text:
-								if word in training[key].lower() and training not in result:
-									result.append(training)
-									print(training['title'])
-								else:
-									continue
+							else:
+								continue
 
-						else:
+						elif type(training[key]) == int:
+							if int(value) == training[key]:
+								result.append(training)
+						
+						elif type(training[key]) == list:
 							for el in training[key]:
-								if value in el.lower():
+								if el.lower() == value and training not in result:
 									result.append(training)
-									print(training['title'])
 								else: 
 									continue
+								
 			advancedsearchtrs.append(result)
 			advancedsearchtrs.insert(0,logic)
 			return advancedsearchtrs
@@ -104,8 +116,8 @@ def basic_key_search(key,value,typesearch,logic,data):
 				resultfiles.append(tr[0])
 				print("File {0}".format(tr[0]['title']))
 				advancedsearchtrs.append(resultfiles)
-				advancedsearchtrs.insert(0,logic)
-				return advancedsearchtrs
+			advancedsearchtrs.insert(0,logic)
+			return advancedsearchtrs
 			#return result
 	elif typesearch == "is":
 		if key != "word":
@@ -262,12 +274,12 @@ def found(request):
 	filestr = search_word_in_files(text,data)
 	resultfiles.append((text.upper(),filestr))
 	splittext = text.split(" ")
-	if (len(splittext) > 1):
+	'''if (len(splittext) > 1):
 		for word in splittext:
 			trainings = basic_training_search(word,data)
 			filestr = search_word_in_files(word,data)
 			result.append((word.upper(),trainings))
-			resultfiles.append((word.upper(),filestr))
+			resultfiles.append((word.upper(),filestr))'''
 
 	context = {'data':result, 'files':resultfiles}
 	return HttpResponse(template.render(context, request))
@@ -354,12 +366,13 @@ def advancedfound(request):
 			result = []
 			print("-->LA BÚSQUEDA ({3}) '{2}' CON CLAVE: {0} Y VALOR: {1} DEVUELVE...".format(key,value,logic.upper(),contains))	
 			result = basic_key_search(key,value,contains,logic,data)
+			
 			advancedsearchtrs.append(result[1])
 			advancedlogic.append(result[0])
 			x = x-1
 			query += logic + " " + key + " " + contains + " " + value + " " 
 
-		query+= "Has given the following results"
+		query+= "has given the following results"
 		indexsplit = []
 		element = 0
 		while element < len(advancedlogic):

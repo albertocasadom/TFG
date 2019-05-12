@@ -2,6 +2,7 @@
 
 {% block content %}
 	{% if user.is_authenticated %}
+		<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 		<script>
 			var count = 0;
 			var countor = 0;
@@ -32,10 +33,11 @@
 			}
 			function deletediv(elementid){
 				var numelems = document.getElementsByTagName("div").length;
+				console.log(numelems);
 				document.getElementById(elementid).remove();
 				var count = document.getElementById("lastfield").getAttribute("name");
 				document.getElementById("lastfield").setAttribute("name",count-1);
-				if (numelems === 5){			
+				if (numelems === 8){			
 						document.getElementById(count).setAttribute("id","toadd");
 						document.getElementsByName(count +"filter")[0].setAttribute("name",'filter');
 						document.getElementsByName(count +"content")[0].setAttribute("name",'content');
@@ -56,10 +58,40 @@
 				}
 
 			}
-		</script>
 
-  		<a class="lead" href="{% url 'logout' %}">Log out </a>
-  		<a href = "{% url 'search' %}"> Search </a>
+			function changetype(element){
+				option = element.value;
+				if (option === "duration"){
+					element.nextSibling.nextSibling.options[1].selected = true
+					element.nextSibling.nextSibling.remove(element.nextSibling.nextSibling.selectedIndex)
+					element.nextSibling.nextSibling.nextSibling.nextSibling.type = "number"
+					element.nextSibling.nextSibling.nextSibling.nextSibling.min = "1"
+					element.nextSibling.nextSibling.nextSibling.nextSibling.value = "1"
+					element.nextSibling.nextSibling.nextSibling.nextSibling.insertAdjacentHTML("afterEnd", '<b> Hour(s) / day(s) / Week(s) / Month(s)<b>')
+				}
+
+			}
+		</script>
+		<div>
+  		<button onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-black">Notes on search fields</button>
+
+			  <div id="id01" class="w3-modal">
+			    <div class="w3-modal-content w3-animate-top w3-card-4">
+			      <header class="w3-container w3-teal"> 
+			        <span onclick="document.getElementById('id01').style.display='none'" 
+			        class="w3-button w3-display-topright">&times;</span>
+			        <h2>Notes on search fields</h2>
+			      </header>
+			      <div class="w3-container">
+			        {% for entrie in legend%}
+			        	<p> <b>{{entrie.0}}</b> is not available for <b>{{entrie.1}}</b></p>
+			        {%endfor%}
+			      </div>
+			      <footer class="w3-container w3-teal">
+			        <p>&nbsp</p>
+			      </footer>
+			    </div>
+			  </div>
   		<form action = "../advancedfound/ " method = 'post'>
   		{% csrf_token %}
     	{{ form.as_p }}
@@ -77,7 +109,7 @@
 	    			<select name = "logic" style = "display:none">
 	    				<option value = "first" selected>first</option>
 	    			</select>
-		  			<select name = "filter">
+		  			<select name = "filter" onchange = "changetype(this)">
 		  				<option value = "word" selected> Word</option> 
 						{% for key in filter %}
 							<option value = "{{key}}">{{key}} </option>
@@ -87,7 +119,7 @@
 						<option value = "contains" selected> Contains </option>
 						<option value = "is"> Is (exactly) </option>
 					</select>
-					<input type = "Search" name = "text" placeholder = 'Search a training...' required>
+					<input type = "Search" name = "text" placeholder = 'Search a training...'>
 				</div>
 			</div>
 			<input type = "button" name = "and" value = "+" onclick= "addand()"/>
