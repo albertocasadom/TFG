@@ -3,7 +3,7 @@
 {% block content %}
 	{% if user.is_authenticated %}
 	  		<a class="lead" href="{% url 'logout' %}">Log out </a>
-	  		<h1 style = 'text-align:center'> <b> {{training.id}} - {{training.title}}</b></h1>
+	  		<h1 style = 'text-align:center'><a href="{{training.site}}" target = "_blank"><b> {{training.id}} - {{training.title}}</b></a></h1>
 	  		<h4 style = 'text-align:center'> {{training.source}}</h4>
 	        <p style = 'text-align: center'> {{training.description}}</p>
 	        <p style = 'font-size: 15px'> The estimated duration of the training is: {{training.duration}}</p>

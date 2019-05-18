@@ -444,17 +444,13 @@ def showtraining(request):
 	with open(os.path.join(BASE_DIR, '../data.json'),'r') as datafile:
 		data = json.load(datafile)
 	template = loader.get_template('showtraining.html')
-	trainingname = request.GET.get('training')
+	trainingid = request.GET.get('id')
 	context = {}
 	trainingfiles = []
 	files = []
-	DIR_PATH = settings.STATIC_URL
-	print(DIR_PATH)
-	print(trainingname)
 	for tr in data['resources']:
-		if tr['title'] == trainingname:
+		if str(tr['id']) == trainingid:
 			training = tr
-			print(training['title'])
 	rango = range(len(training['files']))
 	linksname = []
 	for x in rango:

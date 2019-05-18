@@ -20,7 +20,8 @@
                 "http://enisa.europa.eu/ftp/styx32.ova",
                 "http://enisa.europa.eu/ftp/winbox_tools.zip",
                 "http://enisa.europa.eu/ftp/cuckoo_winbox.zip"
-            ]
+            ],
+            "site": "https://www.enisa.europa.eu/topics/trainings-for-cybersecurity-specialists/online-training-material/technical-operational"
         },
         {
             "id": 2,
@@ -38,7 +39,8 @@
                 "https://www.enisa.europa.eu/topics/trainings-for-cybersecurity-specialists/online-training-material/documents/artifact-analysis-fundamentals-handbook",
                 "https://www.enisa.europa.eu/topics/trainings-for-cybersecurity-specialists/online-training-material/documents/artifact-analysis-fundamentals-toolset",
                 "http://enisa.europa.eu/ftp/styx32.ova"
-            ]
+            ],
+            "site": "https://www.enisa.europa.eu/topics/trainings-for-cybersecurity-specialists/online-training-material/technical-operational"
         },
         {
             "id": 3,
@@ -60,7 +62,8 @@
                 "http://enisa.europa.eu/ftp/styx32.ova",
                 "http://enisa.europa.eu/ftp/opsu-12-2-x86.ova",
                 "https://www.enisa.europa.eu/topics/trainings-for-cybersecurity-specialists/online-training-material/files/aq-tools"
-            ]
+            ],
+            "site": "https://www.enisa.europa.eu/topics/trainings-for-cybersecurity-specialists/online-training-material/technical-operational"
         },
         {
             "id": 4,
@@ -81,7 +84,8 @@
                 "https://www.enisa.europa.eu/topics/trainings-for-cybersecurity-specialists/online-training-material/documents/2016-resources/exe1_forensic_analysis-i-toolset",
                 "http://enisa.europa.eu/ftp/Caine_v1.4.ova",
                 "https://www.enisa.europa.eu/ftp/ENISA-LOT3-Evidence.zip"
-            ]
+            ],
+            "site": "https://www.enisa.europa.eu/topics/trainings-for-cybersecurity-specialists/online-training-material/technical-operational"
         },
         {
             "id": 5,
@@ -99,7 +103,8 @@
                 "https://www.enisa.europa.eu/topics/trainings-for-cybersecurity-specialists/online-training-material/documents/2016-resources/exe2_forensic_analysis_ii-handbook",
                 "https://www.enisa.europa.eu/topics/trainings-for-cybersecurity-specialists/online-training-material/documents/2016-resources/exe2_forensic_analysis_ii-toolset",
                 "http://enisa.europa.eu/ftp/ENISA-Ex2-Evidence.vmdk"
-            ]
+            ],
+            "site": "https://www.enisa.europa.eu/topics/trainings-for-cybersecurity-specialists/online-training-material/technical-operational"
         },
         {
             "id": 6,
@@ -123,7 +128,8 @@
                 "http://enisa.europa.eu/ftp/blog.mysportclub.ex.ova",
                 "http://enisa.europa.eu/ftp/coloserver1337.myhosting.ex.ova",
                 "http://enisa.europa.eu/ftp/coloserver1337.myhosting.ex.mem"
-            ]
+            ],
+            "site": "https://www.enisa.europa.eu/topics/trainings-for-cybersecurity-specialists/online-training-material/technical-operational"
         },
         {
             "id": 7,
@@ -141,7 +147,8 @@
                 "https://www.enisa.europa.eu/topics/trainings-for-cybersecurity-specialists/online-training-material/documents/developing-countermeasures-handbook",
                 "https://www.enisa.europa.eu/topics/trainings-for-cybersecurity-specialists/online-training-material/documents/developing-countermeasures-toolset",
                 "http://enisa.europa.eu/ftp/styx32.ova"
-            ]
+            ],
+            "site": "https://www.enisa.europa.eu/topics/trainings-for-cybersecurity-specialists/online-training-material/technical-operational"
         },
         {
             "id": 8,
@@ -159,7 +166,8 @@
                 "https://www.enisa.europa.eu/topics/trainings-for-cybersecurity-specialists/online-training-material/documents/common-framework-for-artifact-analysis-activities-handbook",
                 "https://www.enisa.europa.eu/topics/trainings-for-cybersecurity-specialists/online-training-material/documents/common-framework-for-artifact-analysis-activities-toolset",
                 "https://www.enisa.europa.eu/ftp/crits-gui.ova"
-            ]
+            ],
+            "site": "https://www.enisa.europa.eu/topics/trainings-for-cybersecurity-specialists/online-training-material/technical-operational"
         },
         {
             "id": 9,
@@ -175,7 +183,8 @@
             "urls": [
                 "https://www.enisa.europa.eu/topics/trainings-for-cybersecurity-specialists/online-training-material/documents/introduction-to-advanced-artefact-analysis.pdf",
                 "https://www.enisa.europa.eu/topics/trainings-for-cybersecurity-specialists/online-training-material/documents/introduction-to-advanced-artefact-analysis-toolset.pdf"
-            ]
+            ],
+            "site": "https://www.enisa.europa.eu/topics/trainings-for-cybersecurity-specialists/online-training-material/technical-operational"
         },
         {
             "id": 10,
@@ -191,7 +200,8 @@
             "urls": [
                 "https://www.enisa.europa.eu/topics/trainings-for-cybersecurity-specialists/online-training-material/documents/dynamic-analysis-of-artefacts-handbook.pdf",
                 "https://www.enisa.europa.eu/topics/trainings-for-cybersecurity-specialists/online-training-material/documents/dynamic-analysis-of-artefacts-toolset.pdf"
-            ]
+            ],
+            "site": "https://www.enisa.europa.eu/topics/trainings-for-cybersecurity-specialists/online-training-material/technical-operational"
         },
         {
             "id": 11,
@@ -207,7 +217,8 @@
             "urls": [
                 "https://www.enisa.europa.eu/topics/trainings-for-cybersecurity-specialists/online-training-material/documents/static-analysis-of-artefacts-handbook.pdf",
                 "https://www.enisa.europa.eu/topics/trainings-for-cybersecurity-specialists/online-training-material/documents/static-analysis-of-artefacts-toolset.pdf"
-            ]
+            ],
+            "site": "https://www.enisa.europa.eu/topics/trainings-for-cybersecurity-specialists/online-training-material/technical-operational"
         },
         {
             "id": 12,
@@ -225,7 +236,8 @@
                 "https://www.enisa.europa.eu/topics/trainings-for-cybersecurity-specialists/online-training-material/documents/processing-and-storing-artifacts-handbook",
                 "https://www.enisa.europa.eu/topics/trainings-for-cybersecurity-specialists/online-training-material/documents/processing-and-storing-artifacts-toolset",
                 "http://enisa.europa.eu/ftp/styx32.ova"
-            ]
+            ],
+            "site": "https://www.enisa.europa.eu/topics/trainings-for-cybersecurity-specialists/online-training-material/technical-operational"
         },
         {
             "id": 13,
@@ -243,7 +255,8 @@
                 "https://www.enisa.europa.eu/topics/csirt-cert-services/reactive-services/copy_of_actionable-information/Usingindicatorstoenhancedefencecapabilities.pdf",
                 "https://www.enisa.europa.eu/ftp/crits-headless.ova",
                 "https://www.enisa.europa.eu/ftp/crits-headless-files.zip"
-            ]
+            ],
+            "site": "https://www.enisa.europa.eu/topics/trainings-for-cybersecurity-specialists/online-training-material/technical-operational"
         },
         {
             "id": 14,
@@ -263,7 +276,8 @@
                 "https://www.enisa.europa.eu/topics/trainings-for-cybersecurity-specialists/online-training-material/documents/identification-and-handling-of-electronic-evidence-toolset",
                 "http://www.enisa.europa.eu/ftp/enisa-main.ova",
                 "https://www.enisa.europa.eu/topics/trainings-for-cybersecurity-specialists/online-training-material/documents/virtual-image-how-to"
-            ]
+            ],
+            "site": "https://www.enisa.europa.eu/topics/trainings-for-cybersecurity-specialists/online-training-material/technical-operational"
         },
         {
             "id": 15,
@@ -283,7 +297,8 @@
                 "https://www.enisa.europa.eu/topics/trainings-for-cybersecurity-specialists/online-training-material/documents/digital-forensics-toolset",
                 "http://www.enisa.europa.eu/ftp/enisa-main.ova",
                 "https://www.enisa.europa.eu/topics/trainings-for-cybersecurity-specialists/online-training-material/documents/virtual-image-how-to"
-            ]
+            ],
+            "site": "https://www.enisa.europa.eu/topics/trainings-for-cybersecurity-specialists/online-training-material/technical-operational"
         },
         {
             "id": 16,
@@ -301,7 +316,8 @@
                 "https://www.enisa.europa.eu/topics/trainings-for-cybersecurity-specialists/online-training-material/documents/proactive-incident-detection-handbook",
                 "https://www.enisa.europa.eu/topics/trainings-for-cybersecurity-specialists/online-training-material/documents/proactive-incident-detection-toolset",
                 "http://www.enisa.europa.eu/ftp/ENISA_CERT_Exercises.ova"
-            ]
+            ],
+            "site": "https://www.enisa.europa.eu/topics/trainings-for-cybersecurity-specialists/online-training-material/technical-operational"
         },
         {
             "id": 17,
@@ -321,7 +337,8 @@
                 "https://www.enisa.europa.eu/topics/trainings-for-cybersecurity-specialists/online-training-material/documents/Mobilethreatsincidenthandlingtoolset.pdf",
                 "http://www.enisa.europa.eu/ftp/enisa-main.ova",
                 "https://www.enisa.europa.eu/topics/trainings-for-cybersecurity-specialists/online-training-material/documents/virtual-image-how-to"
-            ]
+            ],
+            "site": "https://www.enisa.europa.eu/topics/trainings-for-cybersecurity-specialists/online-training-material/technical-operational"
         },
         {
             "id": 18,
@@ -339,7 +356,8 @@
                 "https://www.enisa.europa.eu/topics/trainings-for-cybersecurity-specialists/online-training-material/documents/mobile-threats-incident-handling-part-ii-handbook-document-for-teachers",
                 "https://www.enisa.europa.eu/topics/trainings-for-cybersecurity-specialists/online-training-material/documents/mobile-threats-incident-handling-part-ii.pdf",
                 "http://www.enisa.europa.eu/ftp/enisa-mobile(2016V2).ova"
-            ]
+            ],
+            "site": "https://www.enisa.europa.eu/topics/trainings-for-cybersecurity-specialists/online-training-material/technical-operational"
         },
         {
             "id": 19,
@@ -357,7 +375,8 @@
                 "https://www.enisa.europa.eu/topics/trainings-for-cybersecurity-specialists/online-training-material/documents/automation-in-incident-handling-handbook",
                 "https://www.enisa.europa.eu/topics/trainings-for-cybersecurity-specialists/online-training-material/documents/automation-in-incident-handling-toolset",
                 "http://www.enisa.europa.eu/ftp/ENISA_CERT_Exercises.ova"
-            ]
+            ],
+            "site": "https://www.enisa.europa.eu/topics/trainings-for-cybersecurity-specialists/online-training-material/technical-operational"
         },
         {
             "id": 20,
@@ -368,13 +387,7 @@
             "description": "The training materials are based on good practices, and include all needed methodologies, tools and procedures. The training includes the performance indicators and means, supporting those who use it to increase their operational competence. It is made available in a ready-to use version.  The training consists of an extensive introduction (sections 1\u20134) and three exercises (section 5). The updated scenarios also include content that is in line with the current technologies and methodologies.",
             "files": [
                 "Handbook",
-                "Ex1Toolset",
-                "Ex2Toolset",
-                "Ex3Toolset",
-                "Virtual Image 1",
-                "Virtual Image 2",
-                "Virtual Image 3",
-                "Virtual Image 4"
+                "Toolset Ex1Toolset Ex2Toolset Ex3Virtual Image 1Virtual Image 2Virtual Image 3Virtual Image 4"
             ],
             "urls": [
                 "https://www.enisa.europa.eu/topics/trainings-for-cybersecurity-specialists/online-training-material/documents/introduction-to-network-forensics-handbook.pdf",
@@ -385,7 +398,8 @@
                 "https://www.enisa.europa.eu/ftp/ENISA_INF_Squid_Server_5.2.ova",
                 "https://www.enisa.europa.eu/ftp/ENISA_INF_Squid_Client_5.2.ova",
                 "https://www.enisa.europa.eu/ftp/Caine_ENISA__INF_5.3.ova"
-            ]
+            ],
+            "site": "https://www.enisa.europa.eu/topics/trainings-for-cybersecurity-specialists/online-training-material/technical-operational"
         },
         {
             "id": 21,
@@ -403,7 +417,8 @@
                 "https://www.enisa.europa.eu/topics/trainings-for-cybersecurity-specialists/online-training-material/documents/Honeypots_CERT_Exercise_Handbook.pdf",
                 "https://www.enisa.europa.eu/topics/trainings-for-cybersecurity-specialists/online-training-material/documents/Honeypots_CERT_Exercise_Toolset.pdf",
                 "http://www.enisa.europa.eu/ftp/ENISA-Honeypot-Exercise.ova"
-            ]
+            ],
+            "site": "https://www.enisa.europa.eu/topics/trainings-for-cybersecurity-specialists/online-training-material/technical-operational"
         },
         {
             "id": 22,
@@ -421,7 +436,8 @@
                 "https://www.enisa.europa.eu/topics/trainings-for-cybersecurity-specialists/online-training-material/documents/vulnerability-handling-handbook",
                 "https://www.enisa.europa.eu/topics/trainings-for-cybersecurity-specialists/online-training-material/documents/Vulnerability_Handling_toolset.pdf",
                 "http://www.enisa.europa.eu/ftp/ENISA_CERT_Exercises.ova"
-            ]
+            ],
+            "site": "https://www.enisa.europa.eu/topics/trainings-for-cybersecurity-specialists/online-training-material/technical-operational"
         },
         {
             "id": 23,
@@ -441,7 +457,8 @@
                 "https://www.enisa.europa.eu/topics/trainings-for-cybersecurity-specialists/online-training-material/documents/presenting.pdf",
                 "http://www.enisa.europa.eu/ftp/ENISA_CERT_Exercises(AH_setup_from_beginning).ova",
                 "http://www.enisa.europa.eu/ftp/ENISA_CERT_Exercises_Vis.ova"
-            ]
+            ],
+            "site": "https://www.enisa.europa.eu/topics/trainings-for-cybersecurity-specialists/online-training-material/technical-operational"
         },
         {
             "id": 24,
@@ -461,7 +478,8 @@
                 "https://www.enisa.europa.eu/topics/trainings-for-cybersecurity-specialists/online-training-material/documents/incident-handling-during-attack-on-critical-information-infrastructure-toolset",
                 "http://www.enisa.europa.eu/ftp/enisa-main.ova",
                 "https://www.enisa.europa.eu/topics/trainings-for-cybersecurity-specialists/online-training-material/documents/virtual-image-how-to"
-            ]
+            ],
+            "site": "https://www.enisa.europa.eu/topics/trainings-for-cybersecurity-specialists/online-training-material/operational"
         },
         {
             "id": 25,
@@ -477,7 +495,8 @@
             "urls": [
                 "https://www.enisa.europa.eu/topics/trainings-for-cybersecurity-specialists/online-training-material/documents/advanced_persistent_threat_incident_handling_handbook",
                 "https://www.enisa.europa.eu/topics/trainings-for-cybersecurity-specialists/online-training-material/documents/advanced_persistent_threat_incident_handling_toolset"
-            ]
+            ],
+            "site": "https://www.enisa.europa.eu/topics/trainings-for-cybersecurity-specialists/online-training-material/operational"
         },
         {
             "id": 26,
@@ -493,7 +512,8 @@
             "urls": [
                 "https://www.enisa.europa.eu/topics/trainings-for-cybersecurity-specialists/online-training-material/documents/social_networks_used_as_an_attack_vector_for_targeted_attacks_handbook",
                 "https://www.enisa.europa.eu/topics/trainings-for-cybersecurity-specialists/online-training-material/documents/social_networks_used_as_an_attack_vector_for_targeted_attacks_toolset"
-            ]
+            ],
+            "site": "https://www.enisa.europa.eu/topics/trainings-for-cybersecurity-specialists/online-training-material/operational"
         },
         {
             "id": 27,
@@ -509,7 +529,8 @@
             "urls": [
                 "https://www.enisa.europa.eu/topics/trainings-for-cybersecurity-specialists/online-training-material/documents/writing-security-advisories-handbook",
                 "https://www.enisa.europa.eu/topics/trainings-for-cybersecurity-specialists/online-training-material/documents/writing-security-advisories-toolset"
-            ]
+            ],
+            "site": "https://www.enisa.europa.eu/topics/trainings-for-cybersecurity-specialists/online-training-material/operational"
         },
         {
             "id": 28,
@@ -529,7 +550,8 @@
                 "https://www.enisa.europa.eu/topics/trainings-for-cybersecurity-specialists/online-training-material/documents/Costofincidenthandlingtoolset.pdf",
                 "https://www.enisa.europa.eu/topics/trainings-for-cybersecurity-specialists/online-training-material/documents/Exercise15CalculatorCIC.xlsx",
                 "https://www.enisa.europa.eu/topics/trainings-for-cybersecurity-specialists/online-training-material/documents/Exercise15CalculatorCICOpen.ods"
-            ]
+            ],
+            "site": "https://www.enisa.europa.eu/topics/trainings-for-cybersecurity-specialists/online-training-material/operational"
         },
         {
             "id": 29,
@@ -545,7 +567,8 @@
             "urls": [
                 "https://www.enisa.europa.eu/topics/trainings-for-cybersecurity-specialists/online-training-material/documents/incident-handling-in-live-role-playing-handbook",
                 "https://www.enisa.europa.eu/topics/trainings-for-cybersecurity-specialists/online-training-material/documents/incident-handling-in-live-role-playing-toolset"
-            ]
+            ],
+            "site": "https://www.enisa.europa.eu/topics/trainings-for-cybersecurity-specialists/online-training-material/operational"
         },
         {
             "id": 30,
@@ -561,7 +584,8 @@
             "urls": [
                 "https://www.enisa.europa.eu/topics/trainings-for-cybersecurity-specialists/online-training-material/documents/incident_handling_in_the_cloud_handbook",
                 "https://www.enisa.europa.eu/topics/trainings-for-cybersecurity-specialists/online-training-material/documents/incident_handling_in_the_cloud_toolset"
-            ]
+            ],
+            "site": "https://www.enisa.europa.eu/topics/trainings-for-cybersecurity-specialists/online-training-material/operational"
         },
         {
             "id": 31,
@@ -577,7 +601,8 @@
             "urls": [
                 "https://www.enisa.europa.eu/topics/trainings-for-cybersecurity-specialists/online-training-material/documents/large-scale-incident-handling-handbook",
                 "https://www.enisa.europa.eu/topics/trainings-for-cybersecurity-specialists/online-training-material/documents/large-scale-incident-handling-toolset"
-            ]
+            ],
+            "site": "https://www.enisa.europa.eu/topics/trainings-for-cybersecurity-specialists/online-training-material/operational"
         },
         {
             "id": 32,
@@ -595,7 +620,8 @@
                 "https://www.enisa.europa.eu/topics/trainings-for-cybersecurity-specialists/online-training-material/documents/2016-resources/incident_handling_management-handbook",
                 "https://www.enisa.europa.eu/topics/trainings-for-cybersecurity-specialists/online-training-material/documents/2016-resources/incident_handling_management-toolset",
                 "https://www.enisa.europa.eu/topics/trainings-for-cybersecurity-specialists/online-training-material/documents/2016-resources/incident_handling_management-presentation"
-            ]
+            ],
+            "site": "https://www.enisa.europa.eu/topics/trainings-for-cybersecurity-specialists/online-training-material/setting-up-a-csirt"
         },
         {
             "id": 33,
@@ -615,7 +641,8 @@
                 "https://www.enisa.europa.eu/topics/trainings-for-cybersecurity-specialists/online-training-material/documents/2016-resources/recruitment_of_csirt_staff-toolset",
                 "https://www.enisa.europa.eu/topics/trainings-for-cybersecurity-specialists/online-training-material/documents/2016-resources/recruitment_of_csirt_staff-presentation",
                 "https://www.enisa.europa.eu/topics/trainings-for-cybersecurity-specialists/online-training-material/documents/2016-resources/recruitment_of_csirt_staff-resources"
-            ]
+            ],
+            "site": "https://www.enisa.europa.eu/topics/trainings-for-cybersecurity-specialists/online-training-material/setting-up-a-csirt"
         },
         {
             "id": 34,
@@ -633,7 +660,8 @@
                 "https://www.enisa.europa.eu/topics/trainings-for-cybersecurity-specialists/online-training-material/documents/2016-resources/developing_csirt_infrastructure-handbook",
                 "https://www.enisa.europa.eu/topics/trainings-for-cybersecurity-specialists/online-training-material/documents/2016-resources/developing_csirt_infrastructure-toolset",
                 "https://www.enisa.europa.eu/topics/trainings-for-cybersecurity-specialists/online-training-material/documents/2016-resources/developing_csirt_infrastructure-presentation"
-            ]
+            ],
+            "site": "https://www.enisa.europa.eu/topics/trainings-for-cybersecurity-specialists/online-training-material/setting-up-a-csirt"
         },
         {
             "id": 35,
@@ -649,7 +677,8 @@
             "urls": [
                 "https://www.enisa.europa.eu/topics/trainings-for-cybersecurity-specialists/online-training-material/documents/establishing_external_contacts_handbook",
                 "https://www.enisa.europa.eu/topics/trainings-for-cybersecurity-specialists/online-training-material/documents/establishing-external-contacts-toolset"
-            ]
+            ],
+            "site": "https://www.enisa.europa.eu/topics/trainings-for-cybersecurity-specialists/online-training-material/legal-cooperation"
         },
         {
             "id": 36,
@@ -666,7 +695,8 @@
             "urls": [
                 "https://www.enisa.europa.eu/topics/trainings-for-cybersecurity-specialists/online-training-material/documents/cooperation-with-law-enforcement-agencies-advising-in-cyber-crime-cases-handbook",
                 "https://www.enisa.europa.eu/topics/trainings-for-cybersecurity-specialists/online-training-material/documents/cooperation-with-law-enforcement-agencies-advising-in-cyber-crime-cases-toolset-1"
-            ]
+            ],
+            "site": "https://www.enisa.europa.eu/topics/trainings-for-cybersecurity-specialists/online-training-material/legal-cooperation"
         },
         {
             "id": 37,
@@ -682,7 +712,8 @@
             "urls": [
                 "https://www.enisa.europa.eu/topics/trainings-for-cybersecurity-specialists/online-training-material/documents/assessing_and_testing_communication_handbook",
                 "https://www.enisa.europa.eu/topics/trainings-for-cybersecurity-specialists/online-training-material/documents/assessing_and_testing_communication_toolset"
-            ]
+            ],
+            "site": "https://www.enisa.europa.eu/topics/trainings-for-cybersecurity-specialists/online-training-material/legal-cooperation"
         },
         {
             "id": 38,
@@ -702,7 +733,8 @@
                 "https://www.enisa.europa.eu/topics/trainings-for-cybersecurity-specialists/online-training-material/documents/identifying-and-handling-cyber.pdf",
                 "http://www.enisa.europa.eu/ftp/enisa-main.ova",
                 "https://www.enisa.europa.eu/topics/trainings-for-cybersecurity-specialists/online-training-material/documents/virtual-image-how-to"
-            ]
+            ],
+            "site": "https://www.enisa.europa.eu/topics/trainings-for-cybersecurity-specialists/online-training-material/legal-cooperation"
         },
         {
             "id": 39,
@@ -718,7 +750,8 @@
             "urls": [
                 "https://www.enisa.europa.eu/topics/trainings-for-cybersecurity-specialists/online-training-material/documents/incident-handling-and-cooperation-during-phishing-1.pdf",
                 "https://www.enisa.europa.eu/topics/trainings-for-cybersecurity-specialists/online-training-material/documents/incident-handling-and-cooperation-during-phishing.pdf"
-            ]
+            ],
+            "site": "https://www.enisa.europa.eu/topics/trainings-for-cybersecurity-specialists/online-training-material/legal-cooperation"
         },
         {
             "id": 40,
@@ -734,7 +767,8 @@
             "urls": [
                 "https://www.enisa.europa.eu/topics/trainings-for-cybersecurity-specialists/online-training-material/documents/cooperation-in-the-area-of-cybercrime-handbook.pdf",
                 "https://www.enisa.europa.eu/topics/trainings-for-cybersecurity-specialists/online-training-material/documents/cooperation-in-the-area-of-cybercrime-toolset.pdf"
-            ]
+            ],
+            "site": "https://www.enisa.europa.eu/topics/trainings-for-cybersecurity-specialists/online-training-material/legal-cooperation"
         },
         {
             "id": 41,
@@ -752,7 +786,8 @@
                 "https://www.enisa.europa.eu/topics/trainings-for-cybersecurity-specialists/online-training-material/documents/cert_participation_in_incident_handling_related_to_the_article_13a_obligations_handbook",
                 "https://www.enisa.europa.eu/topics/trainings-for-cybersecurity-specialists/online-training-material/documents/cert_participation_in_incident_handling_related_to_the_article_13a_obligations_toolset",
                 "https://www.enisa.europa.eu/../ftp/data_ddos.pcap"
-            ]
+            ],
+            "site": "https://www.enisa.europa.eu/topics/trainings-for-cybersecurity-specialists/online-training-material/legal-cooperation"
         },
         {
             "id": 42,
@@ -768,7 +803,8 @@
             "urls": [
                 "https://www.enisa.europa.eu/topics/trainings-for-cybersecurity-specialists/online-training-material/documents/cert_participation_in_incident_handling_related_to_the_article_4_obligations_toolset",
                 "https://www.enisa.europa.eu/topics/trainings-for-cybersecurity-specialists/online-training-material/documents/cert_participation_in_incident_handling_related_to_the_article_4_obligations_handbook"
-            ]
+            ],
+            "site": "https://www.enisa.europa.eu/topics/trainings-for-cybersecurity-specialists/online-training-material/legal-cooperation"
         },
         {
             "id": 43,
@@ -777,19 +813,28 @@
             "type": "attack",
             "difficulty": "Not defined",
             "duration": "1 week(s)",
-            "description": "Launching attack to exploit the buffer-overflow vulnerability using shellcode. Conducting experiments\r\n         with several countermeasures.",
+            "description": "Launching attack to exploit the buffer-overflow vulnerability using shellcode. Conducting experiments\r\n         with several countermeasures.\n\nThe learning objective of this lab is for students to gain the first-hand\nexperience on buffer-overflow vulnerability by putting what they have learned\nabout the vulnerability from class into actions.\nBuffer overflow is defined as the condition in which a program attempts to\nwrite data beyond the boundaries of pre-allocated fixed length buffers. This\nvulnerability can be utilized by a malicious user to alter the flow control of\nthe program, even execute arbitrary pieces of code. This vulnerability arises\ndue to the mixing of the storage for data (e.g. buffers) and the\nstorage for controls (e.g. return addresses): an overflow in the data part can\naffect the control flow of the program, because an overflow can\nchange the return address.\n\n\nActivities:  Students are given a program that has the buffer-overflow\nproblem, and they need to exploit the vulnerability\nto gain the root privilege. Moreover, students will\nexperiment with several protection schemes that have been implemented in Linux,\nand evaluate their effectiveness.\n\n\nCopyright \u00a9 Wenliang Du, Syracuse University\n",
             "files": [
+                "Description",
+                "Part 1",
+                "Part 2",
+                "Part 3",
                 "stack.c",
                 "call_shellcode.c",
                 "exploit.c",
                 "exploit.py"
             ],
             "urls": [
+                "http://www.cis.syr.edu/~wedu/seed/Labs_16.04/Software/Buffer_Overflow/./Buffer_Overflow.pdf",
+                "http://www.cis.syr.edu/~wedu/seed/Labs_16.04/Software/Buffer_Overflow/https://youtu.be/3tUIcmG66y0",
+                "http://www.cis.syr.edu/~wedu/seed/Labs_16.04/Software/Buffer_Overflow/https://youtu.be/eYlZt3yYBqM",
+                "http://www.cis.syr.edu/~wedu/seed/Labs_16.04/Software/Buffer_Overflow/https://youtu.be/vKE26N4_fIQ",
                 "http://www.cis.syr.edu/~wedu/seed/Labs_16.04/Software/Buffer_Overflow/./files/stack.c",
                 "http://www.cis.syr.edu/~wedu/seed/Labs_16.04/Software/Buffer_Overflow/./files/call_shellcode.c",
                 "http://www.cis.syr.edu/~wedu/seed/Labs_16.04/Software/Buffer_Overflow/./files/exploit.c",
                 "http://www.cis.syr.edu/~wedu/seed/Labs_16.04/Software/Buffer_Overflow/./files/exploit.py"
-            ]
+            ],
+            "site": "http://www.cis.syr.edu/~wedu/seed/Labs_16.04/Software/Buffer_Overflow/"
         },
         {
             "id": 44,
@@ -798,15 +843,20 @@
             "type": "attack",
             "difficulty": "medium",
             "duration": "1 week(s)",
-            "description": "Using the return-to-libc technique to defeat the \"non-executable stack\" countermeasure of\r\n         the buffer-overflow attack.",
+            "description": "Using the return-to-libc technique to defeat the \"non-executable stack\" countermeasure of\r\n         the buffer-overflow attack.\n\nThe learning objective of this lab is for students to gain the first-hand\nexperience on an interesting attack on buffer-overflow vulnerability; this\nattack can bypass an existing protection scheme currently implemented in Linux\noperating systems.  A common way to exploit a buffer-overflow vulnerability is\nto overflow the buffer with a malicious shellcode, and then cause the\nvulnerable program to jump to the shellcode that is stored in the stack. To\nprevent this kind of attacks, some operating systems, such as Fedora Linux,\nallow system administrators to make stacks non-executable; therefore, jumping to\nthe shellcode will cause the program to fail.\n\n\nUnfortunately, the above protection scheme is not fool-proof; there\nexists another type of attacks, the return-to-libc attack, which\ndoes not need an\nexecutable stack; it does not even use shell code. Instead, it causes the\nvulnerable program to jump to some existing code, such as the\nsystem() function in the libc library, which is\nalready loaded into the memory.\n\n\nIn this lab, students are given a program with a buffer-overflow\nvulnerability; their task is to develop a\nreturn-to-libc attack to exploit\nthe vulnerability and finally to gain the root privilege.\nIn addition to the attacks, students will be guided to\nwalk through several protection\nschemes that have been implemented in Linux to counter against\nthe buffer-overflow attacks. Students need to evaluate whether the schemes work\nor not and explain why.\n\n\nCopyright \u00a9 Wenliang Du, Syracuse University\n",
             "files": [
+                "Description",
+                "Video",
                 "retlib.c",
                 "exploit.c"
             ],
             "urls": [
+                "http://www.cis.syr.edu/~wedu/seed/Labs_16.04/./Software/./Return_to_Libc/./Return_to_libc.pdf",
+                "http://www.cis.syr.edu/~wedu/seed/Labs_16.04/./Software/./Return_to_Libc/https://youtu.be/LBo56Xyowvk",
                 "http://www.cis.syr.edu/~wedu/seed/Labs_16.04/./Software/./Return_to_Libc/./files/retlib.c",
                 "http://www.cis.syr.edu/~wedu/seed/Labs_16.04/./Software/./Return_to_Libc/./files/exploit.c"
-            ]
+            ],
+            "site": "http://www.cis.syr.edu/~wedu/seed/Labs_16.04/./Software/./Return_to_Libc/"
         },
         {
             "id": 45,
@@ -815,13 +865,18 @@
             "type": "exploration",
             "difficulty": "easy",
             "duration": "1 week(s)",
-            "description": "Launching attacks on privileged Set-UID root program. Risks of environment variables. Side effects of\r\n        system().",
+            "description": "Launching attacks on privileged Set-UID root program. Risks of environment variables. Side effects of\r\n        system().\n\nSet-UID is an important security mechanism in Unix operating systems. When a\nSet-UID program runs, it assumes the owner's privileges. For example, if the\nprogram's owner is root, then when anyone runs this program, the program gains\nthe root's privileges during its execution. Set-UID allows us to do many\ninteresting things, but unfortunately, it is also the culprit of many bad\nthings. The objective of this lab is for students to understand \nwhat risks such privileged programs face and how they can be attacked\nif there are mistakes in the code. \n\n\nCopyright \u00a9 Wenliang Du, Syracuse University\n",
             "files": [
+                "Description",
+                "Video",
                 "\nChecklist for Security of Setuid Programs"
             ],
             "urls": [
+                "http://www.cis.syr.edu/~wedu/seed/Labs_16.04/./Software/./Environment_Variable_and_SetUID/./Environment_Variable_and_SetUID.pdf",
+                "http://www.cis.syr.edu/~wedu/seed/Labs_16.04/./Software/./Environment_Variable_and_SetUID/http://www.cis.syr.edu/~wedu/education/setuid.html",
                 "http://www.cis.syr.edu/~wedu/seed/Labs_16.04/./Software/./Environment_Variable_and_SetUID/./files/setuid.pdf"
-            ]
+            ],
+            "site": "http://www.cis.syr.edu/~wedu/seed/Labs_16.04/./Software/./Environment_Variable_and_SetUID/"
         },
         {
             "id": 46,
@@ -830,13 +885,18 @@
             "type": "attack",
             "difficulty": "Not defined",
             "duration": "1 week(s)",
-            "description": "Exploiting the race condition vulnerability in privileged program. Conducting experiments with\r\n         various countermeasures.",
+            "description": "Exploiting the race condition vulnerability in privileged program. Conducting experiments with\r\n         various countermeasures.\n\nThe learning objective of this lab is for students to gain the first-hand\nexperience on the race-condition vulnerability by putting what they have learned\nabout the vulnerability from class into actions.\nA race condition occurs when multiple processes access and manipulate the same\ndata concurrently, and the outcome of the execution depends on the particular\norder in which the access takes place. If a privileged program has a race-condition\nvulnerability, attackers can run a parallel process to ``race'' against\nthe privileged program, with an intention to change the behaviors\nof the program.\n\n\nIn this lab, students will be given a program with a race-condition\nvulnerability; their task is to develop a scheme to exploit\nthe vulnerability and gain the root privilege.  In addition to the\nattacks, students will be guided to walk through several protection\nschemes that can be used to counter the race-condition attacks.\nStudents need to evaluate\nwhether the schemes work or not and explain why.\n\n\nCopyright \u00a9 Wenliang Du, Syracuse University\n",
             "files": [
+                "Description",
+                "Video",
                 "vulp.c"
             ],
             "urls": [
+                "http://www.cis.syr.edu/~wedu/seed/Labs_16.04/./Software/./Race_Condition/./Race_Condition.pdf",
+                "http://www.cis.syr.edu/~wedu/seed/Labs_16.04/./Software/./Race_Condition/https://youtu.be/WYaBHz1QT4k",
                 "http://www.cis.syr.edu/~wedu/seed/Labs_16.04/./Software/./Race_Condition/./files/vulp.c"
-            ]
+            ],
+            "site": "http://www.cis.syr.edu/~wedu/seed/Labs_16.04/./Software/./Race_Condition/"
         },
         {
             "id": 47,
@@ -845,13 +905,18 @@
             "type": "attack",
             "difficulty": "Not defined",
             "duration": "1 week(s)",
-            "description": "Exploiting the Dirty COW race condition vulnerability in Linux kernel \r\n         to gain the root privilege.",
+            "description": "Exploiting the Dirty COW race condition vulnerability in Linux kernel \r\n         to gain the root privilege.\n\nThe Dirty COW vulnerability is an interesting case of\nthe race condition vulnerability. It existed in the Linux kernel since\nSeptember 2007, and was discovered and exploited in October 2016.\nThe vulnerability affects all Linux-based operating systems, including\nAndroid, and its consequence is very severe: attackers can gain the root\nprivilege by exploiting the vulnerability. The vulnerability resides\nin the code of copy-on-write inside Linux kernel. By exploiting this vulnerability, attackers\ncan modify any protected file, even though these files are only readable to them.\n\nThe objective of this lab is for students to gain the hands-on experience on the Dirty COW\nattack, understand the race condition vulnerability exploited by the attack, and\ngain a deeper understanding of the general race condition security problems. In this lab,\nstudents will exploit the Dirty COW race condition vulnerability to gain the root privilege.\n\n\n\nCopyright \u00a9 Wenliang Du, Syracuse University\n",
             "files": [
+                "Description",
+                "Video",
                 "cow_attack.c"
             ],
             "urls": [
+                "http://www.cis.syr.edu/~wedu/seed/Labs_16.04/./Software/./Dirty_COW/./Dirty_COW.pdf",
+                "http://www.cis.syr.edu/~wedu/seed/Labs_16.04/./Software/./Dirty_COW/https://youtu.be/PCKhmPTDurg",
                 "http://www.cis.syr.edu/~wedu/seed/Labs_16.04/./Software/./Dirty_COW/./files/cow_attack.c"
-            ]
+            ],
+            "site": "http://www.cis.syr.edu/~wedu/seed/Labs_16.04/./Software/./Dirty_COW/"
         },
         {
             "id": 48,
@@ -860,14 +925,19 @@
             "type": "attack",
             "difficulty": "Not defined",
             "duration": "1 week(s)",
-            "description": "Exploiting the format string vulnerability to crash a program, steal sensitive information, or\r\n         modify critical data.",
+            "description": "Exploiting the format string vulnerability to crash a program, steal sensitive information, or\r\n         modify critical data.\n\nThe learningrning objective of this lab is for students to gain the first-hand\nexperience on format-string vulnerability by putting what they have learned\nabout the vulnerability from class into actions.\nThe format-string vulnerability is caused by code like\nprintf(user_input), where the contents of variable\nof user_input is provided by users. When this program is running\nwith privileges (e.g., Set-UID program), this printf\nstatement becomes dangerous, because it can lead to one of the following\nconsequences: (1) crash the\nprogram, (2) read from an arbitrary memory place, and (3) modify\nthe values of in an arbitrary memory place. The last consequence\nis very dangerous because it can allow users to modify internal\nvariables of a privileged program, and thus change the behavior\nof the program.\n\n\nIn this lab, students will be given a program with a format-string\nvulnerability; their task is to develop a scheme to exploit\nthe vulnerability.  In addition to the\nattacks, students will be guided to walk through a protection\nscheme that can be used to defeat this type of attacks.\nStudents need to evaluate\nwhether the scheme work or not and explain why.\n\n\nCopyright \u00a9 Wenliang Du, Syracuse University\n",
             "files": [
+                "Description",
+                "Video",
                 "server.c",
                 "\nExploiting Format Strng Vulnerabilities"
             ],
             "urls": [
+                "http://www.cis.syr.edu/~wedu/seed/Labs_16.04/./Software/./Format_String_Server/./Format_String_Server.pdf",
+                "http://www.cis.syr.edu/~wedu/seed/Labs_16.04/./Software/./Format_String_Server/https://youtu.be/df5P5DiBLng",
                 "http://www.cis.syr.edu/~wedu/seed/Labs_16.04/./Software/./Format_String_Server/./files/server.c"
-            ]
+            ],
+            "site": "http://www.cis.syr.edu/~wedu/seed/Labs_16.04/./Software/./Format_String_Server/"
         },
         {
             "id": 49,
@@ -876,13 +946,18 @@
             "type": "attack",
             "difficulty": "Not defined",
             "duration": "1 week(s)",
-            "description": "Launch attack to exploit the Shellshock vulnerability that is discovered in late 2014.",
+            "description": "Launch attack to exploit the Shellshock vulnerability that is discovered in late 2014.\n\nOn September 24, 2014, a severe vulnerability in Bash was identified, and\nit is called Shellshock. This affects many systems. The vulnerability\ncan be easily exploited either remotely or from a local machine. In this\nlab, students need to work on this attack, so they can understand the\nShellshock vulnerability.\n\n\nCopyright \u00a9 Wenliang Du, Syracuse University\n",
             "files": [
+                "Description",
+                "Video",
                 "variables.c"
             ],
             "urls": [
+                "http://www.cis.syr.edu/~wedu/seed/Labs_16.04/./Software/./Shellshock/./Shellshock.pdf",
+                "http://www.cis.syr.edu/~wedu/seed/Labs_16.04/./Software/./Shellshock/https://youtu.be/pEpOSCgTabs",
                 "http://www.cis.syr.edu/~wedu/seed/Labs_16.04/./Software/./Shellshock/./files/variables.c"
-            ]
+            ],
+            "site": "http://www.cis.syr.edu/~wedu/seed/Labs_16.04/./Software/./Shellshock/"
         },
         {
             "id": 50,
@@ -891,9 +966,14 @@
             "type": "exploration",
             "difficulty": "medium",
             "duration": "1 week(s)",
-            "description": "Sniffing packets sent over the local network and spoofing various types of packets.",
-            "files": [],
-            "urls": []
+            "description": "Sniffing packets sent over the local network and spoofing various types of packets.\n\nPacket sniffing and spoofing are the two important concepts in\nnetwork security; they are two major threats in network\ncommunication. Being able to understand these two threats\nis essential for understanding security measures in\nnetworking. There are many packet sniffing and spoofing tools,\nsuch as Wireshark, Tcpdump, Netwox, etc.\nSome of these tools are widely used by security experts, as well as by\nattackers. Being able to use these tools is important\nfor students, but what is more important for students in\na network security course is to understand how these tools work,\ni.e., how packet sniffing and spoofing are implemented\nin software.\n\n\nThe objective of this lab is for students to master the\ntechnologies underlying most of the sniffing and spoofing\ntools. Students will play with some simple\nsniffer and spoofing programs, read their source\ncode, modify them, and eventually gain an in-depth\nunderstanding on the technical aspects of these programs.\nAt the end of this lab, students should be able to\nwrite their own sniffing and spoofing programs.\n\n\nCopyright \u00a9 Wenliang Du, Syracuse University\n",
+            "files": [
+                "Description"
+            ],
+            "urls": [
+                "http://www.cis.syr.edu/~wedu/seed/Labs_16.04/./Networking/./Sniffing_Spoofing/./Sniffing_Spoofing.pdf"
+            ],
+            "site": "http://www.cis.syr.edu/~wedu/seed/Labs_16.04/./Networking/./Sniffing_Spoofing/"
         },
         {
             "id": 51,
@@ -902,9 +982,14 @@
             "type": "attack",
             "difficulty": "medium",
             "duration": "2 week(s)",
-            "description": "Launching attacks to exploit the vulnerabilities of the TCP/IP protocol, including session hijacking,\r\n      SYN flooding, TCP reset attacks, etc.",
-            "files": [],
-            "urls": []
+            "description": "Launching attacks to exploit the vulnerabilities of the TCP/IP protocol, including session hijacking,\r\n      SYN flooding, TCP reset attacks, etc.\n\nThe learning objective of this lab is for students to\ngain first-hand experience on vulnerabilities, as well as on\nattacks against these vulnerabilities.\nWise people learn from mistakes. In security education, we study mistakes\nthat lead to software vulnerabilities. Studying mistakes from the\npast not only help students understand why systems are vulnerable, why\na \"seemly-benign\" mistake can turn into a disaster, and\nwhy many security mechanisms are needed. More importantly,\nit also helps students learn the common patterns of vulnerabilities,\nso they can avoid making similar mistakes in the future.\nMoreover, using vulnerabilities as case studies,\nstudents can learn the principles of secure design, secure programming,\nand security testing.\n\n\nThe vulnerabilities in the TCP/IP protocols represent a special genre of\nvulnerabilities in protocol designs and\nimplementations; they provide an invaluable lesson as to why security should\nbe designed in from the beginning, rather than being added as an afterthought.\nMoreover, studying these vulnerabilities help students understand the\nchallenges of network security and why many network security measures are needed.\n\n\nCopyright \u00a9 Wenliang Du, Syracuse University\n",
+            "files": [
+                "Description"
+            ],
+            "urls": [
+                "http://www.cis.syr.edu/~wedu/seed/Labs_16.04/./Networking/./TCP_Attacks/./TCP_Attacks.pdf"
+            ],
+            "site": "http://www.cis.syr.edu/~wedu/seed/Labs_16.04/./Networking/./TCP_Attacks/"
         },
         {
             "id": 52,
@@ -913,13 +998,16 @@
             "type": "attack",
             "difficulty": "easy",
             "duration": "1 week(s)",
-            "description": "Using the heartbleed attack to steal secrets from a remote server.",
+            "description": "Using the heartbleed attack to steal secrets from a remote server.\n\n\nThe Heartbleed bug (CVE-2014-0160) is a severe implementation flaw in the\nOpenSSL library, which enables attackers to steal data\nfrom the memory of the victim server. The contents of the stolen data\ndepend on what is there in the memory of the server. It could\npotentially contain private keys, TLS session keys, user names,\npasswords, credit cards, etc. The vulnerability is in the implementation of\nthe Heartbeat protocol,  which is used by SSL/TLS to keep the connection alive.\n\n\nThe objective of this lab is for students to understand how serious this\nvulnerability is, how the attack works, and how to fix the problem. The\naffected OpenSSL version range is from 1.0.1 to 1.0.1f. The\nversion in our Ubuntu VM is 1.0.1.\n\n\nCopyright \u00a9 Wenliang Du, Syracuse University\n",
             "files": [
+                "Description",
                 "attack.py"
             ],
             "urls": [
+                "http://www.cis.syr.edu/~wedu/seed/Labs_16.04/./Networking/./Heartbleed/./Heartbleed.pdf",
                 "http://www.cis.syr.edu/~wedu/seed/Labs_16.04/./Networking/./Heartbleed/./attack.py"
-            ]
+            ],
+            "site": "http://www.cis.syr.edu/~wedu/seed/Labs_16.04/./Networking/./Heartbleed/"
         },
         {
             "id": 53,
@@ -928,9 +1016,14 @@
             "type": "attack",
             "difficulty": "easy",
             "duration": "1 week(s)",
-            "description": "Using several methods to conduct DNS pharming attacks on computers in a LAN environment.",
-            "files": [],
-            "urls": []
+            "description": "Using several methods to conduct DNS pharming attacks on computers in a LAN environment.\n\nThe objective of this lab is for students to gain the first-hand experience\non various attacks on DNS (Domain Name System). DNS is the\nInternet's phone book; it\ntranslates hostnames to IP addresses and vice versa.\nThis translation is through DNS resolution, which happens behind\nthe scene. \nDNS Pharming attacks manipulate this resolution process\nin various ways, with an intent to misdirect users to\nalternative destinations, which are often malicious.\nThis lab focuses on seveal DNS Pharming attack techniques.\nStudents will first set up and configure a DNS server, and then they\nwill try various DNS Pharming attacks on the target that is also within\nthe lab environment.\n\n\nThe attacks conducted in this lab assume that the attacker is \non the same local network, and can thus sniff the DNS packets. \nThis assumption is made to simplify the lab tasks. There is a follow-up\nlab called {\\em Remote DNS Attack Lab}, \nwhich removes the assumption, i.e., attackers can launch the \nattack remotely. If you are interested in that, you can\nwork on that lab after finishing this one. It should be noted, the\nremote attack lab is much more challenging than this one.\n\n\nCopyright \u00a9 Wenliang Du, Syracuse University\n",
+            "files": [
+                "Description"
+            ],
+            "urls": [
+                "http://www.cis.syr.edu/~wedu/seed/Labs_16.04/./Networking/./DNS_Local/./DNS_Local.pdf"
+            ],
+            "site": "http://www.cis.syr.edu/~wedu/seed/Labs_16.04/./Networking/./DNS_Local/"
         },
         {
             "id": 54,
@@ -939,9 +1032,14 @@
             "type": "attack",
             "difficulty": "hard",
             "duration": "2 week(s)",
-            "description": "Using the Kaminsky method to launch DNS cache poisoning attacks on remote DNS servers.",
-            "files": [],
-            "urls": []
+            "description": "Using the Kaminsky method to launch DNS cache poisoning attacks on remote DNS servers.\n\nThe objective of this lab is for students to gain the first-hand experience\non the remote DNS cache poisoning attack, also called the Kaminsky\nDNS attack. DNS (Domain Name System) is the\nInternet's phone book; it\ntranslates hostnames to IP addresses and vice versa.\nThis translation is through DNS resolution, which happens behind\nthe scene. \nDNS Pharming attacks manipulate this resolution process\nin various ways, with an intent to misdirect users to\nalternative destinations, which are often malicious.\nThis lab focuses on a particular DNS Pharming attack technique, called\nDNS Cache Poisoning attack.\n\n\nIn another SEED Lab, we have designed activities to conduct the\nsame attack in a local network environment, i.e., the attacker and the\nvictim DNS server are on the same network, where packet sniffering\nis possible.  In this remote attack lab, packet sniffering is not\npossible, so the attack becomes much more challenging than\nthe local attack.\n\n\nCopyright \u00a9 Wenliang Du, Syracuse University\n",
+            "files": [
+                "Description"
+            ],
+            "urls": [
+                "http://www.cis.syr.edu/~wedu/seed/Labs_16.04/./Networking/./DNS_Remote/./DNS_Remote.pdf"
+            ],
+            "site": "http://www.cis.syr.edu/~wedu/seed/Labs_16.04/./Networking/./DNS_Remote/"
         },
         {
             "id": 55,
@@ -950,9 +1048,14 @@
             "type": "exploration",
             "difficulty": "medium",
             "duration": "1 week(s)",
-            "description": "Writing a simple packet-filter firewall; playing with Linux's built-in firewall software and\r\n        web-proxy firewall; experimenting with ways to evade firewalls.",
-            "files": [],
-            "urls": []
+            "description": "Writing a simple packet-filter firewall; playing with Linux's built-in firewall software and\r\n        web-proxy firewall; experimenting with ways to evade firewalls.\n\nThe learning objective of this lab is for students to gain the\ninsights on how firewalls work\nby playing with firewall software and implement a simplified\npacket filtering firewall.\nFirewalls have several types; in this lab, we focus on two types,\nthe packet filter and application firewall.\n\n\nPacket filters act by inspecting the packets;\nif a packet matches the packet filter's set of rules, the packet filter will\neither drop the packet or foward it, depending on what the rules say.\nPacket filters are usually stateless; they filter each packet based\nonly on the information contained in that packet, without paying\nattention to whether a packet is part of an existing stream of traffic.\nPacket filters often use a combination of the packet's source and\ndestination address, its protocol, and, for TCP and UDP traffic,\nport numbers.\n\nApplication firewall works at\nthe application layer. A widely used application firewall\nis web proxy, which is primarily used for egress filtering of\nweb traffic.  In this lab, students will play with both\ntypes of firewalls, and also through the implementation of some\nof the key functionalities, they can understand how\nfirewalls work.\n\n\nCopyright \u00a9 Wenliang Du, Syracuse University\n",
+            "files": [
+                "Description"
+            ],
+            "urls": [
+                "http://www.cis.syr.edu/~wedu/seed/Labs_16.04/./Networking/./Firewall/./Firewall.pdf"
+            ],
+            "site": "http://www.cis.syr.edu/~wedu/seed/Labs_16.04/./Networking/./Firewall/"
         },
         {
             "id": 56,
@@ -961,13 +1064,16 @@
             "type": "exploration",
             "difficulty": "medium",
             "duration": "1 week(s)",
-            "description": "Implement a simple vpn program (client/server), and use it to\r\n        bypass firewalls. ",
+            "description": "Implement a simple vpn program (client/server), and use it to\r\n        bypass firewalls. \n\nOrganizations, Internet Service Providers (ISPs), and countries often block\ntheir internal users from accessing certain external sites. This is called\negress filtering.\nFor example, to prevent work-time distraction, many companies set up their egress firewalls\nto block social network sites, so their employee cannot access those sites\nfrom inside their network. For political reasons, many countries set up egress filtering at their\nISPs to block their people from accessing\nselected foreign web sites. Unfortunately, these firewalls can be easily\nbypassed, and services/products that help users bypass firewalls are widely\navailable on the Internet. The most commonly used technology to bypass\negress firewalls is Virtual Private Network (VPN).\nIn particular, this technology is widely used by smartphone users that are affected by\negress filtering; there are many VPN apps (for Android, iOS, and other\nplatforms) that can help users bypass egress firewalls.\n\n\nThe learning objective of this lab is for students to see\nhow VPN works in action and how VPN can help bypass egress firewalls.\nWe will implement a very simple VPN in this lab, and use it to bypass\nfirewalls. A typical VPN depends on two pieces of technologies: IP tunneling\nand encryption. The tunneling technology is the most essential one to help\nbypass firewalls; the encryption technology is for protecting the content\nof the traffic that goes through the VPN tunnel.\nFor the sake of simplicity, we will only focus on the tunneling part,\nso the traffic inside our tunnel is not encrypted. We have a separate\nVPN lab, which covers both tunneling and encryption. If readers are\ninterested, they can work on our VPN lab to learn how to build a complete\nVPN. In this lab, we only focus on how to use VPN tunnel to bypass firewalls.\n\n\nCopyright \u00a9 Wenliang Du, Syracuse University\n",
             "files": [
+                "Description",
                 "Sample VPN client and server programs (without encryption)"
             ],
             "urls": [
+                "http://www.cis.syr.edu/~wedu/seed/Labs_16.04/./Networking/./Firewall_VPN/./Firewall_VPN.pdf",
                 "http://www.cis.syr.edu/~wedu/seed/Labs_16.04/./Networking/./Firewall_VPN/../VPN/files/vpn.zip"
-            ]
+            ],
+            "site": "http://www.cis.syr.edu/~wedu/seed/Labs_16.04/./Networking/./Firewall_VPN/"
         },
         {
             "id": 57,
@@ -976,15 +1082,18 @@
             "type": "implementation",
             "difficulty": "hard",
             "duration": "4 week(s)",
-            "description": "Design and implement a transport-layer VPN system for Linux, using the TUN/TAP\r\n            technologies. This project requires at least a month of time to finish, so it is good\r\n            for final project.",
+            "description": "Design and implement a transport-layer VPN system for Linux, using the TUN/TAP\r\n            technologies. This project requires at least a month of time to finish, so it is good\r\n            for final project.\n\nA Virtual Private Network (VPN) is used for creating a private scope\nof computer communications or providing a secure extension of a private\nnetwork into an insecure network such as the Internet. VPN is a widely\nused security technology. VPN can be built upon IPSec or\nTransport Layer Security (TLS/SSL). These are two fundamentally different\napproaches for building VPNs. In this lab, we focus\non the TLS/SSL-based VPNs. This type of VPNs is often referred to\nas TLS/SSL VPNs.\n\n\nThe learning objective of this lab is for students to master the\nnetwork and security technologies underlying SSL VPNs.\nThe design and implementation of TLS/SSL VPNs exemplify\na number of security principles and technologies,\nincluding crypto, integrity, authentication, key management, key exchange,\nand Public-Key Infrastructure (PKI).\nTo achieve this goal, students will implement\nminiVPN, a simple TLS/SSL VPN, in the Linux \noperating system. \n\n\nCopyright \u00a9 Wenliang Du, Syracuse University\n",
             "files": [
+                "Description",
                 "Sample VPN client and server programs (without encryption)",
                 "Sample TLS client and server programs"
             ],
             "urls": [
+                "http://www.cis.syr.edu/~wedu/seed/Labs_16.04/./Networking/./VPN/./VPN.pdf",
                 "http://www.cis.syr.edu/~wedu/seed/Labs_16.04/./Networking/./VPN/./files/vpn.zip",
                 "http://www.cis.syr.edu/~wedu/seed/Labs_16.04/./Networking/./VPN/./files/tls.zip"
-            ]
+            ],
+            "site": "http://www.cis.syr.edu/~wedu/seed/Labs_16.04/./Networking/./VPN/"
         },
         {
             "id": 58,
@@ -993,9 +1102,16 @@
             "type": "attack",
             "difficulty": "medium",
             "duration": "1 week(s)",
-            "description": "Launching the cross-site scripting attack on a vulnerable web application. Conducting experiments\n         with several countermeasures.",
-            "files": [],
-            "urls": []
+            "description": "Launching the cross-site scripting attack on a vulnerable web application. Conducting experiments\n         with several countermeasures.\n\nCross-site scripting (XSS) is a type of computer security vulnerability\ntypically found in web applications.  This vulnerability\nmakes it possible for attackers to inject malicious code (e.g. JavaScripts)\ninto victim's web browser. Using this malicious code, the\nattackers can steal the victim's credentials, such as cookies.\nThe access control policies (i.e., the same origin policy)\nemployed by the browser to protect\nthose credentials can be bypassed by exploiting the XSS vulnerability.\nVulnerabilities of this kind have been exploited to craft powerful\nphishing attacks and browser exploits.\n\n\nTo demonstrate what attackers can do by exploiting XSS\nvulnerabilities, we have set up a web application named\nElgg in our pre-built Ubuntu VM image.\nElgg is a very popular open-source web application for\nsocial network, and it has implemented a number of countermeasures\nto remedy the XSS threat. To demonstrate how XSS attacks work, we\nhave commented out these countermeasures in Elgg in our installation,\nintentionally making Elgg vulnerable to XSS attacks.\nWithout the countermeasures, users\ncan post any arbitrary message, including JavaScript\nprograms, to the user profiles.\nIn this lab, students need to exploit this vulnerability to\nlaunch an XSS attack on the modified Elgg, in a way that is\nsimilar to what Samy Kamkar\ndid to MySpace in 2005 through the notorious Samy worm.\nThe ultimate goal of this attack is to spread an XSS worm among the users,\nsuch that whoever views an infected user profile will be infected,\nand whoever is infected will add you (i.e., the attacker) to\nhis/her friend list.\n\n\nCopyright \u00a9 Wenliang Du, Syracuse University\n",
+            "files": [
+                "Description",
+                "Video"
+            ],
+            "urls": [
+                "http://www.cis.syr.edu/~wedu/seed/Labs_16.04/./Web/./Web_XSS_Elgg/./Web_XSS_Elgg.pdf",
+                "http://www.cis.syr.edu/~wedu/seed/Labs_16.04/./Web/./Web_XSS_Elgg/https://youtu.be/sFSq6dsDGzA"
+            ],
+            "site": "http://www.cis.syr.edu/~wedu/seed/Labs_16.04/./Web/./Web_XSS_Elgg/"
         },
         {
             "id": 59,
@@ -1004,9 +1120,16 @@
             "type": "attack",
             "difficulty": "easy",
             "duration": "1 week(s)",
-            "description": "Launching the cross-site request forgery attack on a vulnerable web application. Conducting experiments\n         with several countermeasures.",
-            "files": [],
-            "urls": []
+            "description": "Launching the cross-site request forgery attack on a vulnerable web application. Conducting experiments\n         with several countermeasures.\n\nThe objective of this lab is to help students understand the Cross-Site Request\nForgery (CSRF or XSRF) attack. A CSRF attack involves a victim user, a\ntrusted site, and a malicious site. The victim user holds an active session\nwith a trusted site while visiting a malicious site. The\nmalicious site injects an HTTP request for the trusted site into the victim\nuser session, causing damages.\n\n\nIn this lab, students  will be attacking a social networking web\napplication using the CSRF attack.  The open-source social networking application called\nElgg has\ncountermeasures against CSRF, but we have turned them off for the\npurpose of this lab.\n\n\nCopyright \u00a9 Wenliang Du, Syracuse University\n",
+            "files": [
+                "Description",
+                "Video"
+            ],
+            "urls": [
+                "http://www.cis.syr.edu/~wedu/seed/Labs_16.04/./Web/./Web_CSRF_Elgg/./Web_CSRF_Elgg.pdf",
+                "http://www.cis.syr.edu/~wedu/seed/Labs_16.04/./Web/./Web_CSRF_Elgg/https://youtu.be/iY74zUB6Mpk"
+            ],
+            "site": "http://www.cis.syr.edu/~wedu/seed/Labs_16.04/./Web/./Web_CSRF_Elgg/"
         },
         {
             "id": 60,
@@ -1015,9 +1138,16 @@
             "type": "attack",
             "difficulty": "medium",
             "duration": "1 week(s)",
-            "description": "Launching the SQL-injection attack on a vulnerable web application. Conducting experiments\n         with several countermeasures. This is a newly developed lab, different from the one\n\t using Collabtive. This lab does not use Elgg; instead, it uses a web application developed by us.\n      ",
-            "files": [],
-            "urls": []
+            "description": "Launching the SQL-injection attack on a vulnerable web application. Conducting experiments\n         with several countermeasures. This is a newly developed lab, different from the one\n\t using Collabtive. This lab does not use Elgg; instead, it uses a web application developed by us.\n      \n\nSQL injection is a code injection technique that exploits the\nvulnerabilities in the interface between web applications and\ndatabase servers. The vulnerability is present when user's inputs\nare not correctly checked within the web applications\nbefore being sent to the back-end database servers.\nMany web applications take inputs from users, and then use these\ninputs to construct SQL queries, so the web applications\ncan get information from the database.\nWeb applications also use SQL queries to store information in\nthe database. These are common practices in the development of web applications.\nWhen SQL queries are not carefully constructed,\nSQL injection vulnerabilities can occur.\nThe SQL injection attack is one of the most common\nattacks on web applications.\n\n\nIn this lab, we have created a web application that is vulnerable to the SQL injection attack.\nOur web application includes the common mistakes made by many web developers.\nStudents' goal is to find ways to exploit the SQL injection vulnerabilities,\ndemonstrate the damage that can be achieved by the attack,\nand master the techniques that can help defend against such type of attacks.\n\n\nCopyright \u00a9 Wenliang Du, Syracuse University\n",
+            "files": [
+                "Description",
+                "Video"
+            ],
+            "urls": [
+                "http://www.cis.syr.edu/~wedu/seed/Labs_16.04/./Web/./Web_SQL_Injection/./Web_SQL_Injection.pdf",
+                "http://www.cis.syr.edu/~wedu/seed/Labs_16.04/./Web/./Web_SQL_Injection/https://youtu.be/_P8HCLkDInA"
+            ],
+            "site": "http://www.cis.syr.edu/~wedu/seed/Labs_16.04/./Web/./Web_SQL_Injection/"
         },
         {
             "id": 61,
@@ -1026,13 +1156,16 @@
             "type": "attack",
             "difficulty": "Not defined",
             "duration": "1 week(s)",
-            "description": "Launching attack to exploit the Meltdown vulnerability in Intel CPUs.",
+            "description": "Launching attack to exploit the Meltdown vulnerability in Intel CPUs.\n\nDiscovered in 2017 and publicly disclosed in January 2018, \nthe Meltdown exploits critical vulnerabilities existing in many modern processors, including those \nfrom Intel and ARM. The vulnerabilities allow a user-level program to read data stored inside\nthe kernel memory. Such an access is not allowed by the hardware protection mechanism\nimplemented in most CPUs, but a vulnerability exists in the design of \nthese CPUs that makes it possible to defeat the hardware protection. Because the flaw exists\nin the hardware, it is very difficult to fundamentally fix the problem, unless we change the CPUs \nin our computers. The Meltdown vulnerability represents a special genre of\nvulnerabilities in the design of CPUs. Along with the\nSpectre vulnerability, they provide an invaluable lesson for security education.\n\n\nThe learning objective of this lab is for students\nto gain first-hand experiences on the Meltdown attack. The attack itself is quite sophisticated, so we \nbreak it down into several small steps, each of which is easy to understand and perform.\nOnce students understand each step, it should not be difficult for them to put everything together\nto perform the actual attack. \n\n\nCopyright \u00a9 Wenliang Du, Syracuse University\n",
             "files": [
+                "Description",
                 "Meltdown_Attack.zip"
             ],
             "urls": [
+                "http://www.cis.syr.edu/~wedu/seed/Labs_16.04/./System/./Meltdown_Attack/./Meltdown_Attack.pdf",
                 "http://www.cis.syr.edu/~wedu/seed/Labs_16.04/./System/./Meltdown_Attack/./files/Meltdown_Attack.zip"
-            ]
+            ],
+            "site": "http://www.cis.syr.edu/~wedu/seed/Labs_16.04/./System/./Meltdown_Attack/"
         },
         {
             "id": 62,
@@ -1041,13 +1174,16 @@
             "type": "attack",
             "difficulty": "Not defined",
             "duration": "1 week(s)",
-            "description": "Launching attack to exploit the Spectre vulnerability in Intel CPUs.",
+            "description": "Launching attack to exploit the Spectre vulnerability in Intel CPUs.\n\nDiscovered in 2017 and publicly disclosed in January 2018, \nthe Spectre attack exploits critical vulnerabilities existing in many modern processors, including those \nfrom Intel, AMD, and ARM. The vulnerabilities allow a program to break inter-process \nand intra-process isolation, so a malicious program can read the \ndata from the area that is not accessible to it. \nSuch an access is not allowed by the hardware protection mechanism (for inter-process isolation) or \nsoftware protection mechanism (for intra-prcess isolation), \nbut a vulnerability exists in the design of \nCPUs that makes it possible to defeat the protections. \nBecause the flaw exists\nin the hardware, it is very difficult to fundamentally fix the problem, unless we change the CPUs \nin our computers. The Spectre vulnerability represents a special genre of\nvulnerabilities in the design of CPUs. Along with the\nMeltdown vulnerability, they provide an invaluable lesson for security education.\n\n\nThe learning objective of this lab is for students\nto gain first-hand experiences on the Spectre attack. The attack itself is quite sophisticated, so we \nbreak it down into several small steps, each of which is easy to understand and perform.\nOnce students understand each step, it should not be difficult for them to put everything together\nto perform the actual attack. \n\n\nCopyright \u00a9 Wenliang Du, Syracuse University\n",
             "files": [
+                "Description",
                 "Spectre_Attack.zip"
             ],
             "urls": [
+                "http://www.cis.syr.edu/~wedu/seed/Labs_16.04/./System/./Spectre_Attack/./Spectre_Attack.pdf",
                 "http://www.cis.syr.edu/~wedu/seed/Labs_16.04/./System/./Spectre_Attack/./files/Spectre_Attack.zip"
-            ]
+            ],
+            "site": "http://www.cis.syr.edu/~wedu/seed/Labs_16.04/./System/./Spectre_Attack/"
         },
         {
             "id": 63,
@@ -1056,13 +1192,16 @@
             "type": "attack",
             "difficulty": "Not defined",
             "duration": "1 week(s)",
-            "description": "Use MD5 collision attack to create two different programs that \r\n         have the same MD5 hash value.",
+            "description": "Use MD5 collision attack to create two different programs that \r\n         have the same MD5 hash value.\n\nCollision-resistance is an essential property for one-way hash functions, but\nseveral widely-used one-way hash functions have trouble maintaining this\nproperty. In 2004, Xiaoyun Wang and co-authors demonstrated\na collision attack against MD5. In 2017, CWI Amsterdam and Google Research announced\nthe SHAttered attack, which breaks the collision-resistant property\nof SHA-1. While many students do not have trouble understanding the importance of\nthe one-way property, they cannot easily grasp why the collision-resistance property is\nnecessary, and what the impact of these attacks can cause.\n\n\nThe learning objective of this lab is for students to really understand the impact of\ncollision attacks, and see in first hand what damages can be caused if a widely-used one-way hash\nfunction's collision-resistance property is broken. To achieve this goal, students need to\nlaunch actual collision attacks against the MD5 hash function. Using the attacks, students\nshould be able to create two different programs that share the same MD5 hash but have\ncompletely different behaviors.\n\n\nCopyright \u00a9 Wenliang Du, Syracuse University\n",
             "files": [
+                "Description",
                 "md5_patch.zip"
             ],
             "urls": [
+                "http://www.cis.syr.edu/~wedu/seed/Labs_16.04/./Crypto/./Crypto_MD5_Collision/./Crypto_MD5_Collision.pdf",
                 "http://www.cis.syr.edu/~wedu/seed/Labs_16.04/./Crypto/./Crypto_MD5_Collision/./files/md5_patch.zip"
-            ]
+            ],
+            "site": "http://www.cis.syr.edu/~wedu/seed/Labs_16.04/./Crypto/./Crypto_MD5_Collision/"
         },
         {
             "id": 64,
@@ -1071,9 +1210,14 @@
             "type": "exploration",
             "difficulty": "Not defined",
             "duration": "1 week(s)",
-            "description": "Write a program to implement the RSA algorithm, and use it to do encryption,\r\n      decryption, signature generation and verification. \r\n         ",
-            "files": [],
-            "urls": []
+            "description": "Write a program to implement the RSA algorithm, and use it to do encryption,\r\n      decryption, signature generation and verification. \r\n         \n\nRSA (Rivest-Shamir-Adleman) is one of the first public-key cryptosystems\nand is widely used for secure communication.\nThe RSA algorithm first generates two large random prime numbers,\nand then use them to generate public and private key pairs, which can be\nused to do encryption, decryption, digital signature generation,\nand digital signature verification. The RSA algorithm is built upon\nnumber theories, and it can be quite easily implemented with the support of\nlibraries.\n\n\nThe learning objective of this lab is for students to gain hands-on experiences on\nthe RSA algorithm. From lectures, students should have learned the\ntheoretic part of the RSA algorithm, so they know how to generate public and private keys and\ncan conduct operations, such as encryption, decryption, signature generation, and signature\nverification. This lab enhances student's learning\nby requiring students to conduct RSA operations on actual numbers, and see\nwhether they can get the calculations right. This way, they are given a chance to apply the\nRSA theories learned from the class.\n\n\n\n\nCopyright \u00a9 Wenliang Du, Syracuse University\n",
+            "files": [
+                "Description"
+            ],
+            "urls": [
+                "http://www.cis.syr.edu/~wedu/seed/Labs_16.04/./Crypto/./Crypto_RSA/./Crypto_RSA.pdf"
+            ],
+            "site": "http://www.cis.syr.edu/~wedu/seed/Labs_16.04/./Crypto/./Crypto_RSA/"
         },
         {
             "id": 65,
@@ -1082,17 +1226,20 @@
             "type": "exploration",
             "difficulty": "easy",
             "duration": "1 week(s)",
-            "description": "Explore the secret-key encryption and its applications using OpenSSL.",
+            "description": "Explore the secret-key encryption and its applications using OpenSSL.\n\nThe learning objective of this lab is for students to get familiar with the\nconcepts in the secret-key encryption.  After finishing the lab, students\nshould be able to gain a first-hand experience on encryption algorithms,\nencryption modes, paddings, and initial vector (IV). Moreover, students will be\nable to use tools and write programs to encrypt/decrypt messages.\n\n\nCopyright \u00a9 Wenliang Du, Syracuse University\n",
             "files": [
+                "Description",
                 "ciphertext.txt (for Task 1)",
                 "pic_original.bmp",
                 "English Word List"
             ],
             "urls": [
+                "http://www.cis.syr.edu/~wedu/seed/Labs_16.04/./Crypto/./Crypto_Encryption/./Crypto_Encryption.pdf",
                 "http://www.cis.syr.edu/~wedu/seed/Labs_16.04/./Crypto/./Crypto_Encryption/./files/ciphertext.txt",
                 "http://www.cis.syr.edu/~wedu/seed/Labs_16.04/./Crypto/./Crypto_Encryption/./files/pic_original.bmp",
                 "http://www.cis.syr.edu/~wedu/seed/Labs_16.04/./Crypto/./Crypto_Encryption/./files/words.txt"
-            ]
+            ],
+            "site": "http://www.cis.syr.edu/~wedu/seed/Labs_16.04/./Crypto/./Crypto_Encryption/"
         },
         {
             "id": 66,
@@ -1101,9 +1248,14 @@
             "type": "exploration",
             "difficulty": "easy",
             "duration": "1 week(s)",
-            "description": "Learn how to generate pseudo random numbers that are strong for security purposes.",
-            "files": [],
-            "urls": []
+            "description": "Learn how to generate pseudo random numbers that are strong for security purposes.\n\nGenerating random numbers is a quite common task in security software.\nMany developers know how to generate random\nnumbers (e.g. for Monte Carlo simulation)\nfrom their prior experiences, so they use the similar methods\nto generate the random numbers for security purpose. Unfortunately,\na sequence of random numbers may be good for Monte Carlo simulation, but\nthey may be bad for encryption keys. Developers need to know how to\ngenerate secure random numbers, or they will make mistakes. Similar\nmistakes have been made in some well-known products, including\nNetscape and Kerberos.\n\n\nIn this lab, students will learn why the typical\nrandom number generation method is not appropriate for generating\nsecrets, such as encryption keys. They will further learn\na standard way to generate pseudo random numbers that are good for security purposes.\n\n\nCopyright \u00a9 Wenliang Du, Syracuse University\n",
+            "files": [
+                "Description"
+            ],
+            "urls": [
+                "http://www.cis.syr.edu/~wedu/seed/Labs_16.04/./Crypto/./Crypto_Random_Number/./Crypto_Random_Number.pdf"
+            ],
+            "site": "http://www.cis.syr.edu/~wedu/seed/Labs_16.04/./Crypto/./Crypto_Random_Number/"
         },
         {
             "id": 67,
@@ -1112,9 +1264,14 @@
             "type": "exploration",
             "difficulty": "medium",
             "duration": "1 week(s)",
-            "description": "Explore public-key cryptography, digital signature, certificate, and PKI using OpenSSL.",
-            "files": [],
-            "urls": []
+            "description": "Explore public-key cryptography, digital signature, certificate, and PKI using OpenSSL.\n\nPublic key cryptography is the foundation of today's secure\ncommunication, but it is subject\nto man-in-the-middle attacks when one side of communication sends its\npublic key to the other side.  The fundamental problem is\nthat there is no easy way to verify the ownership of a public key, i.e., given a public key and\nits claimed owner information, how do we ensure that the public key is indeed owned by\nthe claimed owner? The Public Key Infrastructure (PKI) is a practical solution\nto this problem.\n\n\nThe learning objective of this lab is for students to gain the first-hand\nexperience on PKI. SEED labs have a series of labs focusing on the public-key cryptography, and\nthis one focuses on PKI. By doing the tasks in this lab, students should be able to gain a\nbetter understanding of how PKI works, how PKI is used to protect the Web, and\nhow Man-in-the-middle attacks can be defeated by PKI. Moreover, students will be able to\nunderstand the root of the trust in the public-key infrastructure, and what problems\nwill arise if the root trust is broken. \n\n\nCopyright \u00a9 Wenliang Du, Syracuse University\n",
+            "files": [
+                "Description"
+            ],
+            "urls": [
+                "http://www.cis.syr.edu/~wedu/seed/Labs_16.04/./Crypto/./Crypto_PKI/./Crypto_PKI.pdf"
+            ],
+            "site": "http://www.cis.syr.edu/~wedu/seed/Labs_16.04/./Crypto/./Crypto_PKI/"
         },
         {
             "id": 68,
@@ -1123,17 +1280,20 @@
             "type": "attack",
             "difficulty": "easy",
             "duration": "1 week(s)",
-            "description": "Insert malicious code inside an existing Android app, and repackage it.",
+            "description": "Insert malicious code inside an existing Android app, and repackage it.\n\nRepackaging attack is a very common type of attacks on Android devices.\nIn such an attack, attackers modify a popular app downloaded from app\nmarkets, reverse engineer the app, add some malicious payloads, and then\nupload the modified app to app markets. Users can be easily fooled, because\nit is hard to notice the difference between the modified app and the\noriginal app. Once the modified apps are installed, the malicious code\ninside can conduct attacks, usually in the background.\nFor example, in March 2011, it was found that DroidDream Trojan had\nbeen embedded into more than 50 apps in Android official market and had\ninfected many users. DroidDream Trojan exploits vulnerabilities in Android\nto gain the root access on the device.\n\n\nThe learning objective of this lab is for students to gain a first-hand\nexperience in Android repackaging attack, so they can better understand\nthis particular risk associated with Android systems, and be more cautious\nwhen downloading apps to their devices, especially from those untrusted\nthird-party markets. In this lab, students will be\nasked to conduct a simple repackage attack on a selected app, and\ndemonstrate the attack only on our provided Android VM. Students should be warned not to\nsubmit their repackaged apps to any market, or they will face legal\nconsequence. Nor should they run the attack on their own Android devices,\nas that may cause real damages.\n\n\nCopyright \u00a9 Wenliang Du, Syracuse University\n",
             "files": [
+                "Description",
                 "MaliciousCode.smali",
                 "MaliciousCode_Location.zip",
                 "RepackagingLab.apk"
             ],
             "urls": [
+                "http://www.cis.syr.edu/~wedu/seed/Labs_16.04/./Mobile/./Android_Repackaging/./Android_Repackaging.pdf",
                 "http://www.cis.syr.edu/~wedu/seed/Labs_16.04/./Mobile/./Android_Repackaging/./files/MaliciousCode.smali",
                 "http://www.cis.syr.edu/~wedu/seed/Labs_16.04/./Mobile/./Android_Repackaging/./files/MaliciousCode_Location.zip",
                 "http://www.cis.syr.edu/~wedu/seed/Labs_16.04/./Mobile/./Android_Repackaging/./files/RepackagingLab.apk"
-            ]
+            ],
+            "site": "http://www.cis.syr.edu/~wedu/seed/Labs_16.04/./Mobile/./Android_Repackaging/"
         },
         {
             "id": 69,
@@ -1142,9 +1302,14 @@
             "type": "exploration",
             "difficulty": "medium",
             "duration": "1 week(s)",
-            "description": "Develop an OTA (Over-The-Air) package from scratch to root an Android device.",
-            "files": [],
-            "urls": []
+            "description": "Develop an OTA (Over-The-Air) package from scratch to root an Android device.\n\nAndroid devices do not allow their owners to have the root privilege on the\ndevice. This is fine for normal customers, but for users who want to make\ndeep customizations on their devices, this is too restrictive. There are\nways to overcome these restrictions, most of which require the root\nprivilege on the device. The process of gaining the root device on Android\ndevices is called rooting. Being able to root Android devices is a\nvery useful skill for security experts.\n\n\nThe objective of this lab is two-fold. First, through this lab, students\nwill get familiar with the process of device rooting and understand why\ncertain steps are needed. Many people can root Android devices, but not\nmany people fully understand why things have to be done in a particular\nway. Second, the entire rooting mechanism involves\nmany pieces of knowledge about the Android system and operating system in\ngeneral, so it serves as a great vehicle for students to gain such in-depth\nsystem knowledge. In this lab, we will ask students to develop a complete rooting\npackage from scratch, and demonstrate how to use the package to root the\nAndroid VM provided by us.\n\nLab Tasks \n\t(Description)\n\n\nVM version:\nIn addtion to the SEEDUbuntu16.04 VM\n\nLab Tasks \n\t(Description)\n\n\nVM version:\nIn addtion to the SEEDUbuntu16.04 VM\n\nCopyright \u00a9 Wenliang Du, Syracuse University\n",
+            "files": [
+                "Description"
+            ],
+            "urls": [
+                "http://www.cis.syr.edu/~wedu/seed/Labs_16.04/Mobile/Android_Rooting/./Android_Rooting.pdf"
+            ],
+            "site": "http://www.cis.syr.edu/~wedu/seed/Labs_16.04/Mobile/Android_Rooting/"
         }
     ]
 }

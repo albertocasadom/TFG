@@ -29,7 +29,7 @@ for urltraining in traininglinks:
     responsetr = BeautifulSoup(page.content,"html.parser")
     for title in responsetr.find_all('h2'):
     	if title.text != None:
-    		titles.append(title.text.replace("\u00a0"," "))
+    		titles.append((title.text.replace("\u00a0"," "),urltraining))
 
     for content in responsetr.find_all('table'):
         if content.findAll('p') != None:
@@ -44,21 +44,22 @@ for urltraining in traininglinks:
             informationdivided.append((information,resources))
 count = 0
 resources.reverse()
-for onetitle in titles:
+for title_url in titles:
     folder = FILE_PATH 
-    folder = os.path.join(folder, onetitle)
+    folder = os.path.join(folder, title_url[0])
     if not os.path.exists(folder):
         os.makedirs(folder)
 
     data['resources'].append({
         'id':count,
         'source': 'Enisa',
-        'title': onetitle,
+        'title': title_url[0],
         'target_audience': informationdivided[count][0][0],
         'duration': informationdivided[count][0][1],
         'description': informationdivided[count][0][-1],
         'files': informationdivided[count][0][2:-1],
-        'urls': informationdivided[count][1]
+        'urls': informationdivided[count][1],
+        'site': title_url[1]
         })
     
 

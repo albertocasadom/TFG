@@ -52,7 +52,8 @@ for urltraining in traininglinks:
 			description = linkrsc.p.text
 		if urlrsc in linkrsc.a['href']:
 			print("\nConnecting to: {0}".format(linkrsc.a['href']))
-			urltr = requests.get(linkrsc.a['href'])
+			urltr = linkrsc.a['href']
+			urltrequest = requests.get(linkrsc.a['href'])
 			root = linkrsc.a['href']
 		elif "drive" in linkrsc.a['href']:
 			pass
@@ -62,12 +63,23 @@ for urltraining in traininglinks:
 			urltr = urlres + linkrsc.a['href']
 			root = urltr
 			print("\nConnecting to: {0}".format(urltr))
-			urltr = requests.get(urltr)
+			urltrequest = requests.get(urltr)
 
-		response = BeautifulSoup(urltr.content,"html.parser")
+		response = BeautifulSoup(urltrequest.content,"html.parser")
 		files = []
 		dwnfiles = []
 		information = []
+		urlfiles = []
+		for p in response.findAll('p'):
+			description += "\n" + p.text
+		for h3 in response.findAll('h3'):
+			for res in h3.findAll('a'):
+				files.append(res.text)
+				if urlrsc in res['href']:
+					urlfiles.append(res['href'])
+				else:
+					finalurl = urltr + res['href']
+					urlfiles.append(finalurl)
 		for li in response.findAll('li'):
 			if li.a != None and "files/" in li.a['href']:
 				files.append(li.a.text)
@@ -81,7 +93,7 @@ for urltraining in traininglinks:
 		rootpdf = rootpath + '.pdf'
 		for dur in response.find(string = re.compile("week")):
 			information.append(dur)
-		urlfiles = []
+		
 		for file in dwnfiles:
 			filepath = root + file
 			if requests.get(filepath).status_code == 200:
@@ -96,7 +108,8 @@ for urltraining in traininglinks:
 			'duration': information[0] + " week(s)",
 			'description': description,
 			'files': files,
-			'urls': urlfiles
+			'urls': urlfiles,
+			'site':urltr
 			})
 		lastid += 1
 		folder = FILE_PATH

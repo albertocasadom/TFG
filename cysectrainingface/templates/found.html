@@ -81,7 +81,7 @@
 				</head>
 					{% for tr in training.1 %}
 					<tr>
-						<td>  <a href = "{%url 'showtraining'%}?training={{tr.title}}">{{tr.title}}</a></td>
+						<td>  <a href = "{%url 'showtraining'%}?id={{tr.id}}">{{tr.title}}</a></td>
 						<td> {{tr.description}}</td>
 					</tr>
 					{% endfor %}
@@ -100,7 +100,7 @@
 				</head>
 					{% for tr in filestr.1 %}
 					<tr>
-						<td> <a href = "{%url 'showtraining'%}?training={{tr.0.title}}">{{tr.0.title}}</a></td>
+						<td> <a href = "{%url 'showtraining'%}?id={{tr.0.id}}">{{tr.0.title}}</a></td>
 						<td>{{tr.0.description}}</td>
 						<td>{{tr.1}}</td>
 					</tr>

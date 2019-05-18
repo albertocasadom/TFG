@@ -26,7 +26,7 @@ SECRET_KEY = '2*%$i(a(bwzxhszkb1zuj-5%!^5ue(t=&-4x0mcls@aa083bzx'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
-
+DMIN_MEDIA_PREFIX = '/static/admin/' 
 ALLOWED_HOSTS = []
 
 #APPEND_SLASH = False
@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'bootstrap4',
     'rest_framework',
     'APIfaceREST',
+    'sslserver'
 ]
 
 MIDDLEWARE = [
