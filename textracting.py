@@ -11,6 +11,7 @@ from nltk.corpus import stopwords
 
 
 DIR_PATH = os.getcwd()
+print(DIR_PATH)
 dirlist = os.listdir(DIR_PATH)
 if "EnisaFiles" in dirlist:
 	DIR_PATH = os.path.join(DIR_PATH, "EnisaFiles")

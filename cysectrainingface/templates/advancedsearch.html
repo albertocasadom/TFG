@@ -1,6 +1,6 @@
 {% extends "layout.html" %}
 
-{% block content %}
+{% block body %}
 	{% if user.is_authenticated %}
 		<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 		<script>
@@ -11,7 +11,7 @@
 			var lastclicked = ""
 			var firstclicked = ""
 			
-			var inner = '<div id = "toadd"><select name = "logic"><option value = "and" selected>AND</option><option value = "or"> OR </option></select> <select name = "filter"><option value = "word" selected> Word</option> {% for key in filter %}<option value = "{{key}}">{{key}} </option>{% endfor %}</select><select name = "content"><option value = "contains" selected> Contains </option><option value = "is"> Is (exactly) </option></select><input type = "Search" name = "text" placeholder = "Search a training..." required> <input type ="button" value = "-" onclick = "deletediv(this.parentElement.id)"/></div>'
+			var inner = '<div id = "toadd"><select name = "logic"><option value = "and" selected>AND</option><option value = "or"> OR </option></select> <select name = "filter"><option value = "word" selected> Word</option> {% for key in filter %}<option value = "{{key}}">{{key}} </option>{% endfor %}</select><select name = "content"><option value = "contains" selected> Contains </option><option value = "is"> Is (exactly) </option></select><input type = "Search" name = "text" placeholder = "Search a training..." required> <input type ="button" class = "btn btn-min" value = "-" onclick = "deletediv(this.parentElement.id)"/></div>'
 
 			function addand(){
 				var element = document.getElementById("toadd");
@@ -37,7 +37,7 @@
 				document.getElementById(elementid).remove();
 				var count = document.getElementById("lastfield").getAttribute("name");
 				document.getElementById("lastfield").setAttribute("name",count-1);
-				if (numelems === 8){			
+				if (numelems === 9){			
 						document.getElementById(count).setAttribute("id","toadd");
 						document.getElementsByName(count +"filter")[0].setAttribute("name",'filter');
 						document.getElementsByName(count +"content")[0].setAttribute("name",'content');
@@ -72,17 +72,67 @@
 
 			}
 		</script>
-		<div>
-  		<button onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-black">Notes on search fields</button>
+		<style type="text/css">
+			.container-center {
+			    background: rgba(255,255,255,0.6);
+			    position: absolute;
+			    top:50%;
+			    left:40%;
+			    width:50%;
+			    margin-left:-200px;
+			    height:650px;
+			    margin-top:-300px;
+			    border:2px solid #111111;
+			    padding:5px;
+		  }
+		  .container-center-btn{
+			    background: rgba(255,255,255,0.6);
+			    position: absolute;
+			    top:27%;
+			    left:40%;
+			    margin-left:-200px;
+			    margin-top:-150px;
+			    border:2px solid #111111;
+			    padding:5px;
+		  }
+		  .btn-max{
+		  	border-radius: 40%;
+		  	font-size: 15px;
+		  	background-color: green;
+		  	color: white;
+		  }
+		  .btn:hover{
+		  	background-color: white;
+		  	color:black;
+		  }
+		  .btn-min{
+		  	border-radius: 40%;
+		  	font-size: 15px;
+		  	background-color: red;
+		  	color: white;
+		  }
 
+		   .sub{
+		    background-color:#111111;
+		    color: white;
+		    border: 2px solid #111111;
+		    border-radius: 1%;
+		    width: 70%;
+		  }
+		  .sub:hover{
+		    background-color: white;
+		    color: #111111;
+		  }
+		</style>
+  		<button onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-black container-center-btn">Notes on search fields</button>
 			  <div id="id01" class="w3-modal">
 			    <div class="w3-modal-content w3-animate-top w3-card-4">
 			      <header class="w3-container w3-teal"> 
 			        <span onclick="document.getElementById('id01').style.display='none'" 
 			        class="w3-button w3-display-topright">&times;</span>
-			        <h2>Notes on search fields</h2>
+			        <h2 style="text-align: center">Notes on search fields</h2>
 			      </header>
-			      <div class="w3-container">
+			      <div class="w3-container" style="text-align: center">
 			        {% for entrie in legend%}
 			        	<p> <b>{{entrie.0}}</b> is not available for <b>{{entrie.1}}</b></p>
 			        {%endfor%}
@@ -92,18 +142,23 @@
 			      </footer>
 			    </div>
 			  </div>
-  		<form action = "../advancedfound/ " method = 'post'>
+		<div class = "container-center">
+  		<form action = "../advancedfound/ " method = 'post' style = " margin-left: 12%">
   		{% csrf_token %}
     	{{ form.as_p }}
+    	<table>
     	{% for field in pairvalues%}
-    		<input type = "checkbox" onclick = "clickedbox(this)" name = "{{field.0}}-{{length}}"> {{field.0}}<br/>
+    		<td>
+    		<input type = "checkbox" class="checktype" onclick = "clickedbox(this)" name = "{{field.0}}-{{length}}" style="font-size: 50px;"> {{field.0}}<br/>
     		<select name = "{{field.0}}-{{length}}" style = "display: none">
     			<option value = "Any" selected> Any </option>
     			{%for value in field.1%}
-    				<option value = {{value}}>{{value}} </option>
+    				<option value = {{value}} >{{value}} </option>
     			{%endfor%}
     		</select>
+    	</td>
     	{%endfor%}
+</table>
     		<div id = "lastfield">
 	    		<div id = "toadd">
 	    			<select name = "logic" style = "display:none">
@@ -122,13 +177,14 @@
 					<input type = "Search" name = "text" placeholder = 'Search a training...'>
 				</div>
 			</div>
-			<input type = "button" name = "and" value = "+" onclick= "addand()"/>
-			<input type = "submit" value = "submit" />
+			<input type = "button" name = "btn" class = "btn btn-max" value = "+" onclick= "addand()"/>
+			<input type = "submit" value = "submit" class = "sub" />
 			
 		</form>
+	</div>
 		
 
 	{% else %}
        <a class="lead" href="{% url 'login' %}">Log in</a>
 	{% endif %}
-{% endblock content %}
+{% endblock body %}

@@ -89,18 +89,18 @@ def basic_key_search(key,value,typesearch,logic,data):
 					if key in keys:
 					#Separar palabras de búsqueda
 						if type(training[key]) == str:
-							if value.lower() in training[key].lower() and training not in result:
+							if value.lower() in training[key].lower():
 								result.append(training)
 							else:
 								continue
 
 						elif type(training[key]) == int:
-							if int(value) == training[key]:
+							if value in str(training[key]):
 								result.append(training)
 						
 						elif type(training[key]) == list:
 							for el in training[key]:
-								if el.lower() == value and training not in result:
+								if el.lower() == value:
 									result.append(training)
 								else: 
 									continue
@@ -125,23 +125,28 @@ def basic_key_search(key,value,typesearch,logic,data):
 			#Preguntar primero si el training tiene la clave.
 				if training not in result:
 					keys = list(training.keys())
+					print(type(training[key]))
 					if key in keys:
 					#Separar palabras de búsqueda
-						if type(training[key]) != list:
+						if type(training[key]) == str:
 							if value == training[key].lower():
 								result.append(training)
-								print(training['title'])
 							else:
 								continue
-						else:
+						elif type(training[key]) == list:
 							for el in training[key]:
 								if el.lower() == value:
 									result.append(training)
 									print(training['title'])
 								else: 
 									continue
-					else:
-						continue
+						elif type(training[key]) == int:
+							print("hey")
+							if int(value) == training[key]:
+								result.append(training)
+								print(training['title'])
+							else:
+								continue
 			advancedsearchtrs.append(result)
 			advancedsearchtrs.insert(0,logic)
 			return advancedsearchtrs

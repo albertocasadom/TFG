@@ -1,11 +1,12 @@
 {% extends "layout.html" %}
 
-{% block content %}
+{% block body %}
 	{% if user.is_authenticated %}
 	<style>
 		table{
 			font-size: 15px;
 			font-style: italic;
+			color:white;
 		}
 	</style>
   		<a class="lead" href="{% url 'logout' %}">Log out </a>
@@ -28,4 +29,4 @@
 	{% else %}
        <a class="lead" href="{% url 'login' %}">Log in</a>
 	{% endif %}
-{% endblock content %}
+{% endblock body %}
