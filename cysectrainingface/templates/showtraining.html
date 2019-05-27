@@ -4,10 +4,14 @@
 	{% if user.is_authenticated %}
 
 	  		<h1 style = "text-align:center; background-color: rgba(255,255,255,0.75); border: 2px solid #111111;font-family: 'Orbitron', sans-serif; padding:25px"><a href="{{training.site}}" target = "_blank" style="margin-top: 50%"><b> {{training.id}} - {{training.title}}</b></a></h1>
-	  		<h2 style = 'text-align:center; color:white'> {{training.source}}</h4>
-	        <p style = 'text-align: justify;background-color: rgba(255,255,255,0.75); border: 2px solid #111111; padding: 25px;'> {{training.description}}</p>
-	        <h2 style = 'font-size: 15px; background-color: rgba(255,255,255,0.75); border: 2px solid #111111; padding: 25px'> <b>DURATION:</b> {{training.duration}}</h2>
-	        <ul style = "">
+	  		{% if training.target_audience %}
+	  		<h2 style = 'text-align:center; color:white'> {{training.source}} - {{training.target_audience}}</h2>
+	  		{% else %}
+	  		<h2 style = 'text-align:center; color:white'> {{training.source}} </h2>
+	  		{%endif%}
+	        <p style = 'text-align: justify;background-color: rgba(255,255,255,0.75); border: 2px solid #111111; padding: 25px;'>{{training.description}}</p>
+	        <h2 style = 'font-size: 15px; background-color: rgba(255,255,255,0.75); border: 2px solid #111111; text-align:center; padding-top:20px; padding-bottom: 20px'> <b>DURATION:</b> {{training.duration}}</h2>
+	        <ul style = "background-color: rgba(255,255,255,0.75); border: 2px solid #111111; padding:25px">
 	        {% for element in linksname %}
 	        	<li><a href={{element.1}} target = "_blank">{{element.0}}</a></li>
 	        {%endfor%}

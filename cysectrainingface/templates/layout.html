@@ -20,8 +20,6 @@
 	</script>
 	<style type="text/css">
 	  body {
-	    /*https://asuevents.asu.edu/sites/default/files/cybersecurity_education_consortium_rev_9-12-16.00_00_15_13.still001.jpg*/
-	    /*https://ackcent.com/scont/uploads/2017/07/empresa_shutterstock_524595073_web_02-e1501580929492.jpg*/
 	    background: url('https://asuevents.asu.edu/sites/default/files/cybersecurity_education_consortium_rev_9-12-16.00_00_15_13.still001.jpg') no-repeat center center fixed; 
 	  -webkit-background-size: cover;
 	  -moz-background-size: cover;
@@ -34,11 +32,14 @@
 	<nav class="navbar navbar-expand-sm navbar-dark bg-dark">
 		<div class="container">
 			<a class="navbar-brand" href="#">Useful information</a>
+			<a class="navbar-brand" href="#">About us</a>
 			{% block content %}
 				{% if user.is_authenticated %}
 				<a class="navbar-brand" href="{% url 'search' %}">Search</a>
 				<a class="navbar-brand" href = "{% url 'advanced' %}">Advanced Search</a>
 				<a class="navbar-brand" href = "{% url 'logout' %}">Log out</a>
+				{%else%}
+				<a class="navbar-brand" href = "{% url 'login' %}">Log in</a>
 				{%endif%}
 			{%endblock content%}
 		</div> 	
