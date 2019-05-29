@@ -7,9 +7,16 @@ from bs4 import BeautifulSoup
 
 #FILE_PATH = "/Users/albertocm/Desktop/Ingeniería Telemática/TFG/TFG/SeedFiles"
 FILE_PATH = os.getcwd() + "/SeedFiles"
+
+with open("data.json",'r') as datafile:
+			data = json.load(datafile)
+
+lastid = data['resources'][-1]['id']
+
 urlrsc = "http://www.cis.syr.edu/~wedu/seed/Labs_16.04/"
 url = requests.get(urlrsc)
 response = BeautifulSoup(url.content,"html.parser")
+
 traininglinks = [] 
 rsclinks = []
 resources = []
@@ -18,11 +25,6 @@ folder = FILE_PATH
 if not os.path.exists(folder):
 	os.makedirs(folder)
 
-with open("data.json",'r') as datafile:
-			data = json.load(datafile)
-
-lastid = data['resources'][-1]['id']
-print(lastid)
 
 for link in response.findAll("div",{"class":"one_third"}):
 	traininglinks.append(link.a['href'])
@@ -32,6 +34,7 @@ for urltraining in traininglinks:
 	url = requests.get(urlres)
 	print("\nConnecting to: {0}".format(urlres))
 	response = BeautifulSoup(url.content,"html.parser")
+
 	for linkrsc in response.findAll('li'):
 		if linkrsc.h3 != None:
 			title = linkrsc.h3.text
@@ -50,6 +53,7 @@ for urltraining in traininglinks:
 				typetr = "implementation"
 		if linkrsc.p != None:
 			description = linkrsc.p.text
+
 		if urlrsc in linkrsc.a['href']:
 			print("\nConnecting to: {0}".format(linkrsc.a['href']))
 			urltr = linkrsc.a['href']
@@ -117,11 +121,11 @@ for urltraining in traininglinks:
 		if not os.path.exists(folder):
 			os.makedirs(folder)
 
-		'''download = wget.download(rootpdf,out = folder)
+		download = wget.download(rootpdf,out = folder)
 		for file in dwnfiles:
 			filepath= root + file
-			if requests.get(filepath).status_code == 200:'
-				downloadfile = wget.download(filepath, out = folder)'''
+			if requests.get(filepath).status_code == 200:
+				downloadfile = wget.download(filepath, out = folder)
 
 with open("data.json",'w') as outfile:
 	json.dump(data,outfile,indent = 4)

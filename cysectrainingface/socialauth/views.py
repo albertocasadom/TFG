@@ -74,7 +74,7 @@ def basic_training_search(value,data):
 					if el.lower() == value and training not in result:
 						result.append(training)
 					else: 
-									continue
+						continue
 	return result
 
 def basic_key_search(key,value,typesearch,logic,data):
@@ -160,7 +160,7 @@ def basic_key_search(key,value,typesearch,logic,data):
 			return advancedsearchtrs
 
 
-def search_word_in_files(word,data):
+'''def search_word_in_files(word,data):
 	trainingnames = []
 	result = []
 	ENISA_DIR = os.walk(os.path.join(BASE_DIR,'../EnisaFiles'))
@@ -187,6 +187,35 @@ def search_word_in_files(word,data):
 				if repeated > 0:
 					dirsname = dirs[0].split('SeedFiles/')
 					trainingnames.append((dirsname[1],repeated))
+	for training in data['resources']:
+		for tr in trainingnames:
+			if tr[0] == training['title']:
+				result.append([training,tr[1]])
+				result.sort(key=lambda numword: numword[1], reverse = True)
+
+	return result'''
+
+def search_word_in_files(word,data):
+	trainingnames = []
+	result = []
+	PATH_DIR = os.path.join(BASE_DIR,'../')
+	directories = os.listdir(PATH_DIR)
+	for dirs in directories:
+		if "Files" in dirs:
+			dirtrainings = os.listdir(os.path.join(BASE_DIR,"../",dirs))
+			for trfolder in dirtrainings:
+				file = os.path.join(BASE_DIR,"../",dirs,trfolder,'mainwordfile.txt')
+				if os.path.exists(file):
+					with open(file,'r') as wordsfile:
+						repeated = 0
+						for l in wordsfile:
+							match = re.findall(word,l.lower())
+							repeated = len(match)
+						if repeated > 0:
+							dirsname = file.split("/")
+							print(dirsname)
+							trainingnames.append((dirsname[-2],repeated))
+	
 	for training in data['resources']:
 		for tr in trainingnames:
 			if tr[0] == training['title']:
@@ -265,8 +294,9 @@ def get_post_parameters(parameters):
 
 def search(request):
 	template = loader.get_template('search.html')
-	context = get_filters()
+	context = {"user":request.user}
 	return HttpResponse(template.render(context,request))
+
 def found(request):
 	with open(os.path.join(BASE_DIR, '../data.json'),'r') as datafile:
 		data = json.load(datafile)
@@ -278,14 +308,6 @@ def found(request):
 	result.append((text.upper(),trainings))
 	filestr = search_word_in_files(text,data)
 	resultfiles.append((text.upper(),filestr))
-	splittext = text.split(" ")
-	'''if (len(splittext) > 1):
-		for word in splittext:
-			trainings = basic_training_search(word,data)
-			filestr = search_word_in_files(word,data)
-			result.append((word.upper(),trainings))
-			resultfiles.append((word.upper(),filestr))'''
-
 	context = {'data':result, 'files':resultfiles}
 	return HttpResponse(template.render(context, request))
 
