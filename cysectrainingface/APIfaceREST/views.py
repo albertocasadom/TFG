@@ -12,42 +12,7 @@ from socialauth import views
 
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-'''
-def search_word_in_files(word,data):
-	trainingnames = []
-	result = []
-	ENISA_DIR = os.walk(os.path.join(BASE_DIR,'../EnisaFiles'))
-	for dirs in ENISA_DIR:
-		file = os.path.join(dirs[0],'mainwordfile.txt')
-		if os.path.exists(file):
-			with open(file,'r') as wordsfile:
-				repeated = 0
-				for l in wordsfile:
-					match = re.findall(word,l.lower())
-					repeated = len(match)
-				if repeated > 0:
-					dirsname = dirs[0].split('EnisaFiles/')
-					trainingnames.append((dirsname[1],repeated))
-	SEED_DIR = os.walk(os.path.join(BASE_DIR,'../SeedFiles'))
-	for dirs in SEED_DIR:
-		file = os.path.join(dirs[0],'mainwordfile.txt')
-		if os.path.exists(file):
-			with open(file,'r') as wordsfile:
-				repeated = 0
-				for l in wordsfile:
-					match = re.findall(word,l.lower())
-					repeated = len(match)
-				if repeated > 0:
-					dirsname = dirs[0].split('SeedFiles/')
-					trainingnames.append((dirsname[1],repeated))
-	for training in data['resources']:
-		for tr in trainingnames:
-			if tr[0] == training['title']:
-				result.append([training,tr[1]])
-				result.sort(key=lambda numword: numword[1], reverse = True)
 
-	return result
-'''
 def basic_training_search(word,data,key):
 	print("La palabra introducida es: {0}".format(word))
 	result = []
@@ -106,17 +71,14 @@ def traininglist(request):
 		print(request.POST)
 		parameters = list(request.POST.keys())
 		print(parameters)
-
-		requestparameters = {}
-		jsonresult = []
-		for parameter in parameters:
-			if parameter in keylist:
-				print(request.POST.get(parameter))
-				jsonresult.append(basic_training_search(request.POST.get(parameter),data,parameter))
+		jsonresult = {}
+		if (len(parameters) == 1):
+				if parameters[0] in keylist:
+					print(request.POST.get(parameters[0]))
+					jsonresult = {"resources": basic_training_search(request.POST.get(parameters[0]),data,parameters[0])}
+				else:
+					jsonresult = {"message":"Please, enter a correct parameter name"}
+		else:
+			jsonresult = {"message": "Please, enter only one parameter"}
 		   
 		return JSONResponse(jsonresult)
-
-'''
-curl -H "Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNTU3MjU2Njc2LCJqdGkiOiIwMTU0ODBmY2EwNTM0OTExOWE5YzhlNWRiOTI3ZmUyNSIsInVzZXJfaWQiOjh9.88isVbxD8wc_QmZ1fwjuSxMjuDf6BrozXblArGFHiCc" -X POST  http://127.0.0.1:8000/trainings/ -d "id='1'"
-
-'''

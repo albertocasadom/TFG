@@ -160,41 +160,6 @@ def basic_key_search(key,value,typesearch,logic,data):
 			return advancedsearchtrs
 
 
-'''def search_word_in_files(word,data):
-	trainingnames = []
-	result = []
-	ENISA_DIR = os.walk(os.path.join(BASE_DIR,'../EnisaFiles'))
-	for dirs in ENISA_DIR:
-		file = os.path.join(dirs[0],'mainwordfile.txt')
-		if os.path.exists(file):
-			with open(file,'r') as wordsfile:
-				repeated = 0
-				for l in wordsfile:
-					match = re.findall(word,l.lower())
-					repeated = len(match)
-				if repeated > 0:
-					dirsname = dirs[0].split('EnisaFiles/')
-					trainingnames.append((dirsname[1],repeated))
-	SEED_DIR = os.walk(os.path.join(BASE_DIR,'../SeedFiles'))
-	for dirs in SEED_DIR:
-		file = os.path.join(dirs[0],'mainwordfile.txt')
-		if os.path.exists(file):
-			with open(file,'r') as wordsfile:
-				repeated = 0
-				for l in wordsfile:
-					match = re.findall(word,l.lower())
-					repeated = len(match)
-				if repeated > 0:
-					dirsname = dirs[0].split('SeedFiles/')
-					trainingnames.append((dirsname[1],repeated))
-	for training in data['resources']:
-		for tr in trainingnames:
-			if tr[0] == training['title']:
-				result.append([training,tr[1]])
-				result.sort(key=lambda numword: numword[1], reverse = True)
-
-	return result'''
-
 def search_word_in_files(word,data):
 	trainingnames = []
 	result = []
