@@ -31,7 +31,7 @@
 <body>
 	<nav class="navbar navbar-expand-sm navbar-dark bg-dark">
 		<div class="container">
-			<a class="navbar-brand" href="#">Useful information</a>
+			<a class="navbar-brand" href="{% url 'usefulinfo'%}">Useful information</a>
 			<a class="navbar-brand" href="#">About us</a>
 			{% block content %}
 				{% if user.is_authenticated %}

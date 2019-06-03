@@ -1,0 +1,76 @@
+{% extends "layout.html" %}
+
+{% block body %}
+	<style>
+		table{
+			font-size: 15px;
+			font-family: 'Sumana', serif;
+			background-color:white;
+			text-align: center;
+		}
+		th{
+			font-size: 20px;
+		}
+		h2{
+			background-color:rgba(255,255,255,0.8); 
+			text-align: center; border: 2px solid;
+			font-family: 'Orbitron', sans-serif; 
+			font-size:50px;
+	</style>
+
+  		<h2> Useful Information <h2>
+  		<h3 style="color:white; text-align: center">How to request access to our API </h3>
+  		<ol style = "background-color: rgba(255,255,255,0.75); border: 2px solid #111111; padding: 25px;"> If you want to work with our API, you will have to follow the next steps:
+  			<br>
+  			<li> Ask for a system account: Send an email to uc3mnotifytraining@gmail.com with the subject System Account Request and the purpose why you want it.</li>
+  			<li> You will receive an email back with your username and password.</li>
+  			<li> Now you will be able to log in on the system and make some requests </li>
+  		</ol>
+  		<h3 style="color:white; text-align: center"> API workflow for developers </h3>
+  		<ol style = "background-color: rgba(255,255,255,0.75); border: 2px solid #111111; padding: 25px;">
+  			<li> Make a HTTPs POST request to the following url: <i>https://localhost:8000/api/token/</i> indicating your system account username and password as parameters.</li><br>
+  			<p><b>Example:</b> curl -k -X POST https://localhost:8000/api/token/ -d username="admin" -d password="admin"</p>
+  			<li> Save the JSON format tokens that you will receive.</li>
+  			<li> Make another HTTPs POST request to the following url: <i>https://locahost:8000/trainings/</i> indicating the search you would like to do with the metadata as parameter key equals the value you want to find.</li><br>
+  			<p><b>Example:</b> curl -k -X POST https://localhost:8000/trainings/ -d title="advanced"
+        </ol>
+        <h3 style="color:white; text-align: center"> Accepted key values for the search </h3>
+        <table>
+	        <th> Metadata with wide range of possible values
+		        <table>
+		        	<thead>
+		        		<th> Key </th>
+		        	</thead>
+		        	<tbody>
+		        		{%for key in info.filter%}
+		        		<tr>
+		        			<td> {{key}} </td>
+		        		</tr>
+		        		{%endfor%}
+		        	</tbody>
+		        </table>
+		    </th>
+		    <th>
+		    	&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+		    </th>
+		    <th> Metadata with a given range of possible values
+		        <table>
+		        	<thead>
+		        		<th> Key </th>
+		        		<th> Value </th>
+		        	</thead>
+		        	<tbody>
+		        		{%for key in info.pairvalues%}
+		        			{%for item in key.1%}
+			        		<tr>
+			        			<td> {{key.0}}</td>
+			        			<td> {{item}} </td>
+			        		</tr>
+			        		{%endfor%}
+		        		{%endfor%}
+		        	</tbody>
+		        </table>
+		    </th>
+		</table>
+
+{% endblock body %}

@@ -178,7 +178,6 @@ def search_word_in_files(word,data):
 							repeated = len(match)
 						if repeated > 0:
 							dirsname = file.split("/")
-							print(dirsname)
 							trainingnames.append((dirsname[-2],repeated))
 	
 	for training in data['resources']:
@@ -225,10 +224,9 @@ def get_checkbox_repeated(dataset):
 	datafound = []
 	repeated = []
 	keys = list(dataset.keys())
-	print("---- get_dataset_repeats ----")
 	if len(keys) == 0:
-			return (repeated,-1)
-	if len(keys) == 1:
+		return (repeated,-1)
+	elif len(keys) == 1:
 		for data in dataset[keys[0]]:
 			datafound.append(data)
 		print("Número de elementos encontrados: {0}".format(len(datafound)))
@@ -286,7 +284,6 @@ def advancedfound(request):
 		data = json.load(datafile)
 	lenfixedsearch = 0
 	resultr= []
-	template = loader.get_template('found.html')
 	context = {}
 	dataset = {}
 	groupsearch = []
@@ -323,6 +320,10 @@ def advancedfound(request):
 
 	if checkboxclicked != 0:		
 		andtrainings = get_checkbox_repeated(dataset)
+		print("EStoy dentro de la condicion")
+		if len(andtrainings[0]) == 0:
+			template = loader.get_template("emptylist.html")
+			return HttpResponse(template.render(context,request))
 	else:
 		andtrainings = (data['resources'],0)
 
@@ -356,9 +357,7 @@ def advancedfound(request):
 			contains = finalsearch[x-1][0]
 			logic = finalsearch[x-1][2]
 			result = []
-			print("-->LA BÚSQUEDA ({3}) '{2}' CON CLAVE: {0} Y VALOR: {1} DEVUELVE...".format(key,value,logic.upper(),contains))	
 			result = basic_key_search(key,value,contains,logic,data)
-			
 			advancedsearchtrs.append(result[1])
 			advancedlogic.append(result[0])
 			x = x-1
@@ -380,11 +379,6 @@ def advancedfound(request):
 			else:
 				resultr.append(advancedsearchtrs[indexsplit[index]:])
 
-		for res in resultr:
-			print("------------------")
-			for tr in res:
-				for training in tr:
-					print(training['title'])
 		andtrainings = []
 		finalresultand = []
 		finalresult = []
@@ -416,13 +410,10 @@ def advancedfound(request):
 			for res in advancedsearchtrs:
 				for tr in res:
 					finalresult.append(tr)
-			#print("Count of {0} = {1}".format(tr['title'],res.count(tr)))
 			for tr in finalresult:
 				if finalresult.count(tr) == numands:
 					if tr not in finalresultand:
 						finalresultand.append(tr)
-
-
 
 		template = loader.get_template('foundlogic.html')
 		context['data'] = finalresultand
@@ -448,6 +439,13 @@ def showtraining(request):
 	for x in rango:
 		linksname.append([training['files'][x],training['urls'][x]])
 	context = {'training': training, 'linksname':linksname}
+	return HttpResponse(template.render(context,request))
+
+def usefulinfo(request):
+	info = get_filters()
+	context = {'info':info}
+	print(info)
+	template = loader.get_template("usefulinfo.html")
 	return HttpResponse(template.render(context,request))
 
 def logout_view(request):
