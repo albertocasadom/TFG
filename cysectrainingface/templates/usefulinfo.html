@@ -32,7 +32,7 @@
   			<p><b>Example:</b> curl -k -X POST https://localhost:8000/api/token/ -d username="admin" -d password="admin"</p>
   			<li> Save the JSON format tokens that you will receive.</li>
   			<li> Make another HTTPs POST request to the following url: <i>https://locahost:8000/trainings/</i> indicating the search you would like to do with the metadata as parameter key equals the value you want to find.</li><br>
-  			<p><b>Example:</b> curl -k -X POST https://localhost:8000/trainings/ -d title="advanced"
+  			<p><b>Example:</b> curl -k -H "Authorization: Bearer {accesstoken}" -X POST https://localhost:8000/trainings/ -d title="advanced"
         </ol>
         <h3 style="color:white; text-align: center"> Accepted key values for the search </h3>
         <table>

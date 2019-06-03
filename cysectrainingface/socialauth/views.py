@@ -444,7 +444,6 @@ def showtraining(request):
 def usefulinfo(request):
 	info = get_filters()
 	context = {'info':info}
-	print(info)
 	template = loader.get_template("usefulinfo.html")
 	return HttpResponse(template.render(context,request))
 
