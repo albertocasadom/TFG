@@ -32,7 +32,7 @@
 	<nav class="navbar navbar-expand-sm navbar-dark bg-dark">
 		<div class="container">
 			<a class="navbar-brand" href="{% url 'usefulinfo'%}">Useful information</a>
-			<a class="navbar-brand" href="#">About us</a>
+			<a class="navbar-brand" href="{% url 'aboutus' %}">About us</a>
 			{% block content %}
 				{% if user.is_authenticated %}
 				<a class="navbar-brand" href="{% url 'search' %}">Search</a>

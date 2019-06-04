@@ -447,6 +447,9 @@ def usefulinfo(request):
 	template = loader.get_template("usefulinfo.html")
 	return HttpResponse(template.render(context,request))
 
+def aboutus(request):
+	return render(request,'aboutus.html')
+
 def logout_view(request):
 	logout(request)
 	return render(request,'socialauth/logout.html')

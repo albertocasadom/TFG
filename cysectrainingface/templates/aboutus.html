@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+{% block body %}
+<style>
+	h2{
+		background-color:rgba(255,255,255,0.8); 
+		text-align: center; border: 2px solid;
+		font-family: 'Orbitron', sans-serif; 
+		font-size:50px;
+	}
+	.container-center {
+		   	background: rgba(255,255,255,0.6);
+		    border:2px solid #111111;
+		    padding:5px;
+</style>
+<h2> About us </h2>
+	<p style = " background: rgba(255,255,255,0.6); border:2px solid #111111; padding:25px; text-align: justify"> The scope of the project is to build a data set of exercises and materials related to cybersecurity and provide access to the mined data of the diferent webs. The way that we are doing it is by this web interface and by API REST. If you are interested on be a part of the community, you can check the <a href = "{% url 'usefulinfo'%}" style="color:green"> useful information</a> tab or <a href = "{% url 'login'%}" style = "color:green">log in</a> on the corresponding tab.</p>
+
+	<h3 style=" background-color:rgba(255,255,255,0.8); text-align: center; border: 2px solid #111111; padding:5px"> Project Lead </h3>
+	<div class = "container-center">
+		<a href= "https://www.inf.uc3m.es/component/comprofiler/userprofile/aigonzal">
+			<h4 style="text-align: center"> ANA ISABEL GONZÁLEZ-TABLAS FERRERES </h4>
+			<img src = "https://www.inf.uc3m.es/images/comprofiler/121_5b1ac24f9b66b.jpg" style="margin-left: 42.3%; padding: 10px">
+		</a>
+	</div>
+	<h3 style=" background-color:rgba(255,255,255,0.8); text-align: center; border: 2px solid #111111; padding:5px">Students </h3>
+	<div class = "container-center">
+		<a href = "https://www.linkedin.com/in/albertocasadom">
+			<h4 style="text-align:center"> Alberto Casado Medina </h4>
+			<img src = "https://media.licdn.com/dms/image/C4D03AQGQ6gz58WgnPw/profile-displayphoto-shrink_100_100/0?e=1565222400&v=beta&t=uUhqYJeizuXvJImmegqNog8-a_BNnO2IYLDn2V8Ca6U" style ="margin-left: 44.5%; padding: 10px">
+		</a>
+	</div>
+{% endblock body %}
