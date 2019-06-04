@@ -34,7 +34,9 @@
     background-color: #555555;
     color: white;
   }
-
+{%if user.is_authenticated%}
+  
+{%else%}
 </style>
 <div class = container-center>
   <div style = " margin-top: 15%; margin-left: 12%;">
@@ -54,4 +56,5 @@
   </div>
 </div>
 </div>
+{%endif%}
 {% endblock %}
