@@ -77,7 +77,7 @@
   		<h2> The search of: <b>{{data.0.0}}</b> has given the following results </h2>
   		<div class="tab">
 			<button class="tablinks active" onclick="openTab(event, 'field')" >By field</button>
-			<button class="tablinks" onclick="openTab(event, 'keyword')">By keyword</button>
+			<button class="tablinks" onclick="openTab(event, 'keyword')">By word</button>
 		</div>
 	  		<div id="field" class="tabcontent" style = "display:block;">
 	  		{% for training in data %}
@@ -90,7 +90,7 @@
 				</head>
 					{% for tr in training.1 %}
 					<tr>
-						<td>  <a href = "{%url 'showtraining'%}?id={{tr.id}}">{{tr.title}}</a></td>
+						<td>  <a href = "{%url 'showtraining'%}?id={{tr.id}}" target="_blank">{{tr.title}}</a></td>
 						<td> {{tr.description}}</td>
 					</tr>
 					{% endfor %}
@@ -109,7 +109,7 @@
 				</head>
 					{% for tr in filestr.1 %}
 					<tr>
-						<td> <a href = "{%url 'showtraining'%}?id={{tr.0.id}}">{{tr.0.title}}</a></td>
+						<td> <a href = "{%url 'showtraining'%}?id={{tr.0.id}}" target="_blank">{{tr.0.title}}</a></td>
 						<td>{{tr.0.description}}</td>
 						<td>{{tr.1}}</td>
 					</tr>

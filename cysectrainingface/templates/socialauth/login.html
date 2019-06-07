@@ -34,10 +34,11 @@
     background-color: #555555;
     color: white;
   }
-{%if user.is_authenticated%}
-  
-{%else%}
 </style>
+{%if user.is_authenticated%}
+  <p style = " background: rgba(255,255,255,0.6); border:2px solid #111111; padding:15px; text-align: justify"> The scope of the project is to build a data set of exercises and materials related to cybersecurity and provide access to the mined data of the diferent webs. The way that we are doing it is by this web interface and by API REST. If you are interested on be a part of the community, you can check the <a href = "{% url 'usefulinfo'%}" style="color:green"> useful information</a> tab or <a href = "{% url 'login'%}" style = "color:green">log in</a> on the corresponding tab.</p>
+{%else%}
+<p style = " background: rgba(255,255,255,0.6); border:2px solid #111111; padding:15px; text-align: justify"> The scope of the project is to build a data set of exercises and materials related to cybersecurity and provide access to the mined data of the diferent webs. The way that we are doing it is by this web interface and by API REST. If you are interested on be a part of the community, you can check the <a href = "{% url 'usefulinfo'%}" style="color:green"> useful information</a> tab or <a href = "{% url 'login'%}" style = "color:green">log in</a> on the corresponding tab.</p>
 <div class = container-center>
   <div style = " margin-top: 15%; margin-left: 12%;">
   <h2 style = "margin-left: 33%">Login</h2>

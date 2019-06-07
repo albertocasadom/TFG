@@ -19,9 +19,8 @@
 			font-family: 'Orbitron', sans-serif; 
 			font-size:50px;
 	</style>
-  		<a class="lead" href="{% url 'logout' %}">Log out </a>
 
-  		<h2> {{text}} found in <h2>
+  		<h2> {{text}} has given the following results: <h2>
         <table class="table table-bordered">
 			<head>
 				<tr>
@@ -31,7 +30,7 @@
 			</head>
 				{% for training in data %}
 				<tr>
-					<td> <a href = "{%url 'showtraining'%}?id={{training.id}}">{{training.title}}</a></td>
+					<td> <a href = "{%url 'showtraining'%}?id={{training.id}}" target = "_blank">{{training.title}}</a></td>
 					<td> {{training.description}}</td>
 				</tr>
 				{% endfor %}
